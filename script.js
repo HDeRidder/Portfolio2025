@@ -88,8 +88,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Add some parallax effect to the hero section
     const hero = document.querySelector('.hero');
+    const heroButton = document.querySelector('.hero .cta-button');
+    const aboutSection = document.getElementById('about');
     window.addEventListener('scroll', () => {
         const scroll = window.pageYOffset;
-        hero.style.transform = `translateY(${scroll * 0.5}px)`;
+        hero.style.transform = `translateY(${scroll * 0.15}px)`;
+
+        // Hide hero button when about section reaches the top
+        if (heroButton && aboutSection) {
+            const aboutRect = aboutSection.getBoundingClientRect();
+            if (aboutRect.top <= 0) {
+                heroButton.classList.add('hide-on-scroll');
+            } else {
+                heroButton.classList.remove('hide-on-scroll');
+            }
+        }
+    });
+
+    const toggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const body = document.body;
+
+    // Check for saved theme in localStorage
+    if (localStorage.getItem('theme') === 'light') {
+        body.classList.add('light-mode');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+    }
+
+    toggleBtn.addEventListener('click', function () {
+        body.classList.toggle('light-mode');
+        const isLight = body.classList.contains('light-mode');
+        if (isLight) {
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+            localStorage.setItem('theme', 'light');
+        } else {
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+            localStorage.setItem('theme', 'dark');
+        }
     });
 }); 

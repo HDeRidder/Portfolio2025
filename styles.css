@@ -6,6 +6,14 @@
     --dark-gray: #1a1a1a;
     --light-gray: #999999;
     --white: #ffffff;
+
+    /* Light mode variables */
+    --light-bg: #f7f7f7;
+    --light-gray-bg: #eaeaea;
+    --light-card: #ffffff;
+    --light-text: #222222;
+    --light-subtitle: #555555;
+    --light-border: #ff4d4d;
 }
 
 * {
@@ -23,6 +31,207 @@ body {
     background-color: var(--dark-bg);
     color: var(--white);
     line-height: 1.6;
+}
+
+body.light-mode {
+    background-color: var(--light-bg);
+    color: var(--light-text);
+}
+
+body.light-mode .navbar {
+    background-color: #fff;
+    border-bottom: 1px solid var(--light-border);
+}
+body.light-mode .logo {
+    color: var(--primary-red);
+}
+body.light-mode .nav-links a {
+    color: var(--light-text);
+}
+body.light-mode .nav-links a:hover {
+    color: var(--primary-red);
+}
+body.light-mode .about {
+    background-color: var(--light-gray-bg);
+}
+body.light-mode .skills {
+    background-color: var(--light-bg);
+}
+body.light-mode .skill-card {
+    background-color: var(--light-card);
+    border: 1px solid var(--light-border);
+}
+body.light-mode .skill-icon i {
+    color: var(--primary-red);
+}
+body.light-mode .project-card {
+    background-color: var(--light-card);
+    border: 1px solid var(--light-border);
+}
+body.light-mode .project-description {
+    background-color: var(--light-card);
+    border: 1px solid var(--light-border);
+    color: var(--light-text);
+}
+body.light-mode .project-description h3 {
+    color: var(--primary-red);
+}
+body.light-mode .stat-card {
+    background-color: var(--light-card);
+    border: 1px solid var(--light-border);
+    color: var(--light-text);
+}
+body.light-mode .section-subtitle {
+    color: var(--light-subtitle);
+}
+body.light-mode .footer {
+    background-color: var(--light-card);
+    color: var(--light-text);
+    border-top: 1px solid var(--light-border);
+}
+body.light-mode .contact {
+    background-color: var(--light-gray-bg);
+}
+body.light-mode .contact-form input,
+body.light-mode .contact-form textarea {
+    background-color: var(--light-card);
+    color: var(--light-text);
+    border: 1px solid var(--light-border);
+}
+body.light-mode .cta-button,
+body.light-mode .read-more-btn,
+body.light-mode .download-btn {
+    color: var(--primary-red);
+    border-color: var(--primary-red);
+    background: transparent;
+}
+body.light-mode .cta-button:hover,
+body.light-mode .read-more-btn:hover,
+body.light-mode .download-btn:hover {
+    background: var(--primary-red);
+    color: #fff;
+}
+body.light-mode .profile-frame {
+    background-color: var(--light-card);
+    border: 2px solid var(--primary-red);
+}
+body.light-mode .profile-frame img {
+    border: 2px solid var(--light-card);
+}
+body.light-mode .document-card {
+    background-color: var(--light-card);
+    border: 1px solid var(--light-border);
+    color: var(--light-text);
+}
+body.light-mode .internship-content {
+    background-color: var(--light-card);
+    border: 1px solid var(--light-border);
+    color: var(--light-text);
+}
+body.light-mode .project-hero {
+    border: 1px solid var(--light-border);
+    background: var(--light-card);
+}
+body.light-mode .project-hero img {
+    background: var(--light-card);
+}
+body.light-mode .project-overlay {
+    background: rgba(255,255,255,0.85);
+}
+body.light-mode .project-card h3,
+body.light-mode .project-card p {
+    color: var(--light-text);
+}
+body.light-mode .read-more-btn {
+    color: var(--primary-red);
+    border-color: var(--primary-red);
+    background: #fff;
+}
+body.light-mode .read-more-btn:hover {
+    background: var(--primary-red);
+    color: #fff;
+}
+body.light-mode .stat-card p,
+body.light-mode .stat-card h3 {
+    color: var(--light-text);
+}
+body.light-mode .internship {
+    background: var(--light-gray-bg);
+}
+body.light-mode .document-icon {
+    color: var(--primary-red);
+}
+body.light-mode .social-icon {
+    color: var(--primary-red);
+    border: 1px solid var(--primary-red);
+    background: #fff;
+}
+body.light-mode .social-icon:hover {
+    background: var(--primary-red);
+    color: #fff;
+}
+body.light-mode .contact-info .contact-item i {
+    color: var(--primary-red);
+}
+body.light-mode .contact-info .contact-item p {
+    color: var(--light-text);
+}
+body.light-mode .contact-form input,
+body.light-mode .contact-form textarea {
+    background: #fff;
+    color: var(--light-text);
+    border: 1px solid var(--light-border);
+}
+body.light-mode .contact-form .submit-button {
+    color: var(--primary-red);
+    border-color: var(--primary-red);
+    background: #fff;
+}
+body.light-mode .contact-form .submit-button:hover {
+    background: var(--primary-red);
+    color: #fff;
+}
+body.light-mode .about-image .profile-frame {
+    background: #fff;
+    border: 2px solid var(--primary-red);
+}
+body.light-mode .about-image .profile-frame img {
+    border: 2px solid #fff;
+}
+body.light-mode .animate-hidden {
+    background: transparent !important;
+}
+
+/* Subtle glow for theme toggle button */
+#theme-toggle {
+    background: #fff;
+    border: 2px solid var(--primary-red);
+    border-radius: 50%;
+    box-shadow: 0 0 4px var(--primary-red), 0 0 6px #fff;
+    color: var(--primary-red);
+    font-size: 1.7rem;
+    margin-left: 1.5rem;
+    padding: 0.5rem 0.7rem;
+    transition: all 0.3s;
+    position: relative;
+    z-index: 10;
+}
+#theme-toggle:hover, #theme-toggle:focus {
+    background: var(--primary-red);
+    color: #fff;
+    box-shadow: 0 0 8px var(--primary-red), 0 0 12px #fff;
+    outline: none;
+}
+body.light-mode #theme-toggle {
+    background: var(--primary-red);
+    color: #fff;
+    border: 2px solid var(--primary-red);
+    box-shadow: 0 0 8px var(--primary-red), 0 0 12px #fff;
+}
+body.light-mode #theme-toggle:hover, body.light-mode #theme-toggle:focus {
+    background: #fff;
+    color: var(--primary-red);
+    box-shadow: 0 0 4px var(--primary-red), 0 0 6px #fff;
 }
 
 /* Navbar */
@@ -163,10 +372,20 @@ body {
     box-shadow: 0 0 20px var(--primary-red);
 }
 
+/* Hide hero cta-button on scroll */
+.hero .cta-button.hide-on-scroll {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s;
+}
+.hero .cta-button {
+    transition: opacity 0.4s;
+}
+
 /* Fix spacing between hero and about section */
 #about {
-    margin-top: 0;
-    padding-top: 6rem;
+    margin-top: 5rem !important;
+    padding-top: 2rem !important;
 }
 
 /* Ensure proper stacking context */
@@ -324,10 +543,7 @@ h2 {
 }
 
 .skill-card:hover .skill-icon i {
-    text-shadow: 
-        0 0 10px var(--primary-red),
-        0 0 20px var(--primary-red),
-        0 0 30px var(--neon-red);
+    text-shadow: 0 0 2px var(--primary-red), 0 0 4px var(--neon-red);
 }
 
 .skill-card h3 {
@@ -716,10 +932,7 @@ h2 {
 }
 
 .skill-card:hover .skill-icon i {
-    text-shadow: 
-        0 0 10px var(--primary-red),
-        0 0 20px var(--primary-red),
-        0 0 30px var(--neon-red);
+    text-shadow: 0 0 2px var(--primary-red), 0 0 4px var(--neon-red);
 }
 
 .skill-card h3 {
@@ -877,10 +1090,7 @@ h2 {
 }
 
 .skill-card:hover .skill-icon i {
-    text-shadow: 
-        0 0 10px var(--primary-red),
-        0 0 20px var(--primary-red),
-        0 0 30px var(--neon-red);
+    text-shadow: 0 0 2px var(--primary-red), 0 0 4px var(--neon-red);
 }
 
 /* Responsive design for about section */
@@ -904,4 +1114,14 @@ h2 {
         width: 250px;
         height: 250px;
     }
+}
+
+/* Darker titles in light mode */
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3 {
+    color: #181818 !important;
+}
+body.light-mode .hero h1 {
+    color: #181818 !important;
 } 
