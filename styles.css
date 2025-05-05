@@ -1172,4 +1172,34 @@ body.light-mode .hero h1 {
     display: flex;
     align-items: center;
     gap: 0.7rem;
+}
+
+.round-profile {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 260px;
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 24px rgba(255,0,0,0.12);
+}
+.round-profile img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+}
+@media (max-width: 992px) {
+    .round-profile {
+        width: 180px;
+        height: 180px;
+    }
+}
+@media (max-width: 576px) {
+    .round-profile {
+        width: 120px;
+        height: 120px;
+    }
 } 
