@@ -418,14 +418,15 @@ h2 {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: 340px 1fr;
+    gap: 3rem 4rem;
+    align-items: flex-start;
 }
 
 .about-image {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .profile-frame {
@@ -478,8 +479,37 @@ h2 {
     }
 }
 
-.about-text {
-    font-size: 1.1rem;
+.about-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2.2rem;
+}
+
+.about-block h3 {
+    font-size: 1.3rem;
+    color: var(--primary-red);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+}
+
+.about-block p,
+.about-block ul {
+    color: var(--light-gray);
+    font-size: 1.08rem;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+.about-hobbies {
+    list-style: disc inside;
+    margin: 0 0 0 1rem;
+    padding: 0;
+    color: var(--light-gray);
+}
+
+.about-hobbies li {
+    margin-bottom: 0.3rem;
 }
 
 .stats-grid {
@@ -1097,22 +1127,27 @@ h2 {
 @media (max-width: 992px) {
     .about-content {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2rem;
     }
-
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .about-image {
+        justify-content: center;
+    }
+    .profile-frame {
+        width: 220px;
+        height: 220px;
     }
 }
 
 @media (max-width: 576px) {
-    .stats-grid {
-        grid-template-columns: 1fr;
+    .about-content {
+        gap: 1.2rem;
     }
-
     .profile-frame {
-        width: 250px;
-        height: 250px;
+        width: 150px;
+        height: 150px;
+    }
+    .about-block h3 {
+        font-size: 1.1rem;
     }
 }
 
@@ -1124,4 +1159,17 @@ body.light-mode h3 {
 }
 body.light-mode .hero h1 {
     color: #181818 !important;
+}
+
+.download-cv-container {
+    display: flex;
+    justify-content: center;
+    margin: 2.5rem 0 2rem 0;
+}
+.download-cv-container .cta-button {
+    font-size: 1.1rem;
+    padding: 1rem 2.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
 } 

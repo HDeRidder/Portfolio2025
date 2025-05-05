@@ -6,7 +6,7 @@
     <title>Smart Home Automation - IoT Portfolio</title>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/d9f0abd257.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -20,6 +20,9 @@
                 <li><a href="../index.html#internship">INTERNSHIP</a></li>
                 <li><a href="../index.html#contact">CONTACT</a></li>
             </ul>
+            <button id="theme-toggle" aria-label="Toggle light/dark mode">
+                <i id="theme-icon" class="fas fa-moon"></i>
+            </button>
         </div>
     </nav>
 
@@ -70,6 +73,50 @@
             </div>
         </div>
     </section>
+
+    <section id="contact" class="contact">
+        <h2>CONTACT ME</h2>
+        <p class="section-subtitle">Let's discuss how we can collaborate on IoT solutions</p>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Herfelingen, Belgium</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+32 483 11 20 61</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>de.ridder.harold@gmail.com</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/HDeRidder" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/harold-d-9b0b67112/" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="text" placeholder="Subject" required>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit" class="submit-button">SEND MESSAGE</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Harold De Ridder. All Rights Reserved.</p>
+        </div>
+    </footer>
 
     <script src="../script.js"></script>
 </body>
