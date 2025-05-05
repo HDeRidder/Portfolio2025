@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minifigure Sorting - IoT Portfolio</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d9f0abd257.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="../index.html" class="logo">IoT Portfolio</a>
+            <ul class="nav-links">
+                <li><a href="../index.html#home">HOME</a></li>
+                <li><a href="../index.html#about">ABOUT ME</a></li>
+                <li><a href="../index.html#skills">SKILLS</a></li>
+                <li><a href="../index.html#projects">PROJECTS</a></li>
+                <li><a href="../index.html#internship">INTERNSHIP</a></li>
+                <li><a href="../index.html#contact">CONTACT</a></li>
+            </ul>
+            <button id="theme-toggle" aria-label="Toggle light/dark mode">
+                <i id="theme-icon" class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="project-detail">
+        <h2>MINIFIGURE SORTING</h2>
+        <p class="section-subtitle">AI-Powered LEGO Minifigure Recognition at Bricks & More</p>
+        <div class="project-hero" style="display: flex; justify-content: center; align-items: center;">
+            <img src="../images/MinifigureSorting.png" alt="Minifigure Sorting" style="max-width: 400px; border-radius: 12px; border: 2px solid #ff0000; box-shadow: 0 0 20px rgba(255,0,0,0.15);">
+        </div>
+        <div class="project-description">
+            <h3>Context & Background</h3>
+            <p>For the Digital Innovation course, we were given the assignment to program a robot arm for the Lego fair called 'Bricks and More'. This fair takes place every year on the campus of Thomas More in Geel. It attracts a lot of hobbyists but also a lot of children. The latter group would be our target group.</p>
+            <p><strong>The assignment:</strong><br>
+            Make sure children can make little men at the lego fair and have them triaged by a robot arm. The idea is that the robot arm will try to divide the made man into 1 of 4 categories.</p>
+            <p>The 4 categories were:</p>
+            <ul>
+                <li>Space</li>
+                <li>Knights</li>
+                <li>Pirates</li>
+                <li>Emergency Services</li>
+            </ul>
+            <h3>Realization</h3>
+            <p>To realize this, we used Teachable Machines. This is a pre-trained AI model from Google that you can use to recognize things. These things can be images, sounds or body positions. We chose images and started taking thousands of pictures of hundreds of different self-made males that each belonged to one category. Based on this input, we taught the AI model to distinguish minifigures from each other.</p>
+            <p>Next, we got to work on the Cobot. A cobot is a robot designed so that there are virtually no risks involved in using it around humans. If the robot is making a move and bumps into something (even if only gently), it blocks immediately to avoid accidents. We used the wizard on the accompanying tablet to program 4 different scenarios that the robot arm could be presented with. Each scenario was a path that this robotic arm would follow, each time starting with picking up the male, then making a nice pendulum movement to finally put the male down in 1 of the 4 spots.</p>
+            <p>Finally, we connected a webcam to a Raspberry Pi. The webcam served to take a picture of the created little man. The Raspberry Pi was in turn connected to a relay board that switched inputs of the Cobot. The flow was as follows:</p>
+            <ol>
+                <li>The webcam took a picture that was stored on the Raspberry Pi</li>
+                <li>The photo was forwarded to an online AI model via the Raspberry Pi</li>
+                <li>The AI model tried to categorize the photo and forwarded that category to the Raspberry Pi</li>
+                <li>The raspberry pi switched 1 of 4 relays based on the returned result</li>
+                <li>The robot executed the corresponding pre-programmed scenario and (hopefully) put the male in the right place</li>
+            </ol>
+            <h3>What did I learn?</h3>
+            <ul>
+                <li>Working with Teachable Machine, a pre-trained AI from Google</li>
+                <li>Programming a Cobot</li>
+                <li>Brushed up on Python knowledge</li>
+                <li>Combining Raspberry Pi and Robotics</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Harold De Ridder. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html> 
