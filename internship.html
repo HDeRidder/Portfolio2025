@@ -26,18 +26,70 @@
         </div>
     </nav>
 
+    <section class="project-banner">
+        <div class="banner-content">
+            <h1>MY INTERNSHIP</h1>
+            <p class="subtitle">IoT Solutions Developer at TechCorp</p>
+        </div>
+        <div class="banner-image">
+            <img src="images/internship-banner.jpg" alt="Internship Banner">
+        </div>
+    </section>
+
     <section class="internship-detail">
-        <h2>INTERNSHIP EXPERIENCE</h2>
-        <p class="section-subtitle">IoT Solutions Developer at TechCorp</p>
-        
-        <div class="internship-content">
-            <h3>Industrial IoT Monitoring System</h3>
-            <p>During my internship at TechCorp, I developed a comprehensive IoT monitoring system for industrial applications. 
-            The project focused on creating a scalable architecture that enables real-time data collection from various sensors, 
-            processes this data using advanced analytics, and presents actionable insights through an intuitive dashboard.</p>
-            
-            <p>Key achievements include implementing machine learning algorithms for predictive maintenance, developing a robust 
-            cloud infrastructure using AWS IoT Core, and creating a user-friendly web interface for system monitoring and control.</p>
+        <div class="content-container">
+            <h3>Context & Background</h3>
+            <p>My internship took place at CERcuits, a startup on the innovation campus in Geel that specializes in ceramic PCBs (Printed Circuit Boards). These are thin boards made of insulating material, in this case ceramics, that are more resistant to extreme temperatures. On PCBs you see copper tracks connecting electronic components. They are used in applications where heat resistance is crucial.</p>
+            <p>My first contact with CERcuits came during the "Embedded Devices Essentials" class in the second year of my bachelor's degree. At the time, we were working on a weather balloon that could serve as an emergency network. In the process, we designed our own PCB with LORA and wifi functionality. Our professor then invited some people from CERcuits for a guest lecture. That presentation stuck with me, and in my senior year I decided to apply for an internship there.</p>
+            <p>On my first visit, I was immediately warmly welcomed by my mentor, Ruben Mangelschots. After a brief introduction and tour, I was given the green light to start work there. My assignment: monitor and automate the existing dust extraction system.</p>
+
+            <h3>Problem definition</h3>
+            <p>In one room there are four 600W blowers running almost constantly. Although the system works, there are some drawbacks:</p>
+            <ul>
+                <li>Obnoxious noise for workers.</li>
+                <li>Heating up of the room, especially annoying in summer.</li>
+                <li>High energy cost due to continuous operation.</li>
+            </ul>
+            <p>This could be more efficient. And I got to work on that.</p>
+
+            <h3>Realization</h3>
+            <p>Like any good project, I started with research. Together with my mentor, we determined the desired functionalities of the "Air Filtration Control System."</p>
+            <ul>
+                <li>Detect when a laser is active.</li>
+                <li>Automatically turn on the blower when laser activity occurs.</li>
+                <li>Turning off the blower after 15 minutes of inactivity.</li>
+                <li>Monitor the status of the filter bags and alert when they are replaced.</li>
+            </ul>
+            <p>As the core, I chose an ESP32 microcontroller: powerful, affordable and familiar to me. The status of the laser was read via a pin on the M4 board, which switches from 0 to 24V upon activity. Since the ESP32 can only handle 3.3V, I used an optocoupler to separate the two circuits.</p>
+            <p>For switching the blower and signal lights, I used relay boards. Since the blower operates on 230V (and not the 24V for which the relays are designed), I used a Siemens contactor - a heavier version of a relay, suitable for higher voltages.</p>
+            <p>In addition, I provided signaling via a three-color lamp with built-in buzzer. This displayed the system status visually and aurally: red when switched on, yellow when the filter bag is full, and so on.</p>
+
+            <!-- Add more sections here for technologies used, learnings, etc. -->
+            <h3>What did I learn?</h3>
+            <p> [Insert learnings here] </p>
+
+            <!-- Carousel for images -->
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <img src="images/internship-image1.jpg" alt="Internship Image 1">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/internship-image2.jpg" alt="Internship Image 2">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/internship-image3.jpg" alt="Internship Image 3">
+                </div>
+                <!-- Add more carousel-slide divs for additional images -->
+            </div>
+            <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+            <button class="next" onclick="plusSlides(1)">&#10095;</button>
+            <div class="dots-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <!-- Add more dots for additional images -->
+            </div>
+
         </div>
 
         <div class="document-grid">
@@ -45,7 +97,7 @@
                 <div class="document-icon">
                     <i class="fas fa-file-pdf"></i>
                 </div>
-                <h3>Final Report</h3>
+                <h3>Project Plan</h3>
                 <p>Comprehensive analysis of my internship project and outcomes</p>
                 <a href="documents/final-report.pdf" class="download-btn">DOWNLOAD</a>
             </div>
@@ -54,7 +106,7 @@
                 <div class="document-icon">
                     <i class="fas fa-file-code"></i>
                 </div>
-                <h3>Technical Documentation</h3>
+                <h3>Realisation</h3>
                 <p>Technical specifications and implementation details</p>
                 <a href="documents/technical-docs.pdf" class="download-btn">DOWNLOAD</a>
             </div>
@@ -63,7 +115,7 @@
                 <div class="document-icon">
                     <i class="fas fa-file-alt"></i>
                 </div>
-                <h3>Weekly Progress Report</h3>
+                <h3>Reflection</h3>
                 <p>Detailed timeline and milestone achievements</p>
                 <a href="documents/progress-report.pdf" class="download-btn">DOWNLOAD</a>
             </div>

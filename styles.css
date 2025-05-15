@@ -11,7 +11,7 @@
     --light-bg: #f7f7f7;
     --light-gray-bg: #eaeaea;
     --light-card: #ffffff;
-    --light-text: #222222;
+    --light-text: #000000;
     --light-subtitle: #555555;
     --light-border: #ff4d4d;
 }
@@ -116,7 +116,8 @@ body.light-mode .profile-frame {
     border: 2px solid var(--primary-red);
 }
 body.light-mode .profile-frame img {
-    border: 2px solid var(--light-card);
+    background: var(--light-card);
+    border: none;
 }
 body.light-mode .document-card {
     background-color: var(--light-card);
@@ -433,37 +434,23 @@ h2 {
     width: 300px;
     height: 300px;
     position: relative;
-    border: 2px solid var(--primary-red);
-    padding: 10px;
+    border: 3px solid var(--primary-red);
+    padding: 0;
     background-color: var(--dark-bg);
     box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
-    transition: all 0.3s ease;
-}
-
-.profile-frame::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg, var(--primary-red), var(--neon-red));
-    z-index: -1;
-    animation: borderGlow 3s ease-in-out infinite;
+    transition: none;
 }
 
 .profile-frame:hover {
-    transform: translateY(-5px);
-    box-shadow: 
-        0 0 20px rgba(255, 0, 0, 0.3),
-        0 0 40px rgba(255, 0, 0, 0.2);
+    transform: none;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
 }
 
 .profile-frame img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border: 2px solid var(--dark-bg);
+    border: none;
 }
 
 @keyframes borderGlow {
@@ -473,7 +460,7 @@ h2 {
     }
     50% {
         opacity: 1;
-        box-shadow: 
+        box-shadow:
             0 0 20px var(--primary-red),
             0 0 40px var(--neon-red);
     }
@@ -671,7 +658,18 @@ h2 {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top;
     transition: transform 0.3s ease;
+}
+
+.project-image.lora-image img,
+.project-image.permaculture-image img,
+.project-image.mesh-image img {
+    object-position: center;
+}
+
+.project-image.permaculture-image img {
+    object-position: center 0.75rem;
 }
 
 .project-overlay {
@@ -731,13 +729,13 @@ h2 {
 .project-card h3 {
     padding: 1.5rem 1.5rem 0.5rem;
     color: var(--white);
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 }
 
 .project-card p {
     padding: 0 1.5rem 1.5rem;
     color: var(--light-gray);
-    font-size: 0.9rem;
+    font-size: 1.0rem;
 }
 
 /* Internship Section */
@@ -834,87 +832,94 @@ h2 {
 }
 
 /* Project Detail Page */
-.project-detail {
-    padding: 8rem 2rem 4rem;
-    background-color: var(--dark-bg);
-}
-
-.project-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.project-hero {
+.project-banner {
+    position: relative;
     width: 100%;
-    height: 400px;
+    height: 400px; /* Adjust height as needed */
     overflow: hidden;
-    margin-bottom: 3rem;
-    border: 1px solid var(--primary-red);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    margin-top: 80px; /* Adjust based on navbar height */
 }
 
-.project-hero img {
+.banner-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: brightness(50%); /* Darken image for text readability */
 }
 
-.project-description {
-    background-color: var(--dark-gray);
-    padding: 3rem;
+.banner-content {
+    position: relative;
+    z-index: 1;
+}
+
+.project-banner h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-banner .subtitle {
+    font-size: 1.2rem;
+    color: var(--light-gray);
+}
+
+.project-detail {
+    padding: 4rem 2rem;
+    background-color: var(--dark-bg);
+}
+
+.content-container {
+    max-width: 900px; /* Limit text width */
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--dark-gray); /* Background for readability */
     border: 1px solid var(--primary-red);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
 }
 
-.project-description h3 {
+.content-container h3 {
     color: var(--primary-red);
-    font-size: 1.8rem;
-    margin: 2rem 0 1rem;
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
 }
 
-.project-description h3:first-child {
+.content-container h3:first-child {
     margin-top: 0;
 }
 
-.project-description p {
+.content-container p,
+.content-container ul {
     color: var(--light-gray);
-    line-height: 1.8;
+    line-height: 1.7;
     margin-bottom: 1.5rem;
 }
 
-.project-description ul {
-    list-style: none;
-    margin-bottom: 2rem;
-}
-
-.project-description li {
-    color: var(--light-gray);
-    margin-bottom: 0.8rem;
+.content-container ul {
+    list-style: disc inside;
     padding-left: 1.5rem;
-    position: relative;
 }
 
-.project-description li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 8px;
-    height: 8px;
-    background-color: var(--primary-red);
-    border-radius: 50%;
+.content-container li {
+    margin-bottom: 0.5rem;
 }
 
-.project-links {
-    display: flex;
-    gap: 1.5rem;
-    margin-top: 3rem;
+/* Adjust existing project-detail rule if necessary */
+/* Ensure padding is applied correctly after adding banner */
+section.project-detail {
+    padding-top: 4rem; /* Add padding to the top */
 }
 
-.project-links .cta-button {
-    flex: 1;
-    text-align: center;
-    max-width: 250px;
-}
+/* Existing project-hero and project-description rules might need to be removed or adjusted if they are no longer used in the HTML structure */
+/* For example, remove the old .project-hero and .project-description rules if they only applied to the previous structure */
 
 /* Internship Detail Page */
 .internship-detail {
@@ -1202,4 +1207,358 @@ body.light-mode .hero h1 {
         width: 120px;
         height: 120px;
     }
-} 
+}
+
+/* Project Detail Page Styling */
+/* Add carousel styling */
+.carousel-container {
+    position: relative;
+    max-width: 800px; /* Adjust as needed */
+    margin: 2rem auto;
+    overflow: hidden;
+    border: 1px solid var(--primary-red);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+}
+
+.carousel-slide {
+    display: none; /* Hide slides by default */
+    width: 100%;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 2;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little more opacity */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,1);
+}
+
+/* Dots indicators */
+.dots-container {
+    text-align: center;
+    padding: 10px 0;
+    background-color: var(--dark-gray); /* Match content container background */
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: var(--light-gray); /* Inactive dot color */
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: var(--primary-red); /* Active/hover dot color */
+}
+
+/* Caption text */
+/* .text { ... styling for captions if you add them ... } */
+
+/* Number text (1/3 etc) */
+/* .numbertext { ... styling for slide numbers if you add them ... } */
+
+.project-banner {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Adjust height as needed */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    margin-top: 80px; /* Adjust based on navbar height */
+}
+
+.banner-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(50%); /* Darken image for text readability */
+}
+
+.banner-content {
+    position: relative;
+    z-index: 1;
+}
+
+.project-banner h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-banner .subtitle {
+    font-size: 1.2rem;
+    color: var(--light-gray);
+}
+
+.project-detail {
+    padding: 4rem 2rem;
+    background-color: var(--dark-bg);
+}
+
+.content-container {
+    max-width: 900px; /* Limit text width */
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--dark-gray); /* Background for readability */
+    border: 1px solid var(--primary-red);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+}
+
+.content-container h3 {
+    color: var(--primary-red);
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.content-container h3:first-child {
+    margin-top: 0;
+}
+
+.content-container p,
+.content-container ul {
+    color: var(--light-gray);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.content-container ul {
+    list-style: disc inside;
+    padding-left: 1.5rem;
+}
+
+.content-container li {
+    margin-bottom: 0.5rem;
+}
+
+/* Adjust existing project-detail rule if necessary */
+/* Ensure padding is applied correctly after adding banner */
+section.project-detail {
+    padding-top: 4rem; /* Add padding to the top */
+}
+
+/* Existing project-hero and project-description rules might need to be removed or adjusted if they are no longer used in the HTML structure */
+/* For example, remove the old .project-hero and .project-description rules if they only applied to the previous structure */
+
+/* Internship Detail Page */
+.internship-detail {
+    padding: 8rem 2rem 4rem;
+    background-color: var(--dark-bg);
+}
+
+/* Updated Technical Skills Section */
+.skill-card {
+    background-color: var(--dark-gray);
+    padding: 2rem;
+    border: 1px solid var(--primary-red);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.2);
+}
+
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 0%, rgba(255, 0, 0, 0.1) 100%);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.skill-card:hover::before {
+    transform: translateX(0);
+}
+
+.skill-icon {
+    font-size: 3rem;
+    color: var(--primary-red);
+    margin-bottom: 1.5rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover .skill-icon i {
+    text-shadow: 0 0 2px var(--primary-red), 0 0 4px var(--neon-red);
+}
+
+.skill-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+
+.skill-card p {
+    color: var(--light-gray);
+    font-size: 0.9rem;
+}
+
+/* Contact Section */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: var(--primary-red);
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--primary-red);
+    color: var(--primary-red);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-red);
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+
+.social-icon:hover {
+    color: var(--dark-bg);
+}
+
+.social-icon:hover::before {
+    transform: translateX(100%);
+}
+
+/* Update social icons */
+.social-icon i {
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover i {
+    transform: scale(1.1);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--dark-gray);
+    padding: 2rem;
+    text-align: center;
+    border-top: 1px solid var(--primary-red);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Responsive Design Updates */
+@media (max-width: 768px) {
+    .project-hero {
+        height: 250px;
+    }
+
+    .project-description {
+        padding: 1.5rem;
+    }
+
+    .project-links {
+        flex-direction: column;
+    }
+
+    .project-links .cta-button {
+        max-width: 100%;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+/* Adjust object-position for specific project banner images */
+.project-banner .banner-image img[src="../images/PermacultureDesignCourse.jpg"] {
+    object-position: center 25%; /* Adjust Permaculture image position */
+}
+
+.project-banner .banner-image img[src="../images/ProjectIOT.png"] {
+    object-position: center 1rem; /* Move Project IOT image down */
+}
