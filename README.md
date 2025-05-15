@@ -7,12 +7,13 @@ A modern, responsive portfolio website showcasing IoT (Internet of Things) proje
 - **Modern UI Design**: Cyberpunk-inspired interface with neon effects and dynamic animations
 - **Responsive Layout**: Fully responsive design that works on all devices
 - **Project Showcase**: Detailed presentations of IoT projects including:
-  - Smart Home Automation
-  - Industrial IoT Monitoring
-  - Smart Agriculture System
-  - Healthcare Monitoring System
-  - Smart Energy Management
-  - Smart Waste Management
+  - LORA The Explorer (Weather Balloon & Backup Network)
+  - Minifigure Sorting (AI-Powered LEGO Minifigure Recognition)
+  - App Hosting Platform (Local Datacenter PHP Application Hosting)
+  - Permaculture Design Course (PDC) (Sustainable Agriculture)
+  - Project IOT (Pumpkin Greenhouse Automation)
+  - Project 4.0 (Smart Parking Solution)
+  - Mesh network (Campus-Wide Mesh Network)
 
 ## 🛠️ Technical Skills Showcased
 
@@ -39,16 +40,17 @@ Portfolio2025/
 └── internship.html      # Internship experience page
 ```
 
-## 🎨 Design Features
+## �� Design Features
 
-- Neon glow effects
-- Animated hover states
-- Smooth scrolling
-- Dynamic content transitions
-- Responsive navigation
-- Interactive project cards
+- Modern, responsive layout with a cyberpunk-inspired design
+- Neon glow effects and animated hover states
+- Smooth scrolling and dynamic content transitions
+- Refactored project detail pages with banner images and structured content
+- Image carousels on specific project and internship pages
+- Responsive navigation and interactive project cards
+- Updated profile picture border styling
 
-## 🔧 Technologies Used
+## �� Technologies Used
 
 - HTML5
 - CSS3 (Custom properties, Flexbox, Grid)
