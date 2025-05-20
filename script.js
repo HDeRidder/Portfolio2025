@@ -109,11 +109,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeIcon = document.getElementById('theme-icon');
     const body = document.body;
 
-    // Check for saved theme in localStorage
-    if (localStorage.getItem('theme') === 'light') {
+    // Check for saved theme in localStorage or default to light mode
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'dark') {
+        // If theme is explicitly saved as dark, apply dark mode
+        body.classList.remove('light-mode');
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+    } else if (savedTheme === 'light') {
+        // If theme is explicitly saved as light, apply light mode
         body.classList.add('light-mode');
         themeIcon.classList.remove('fa-moon');
         themeIcon.classList.add('fa-sun');
+    } else {
+        // If no theme is saved, default to light mode and save preference
+        body.classList.add('light-mode');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+        localStorage.setItem('theme', 'light');
     }
 
     toggleBtn.addEventListener('click', function () {
