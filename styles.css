@@ -14,6 +14,11 @@
     --light-text: #000000;
     --light-subtitle: #555555;
     --light-border: #ff4d4d;
+
+    /* Dark mode variables - using fallback to light mode variables */
+    --dark-text: var(--white);
+    --dark-subtitle: var(--light-gray);
+    --dark-border: var(--primary-red);
 }
 
 * {
@@ -26,224 +31,22 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Base styles (Light Mode) */
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: var(--dark-bg);
-    color: var(--white);
+    background-color: var(--light-bg);
+    color: var(--light-text);
     line-height: 1.6;
 }
 
-body.light-mode {
-    background-color: var(--light-bg);
-    color: var(--light-text);
-}
-
-body.light-mode .navbar {
-    background-color: #fff;
-    border-bottom: 1px solid var(--light-border);
-}
-body.light-mode .logo {
-    color: var(--primary-red);
-}
-body.light-mode .nav-links a {
-    color: var(--light-text);
-}
-body.light-mode .nav-links a:hover {
-    color: var(--primary-red);
-}
-body.light-mode .about {
-    background-color: var(--light-gray-bg);
-}
-body.light-mode .skills {
-    background-color: var(--light-bg);
-}
-body.light-mode .skill-card {
-    background-color: var(--light-card);
-    border: 1px solid var(--light-border);
-}
-body.light-mode .skill-icon i {
-    color: var(--primary-red);
-}
-body.light-mode .project-card {
-    background-color: var(--light-card);
-    border: 1px solid var(--light-border);
-}
-body.light-mode .project-description {
-    background-color: var(--light-card);
-    border: 1px solid var(--light-border);
-    color: var(--light-text);
-}
-body.light-mode .project-description h3 {
-    color: var(--primary-red);
-}
-body.light-mode .stat-card {
-    background-color: var(--light-card);
-    border: 1px solid var(--light-border);
-    color: var(--light-text);
-}
-body.light-mode .section-subtitle {
-    color: var(--light-subtitle);
-}
-body.light-mode .footer {
-    background-color: var(--light-card);
-    color: var(--light-text);
-    border-top: 1px solid var(--light-border);
-}
-body.light-mode .contact {
-    background-color: var(--light-gray-bg);
-}
-body.light-mode .contact-form input,
-body.light-mode .contact-form textarea {
-    background-color: var(--light-card);
-    color: var(--light-text);
-    border: 1px solid var(--light-border);
-}
-body.light-mode .cta-button,
-body.light-mode .read-more-btn,
-body.light-mode .download-btn {
-    color: var(--primary-red);
-    border-color: var(--primary-red);
-    background: transparent;
-}
-body.light-mode .cta-button:hover,
-body.light-mode .read-more-btn:hover,
-body.light-mode .download-btn:hover {
-    background: var(--primary-red);
-    color: #fff;
-}
-body.light-mode .profile-frame {
-    background-color: var(--light-card);
-    border: 2px solid var(--primary-red);
-}
-body.light-mode .profile-frame img {
-    background: var(--light-card);
-    border: none;
-}
-body.light-mode .document-card {
-    background-color: var(--light-card);
-    border: 1px solid var(--light-border);
-    color: var(--light-text);
-}
-body.light-mode .internship-content {
-    background-color: var(--light-card);
-    border: 1px solid var(--light-border);
-    color: var(--light-text);
-}
-body.light-mode .project-hero {
-    border: 1px solid var(--light-border);
-    background: var(--light-card);
-}
-body.light-mode .project-hero img {
-    background: var(--light-card);
-}
-body.light-mode .project-overlay {
-    background: rgba(255,255,255,0.85);
-}
-body.light-mode .project-card h3,
-body.light-mode .project-card p {
-    color: var(--light-text);
-}
-body.light-mode .read-more-btn {
-    color: var(--primary-red);
-    border-color: var(--primary-red);
-    background: #fff;
-}
-body.light-mode .read-more-btn:hover {
-    background: var(--primary-red);
-    color: #fff;
-}
-body.light-mode .stat-card p,
-body.light-mode .stat-card h3 {
-    color: var(--light-text);
-}
-body.light-mode .internship {
-    background: var(--light-gray-bg);
-}
-body.light-mode .document-icon {
-    color: var(--primary-red);
-}
-body.light-mode .social-icon {
-    color: var(--primary-red);
-    border: 1px solid var(--primary-red);
-    background: #fff;
-}
-body.light-mode .social-icon:hover {
-    background: var(--primary-red);
-    color: #fff;
-}
-body.light-mode .contact-info .contact-item i {
-    color: var(--primary-red);
-}
-body.light-mode .contact-info .contact-item p {
-    color: var(--light-text);
-}
-body.light-mode .contact-form input,
-body.light-mode .contact-form textarea {
-    background: #fff;
-    color: var(--light-text);
-    border: 1px solid var(--light-border);
-}
-body.light-mode .contact-form .submit-button {
-    color: var(--primary-red);
-    border-color: var(--primary-red);
-    background: #fff;
-}
-body.light-mode .contact-form .submit-button:hover {
-    background: var(--primary-red);
-    color: #fff;
-}
-body.light-mode .about-image .profile-frame {
-    background: #fff;
-    border: 2px solid var(--primary-red);
-}
-body.light-mode .about-image .profile-frame img {
-    border: 2px solid #fff;
-}
-body.light-mode .animate-hidden {
-    background: transparent !important;
-}
-
-/* Subtle glow for theme toggle button */
-#theme-toggle {
-    background: #fff;
-    border: 2px solid var(--primary-red);
-    border-radius: 50%;
-    box-shadow: 0 0 4px var(--primary-red), 0 0 6px #fff;
-    color: var(--primary-red);
-    font-size: 1.7rem;
-    margin-left: 1.5rem;
-    padding: 0.5rem 0.7rem;
-    transition: all 0.3s;
-    position: relative;
-    z-index: 10;
-}
-#theme-toggle:hover, #theme-toggle:focus {
-    background: var(--primary-red);
-    color: #fff;
-    box-shadow: 0 0 8px var(--primary-red), 0 0 12px #fff;
-    outline: none;
-}
-body.light-mode #theme-toggle {
-    background: var(--primary-red);
-    color: #fff;
-    border: 2px solid var(--primary-red);
-    box-shadow: 0 0 8px var(--primary-red), 0 0 12px #fff;
-}
-body.light-mode #theme-toggle:hover, body.light-mode #theme-toggle:focus {
-    background: #fff;
-    color: var(--primary-red);
-    box-shadow: 0 0 4px var(--primary-red), 0 0 6px #fff;
-}
-
-/* Navbar */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: var(--light-card);
     padding: 1rem 0;
     z-index: 1000;
-    border-bottom: 1px solid var(--primary-red);
+    border-bottom: 1px solid var(--light-border);
 }
 
 .nav-content {
@@ -270,7 +73,7 @@ body.light-mode #theme-toggle:hover, body.light-mode #theme-toggle:focus {
 }
 
 .nav-links a {
-    color: var(--white);
+    color: var(--light-text);
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 600;
@@ -334,7 +137,7 @@ body.light-mode #theme-toggle:hover, body.light-mode #theme-toggle:focus {
     text-align: center;
     position: relative;
     padding: 0 2rem;
-    background-color: var(--dark-bg);
+    background-color: var(--light-bg);
 }
 
 .hero-content {
@@ -347,24 +150,25 @@ body.light-mode #theme-toggle:hover, body.light-mode #theme-toggle:focus {
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 1.5rem;
-    color: var(--white);
+    color: var(--light-text);
 }
 
 .hero .subtitle {
     font-size: 1.5rem;
-    color: var(--light-gray);
+    color: var(--light-subtitle);
     margin-bottom: 2rem;
+    font-weight: 500;
 }
 
 .cta-button {
     display: inline-block;
     padding: 1rem 2rem;
-    background-color: transparent;
+    background-color: var(--light-card);
     color: var(--primary-red);
     border: 2px solid var(--primary-red);
     text-decoration: none;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-in-out;
 }
 
 .cta-button:hover {
@@ -380,7 +184,7 @@ body.light-mode #theme-toggle:hover, body.light-mode #theme-toggle:focus {
     transition: opacity 0.4s;
 }
 .hero .cta-button {
-    transition: opacity 0.4s;
+    transition: all 0.3s ease-in-out;
 }
 
 /* Fix spacing between hero and about section */
@@ -393,13 +197,13 @@ body.light-mode #theme-toggle:hover, body.light-mode #theme-toggle:focus {
 section:not(.hero) {
     position: relative;
     z-index: 3;
-    background-color: var(--dark-bg);
+    background-color: var(--light-gray-bg);
 }
 
 /* About Section */
 .about {
     padding: 6rem 2rem;
-    background-color: var(--darker-gray);
+    background-color: var(--light-gray-bg);
 }
 
 h2 {
@@ -411,8 +215,11 @@ h2 {
 
 .section-subtitle {
     text-align: center;
-    color: var(--light-gray);
-    margin-bottom: 3rem;
+    color: var(--light-text);
+    margin: 0 auto 1.5rem;
+    max-width: 1200px;
+    font-size: 1.15rem;
+    font-weight: 600;
 }
 
 .about-content {
@@ -434,23 +241,23 @@ h2 {
     width: 300px;
     height: 300px;
     position: relative;
-    border: 3px solid var(--primary-red);
+    border: 2px solid var(--primary-red);
     padding: 0;
-    background-color: var(--dark-bg);
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+    background-color: var(--light-card);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.1);
     transition: none;
 }
 
 .profile-frame:hover {
     transform: none;
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.1);
 }
 
 .profile-frame img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border: none;
+    border: 2px solid var(--light-card);
 }
 
 @keyframes borderGlow {
@@ -482,7 +289,7 @@ h2 {
 
 .about-block p,
 .about-block ul {
-    color: var(--light-gray);
+    color: var(--light-text);
     font-size: 1.08rem;
     line-height: 1.7;
     margin-bottom: 0;
@@ -492,7 +299,7 @@ h2 {
     list-style: disc inside;
     margin: 0 0 0 1rem;
     padding: 0;
-    color: var(--light-gray);
+    color: var(--light-text);
 }
 
 .about-hobbies li {
@@ -510,7 +317,7 @@ h2 {
 /* Skills Section */
 .skills {
     padding: 6rem 2rem;
-    background-color: var(--dark-bg);
+    background-color: var(--light-bg);
 }
 
 .skills-grid {
@@ -522,17 +329,24 @@ h2 {
 }
 
 .skill-card {
-    background-color: var(--dark-gray);
+    background-color: var(--light-card);
     padding: 2rem;
-    border: 3px solid var(--primary-red);
+    border: 1px solid var(--light-border);
     position: relative;
     overflow: hidden;
-    transition: none;
+    transition: all 0.3s ease;
 }
 
-.skill-card:hover {
-    transform: none;
-    box-shadow: none;
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 0%, rgba(255, 0, 0, 0.05) 100%);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
 }
 
 .skill-icon {
@@ -546,18 +360,18 @@ h2 {
 .skill-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: var(--white);
+    color: var(--light-text);
 }
 
 .skill-card p {
-    color: var(--light-gray);
+    color: var(--light-text);
     font-size: 0.9rem;
 }
 
 /* Contact Section */
 .contact {
     padding: 6rem 2rem;
-    background-color: var(--darker-gray);
+    background-color: var(--light-gray-bg);
 }
 
 .contact-form {
@@ -570,16 +384,16 @@ h2 {
     width: 100%;
     padding: 1rem;
     margin-bottom: 1rem;
-    background-color: var(--dark-gray);
-    border: 1px solid var(--primary-red);
-    color: var(--white);
+    background-color: var(--light-card);
+    border: 1px solid var(--light-border);
+    color: var(--light-text);
     font-family: 'Montserrat', sans-serif;
 }
 
 .submit-button {
     width: 100%;
     padding: 1rem;
-    background-color: transparent;
+    background-color: var(--light-card);
     color: var(--primary-red);
     border: 2px solid var(--primary-red);
     font-weight: 600;
@@ -618,8 +432,8 @@ h2 {
 }
 
 .project-card {
-    background-color: var(--dark-gray);
-    border: 1px solid var(--primary-red);
+    background-color: var(--light-card);
+    border: 1px solid var(--light-border);
     overflow: hidden;
     transition: transform 0.3s ease;
 }
@@ -658,7 +472,7 @@ h2 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(255, 255, 255, 0.85);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -671,11 +485,11 @@ h2 {
 }
 
 .read-more-btn {
-    color: var(--white);
+    color: var(--primary-red);
     text-decoration: none;
     padding: 0.8rem 1.5rem;
     border: 2px solid var(--primary-red);
-    background: transparent;
+    background: var(--light-card);
     transition: all 0.3s ease;
     position: relative;
     z-index: 1;
@@ -708,20 +522,20 @@ h2 {
 
 .project-card h3 {
     padding: 1.5rem 1.5rem 0.5rem;
-    color: var(--white);
+    color: var(--light-text);
     font-size: 1.4rem;
 }
 
 .project-card p {
     padding: 0 1.5rem 1.5rem;
-    color: var(--light-gray);
+    color: var(--light-text);
     font-size: 1.0rem;
 }
 
 /* Internship Section */
 .internship {
     padding: 6rem 2rem;
-    background-color: var(--darker-gray);
+    background-color: var(--light-gray-bg);
 }
 
 .internship-content {
@@ -729,8 +543,9 @@ h2 {
     margin: 0 auto;
     text-align: center;
     padding: 2rem;
-    border: 1px solid var(--primary-red);
-    background-color: var(--dark-gray);
+    border: 1px solid var(--light-border);
+    background-color: var(--light-card);
+    color: var(--light-text);
 }
 
 .internship-content h3 {
@@ -740,7 +555,7 @@ h2 {
 }
 
 .internship-content p {
-    color: var(--light-gray);
+    color: var(--light-text);
     margin-bottom: 2rem;
     line-height: 1.8;
 }
@@ -760,16 +575,16 @@ h2 {
 }
 
 .document-card {
-    background-color: var(--dark-gray);
+    background-color: var(--light-card);
     padding: 2rem;
     text-align: center;
-    border: 1px solid var(--primary-red);
+    border: 1px solid var(--light-border);
     transition: all 0.3s ease;
 }
 
 .document-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.1);
 }
 
 .document-icon {
@@ -779,12 +594,12 @@ h2 {
 }
 
 .document-card h3 {
-    color: var(--white);
+    color: var(--light-text);
     margin-bottom: 1rem;
 }
 
 .document-card p {
-    color: var(--light-gray);
+    color: var(--light-text);
     margin-bottom: 1.5rem;
     font-size: 0.9rem;
 }
@@ -792,7 +607,7 @@ h2 {
 .download-btn {
     display: inline-block;
     padding: 0.8rem 1.5rem;
-    background-color: transparent;
+    background-color: var(--light-card); /* Default to light card background */
     color: var(--primary-red);
     border: 1px solid var(--primary-red);
     text-decoration: none;
@@ -853,16 +668,17 @@ h2 {
 
 .project-detail {
     padding: 4rem 2rem;
-    background-color: var(--dark-bg);
+    background-color: var(--light-bg);
 }
 
 .content-container {
     max-width: 900px; /* Limit text width */
     margin: 0 auto;
     padding: 2rem;
-    background-color: var(--dark-gray); /* Background for readability */
-    border: 1px solid var(--primary-red);
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+    background-color: var(--light-card); /* Background for readability */
+    border: 1px solid var(--light-border);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.1);
+    color: var(--light-text);
 }
 
 .content-container h3 {
@@ -878,7 +694,7 @@ h2 {
 
 .content-container p,
 .content-container ul {
-    color: var(--light-gray);
+    color: var(--light-text);
     line-height: 1.7;
     margin-bottom: 1.5rem;
 }
@@ -904,82 +720,47 @@ section.project-detail {
 /* Internship Detail Page */
 .internship-detail {
     padding: 8rem 2rem 4rem;
-    background-color: var(--dark-bg);
+    background-color: var(--light-bg);
 }
 
 /* Updated Technical Skills Section */
-.skill-card {
-    background-color: var(--dark-gray);
-    padding: 2rem;
-    border: 1px solid var(--primary-red);
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.skill-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 30px rgba(255, 0, 0, 0.2);
-}
-
-.skill-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, transparent 0%, rgba(255, 0, 0, 0.1) 100%);
-    transform: translateX(-100%);
-    transition: transform 0.6s ease;
-}
-
-.skill-card:hover::before {
-    transform: translateX(0);
-}
-
-.skill-icon {
-    font-size: 3rem;
-    color: var(--primary-red);
-    margin-bottom: 1.5rem;
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-.skill-card:hover .skill-icon i {
-    text-shadow: 0 0 2px var(--primary-red), 0 0 4px var(--neon-red);
-}
-
-.skill-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--white);
-}
-
-.skill-card p {
-    color: var(--light-gray);
-    font-size: 0.9rem;
-}
+/* Skill card styles are already covered in the general .skill-card rule */
 
 /* Contact Section */
 .contact-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr; /* Change to single column */
     gap: 4rem;
     max-width: 1200px;
     margin: 0 auto;
+    justify-items: center; /* Center the grid item horizontally */
 }
 
 .contact-info {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    align-items: center; /* Center the flex items horizontally */
 }
 
 .contact-item {
     display: flex;
     align-items: center;
     gap: 1rem;
+}
+
+/* Style for the mailto link in contact info */
+.contact-email-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+    transition: color 0.3s ease;
+}
+
+.contact-email-link:hover {
+    color: var(--primary-red); /* Change color on hover */
 }
 
 .contact-item i {
@@ -1000,11 +781,12 @@ section.project-detail {
     align-items: center;
     justify-content: center;
     border: 1px solid var(--primary-red);
-    color: var(--primary-red);
     font-size: 1.2rem;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    z-index: 1; /* Give social icon a stacking context */
+    /* Base color and background set by light/dark mode specific rules below */
 }
 
 .social-icon::before {
@@ -1016,33 +798,53 @@ section.project-detail {
     height: 100%;
     background: var(--primary-red);
     transition: transform 0.3s ease;
-    z-index: -1;
-}
-
-.social-icon:hover {
-    color: var(--dark-bg);
+    z-index: -1; /* Keep ::before behind the icon */
 }
 
 .social-icon:hover::before {
-    transform: translateX(100%);
+    transform: translateX(100%); /* This triggers the red fill from left to right */
 }
 
-/* Update social icons */
+/* Style for the icon inside social link */
 .social-icon i {
     font-size: 1.5rem;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease; /* Transition color change */
+    z-index: 2; /* Ensure icon is above ::before */
+    /* Color set by light/dark mode specific rules below */
 }
 
-.social-icon:hover i {
-    transform: scale(1.1);
+/* Light mode styles for social icon */
+.social-icon {
+    background: var(--light-card); /* White background in light mode */
+    color: var(--primary-red); /* Red icon color in light mode */
+}
+
+/* Light mode hover styles for social icon */
+.social-icon:hover {
+    color: var(--white); /* Icon color changes to white on hover in light mode */
+}
+
+/* Dark mode styles for social icon */
+body:not(.light-mode) .social-icon {
+    background: transparent; /* Transparent background in dark mode */
+    border: 1px solid var(--dark-border);
+    color: var(--primary-red); /* Red icon color in dark mode */
+}
+
+/* Dark mode hover styles for social icon */
+body:not(.light-mode) .social-icon:hover {
+    color: var(--dark-bg); /* Icon color changes to dark-bg (black) on hover in dark mode */
+    box-shadow: 0 0 5px var(--primary-red), 0 0 10px var(--primary-red); /* Reduced Glowing effect */
+    border-color: var(--neon-red); /* Neon border color on hover */
 }
 
 /* Footer */
 .footer {
-    background-color: var(--dark-gray);
+    background-color: var(--light-card);
     padding: 2rem;
     text-align: center;
-    border-top: 1px solid var(--primary-red);
+    border-top: 1px solid var(--light-border);
+    color: var(--light-text);
 }
 
 .footer-content {
@@ -1050,101 +852,338 @@ section.project-detail {
     margin: 0 auto;
 }
 
-/* Responsive Design Updates */
-@media (max-width: 768px) {
-    .project-hero {
-        height: 250px;
-    }
-
-    .project-description {
-        padding: 1.5rem;
-    }
-
-    .project-links {
-        flex-direction: column;
-    }
-
-    .project-links .cta-button {
-        max-width: 100%;
-    }
-
-    .contact-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .social-links {
-        justify-content: center;
-    }
+/* Subtle glow for theme toggle button */
+#theme-toggle {
+    background: var(--primary-red);
+    border: 2px solid var(--primary-red);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--primary-red), 0 0 12px #fff;
+    color: #fff;
+    font-size: 1.7rem;
+    margin-left: 1.5rem;
+    padding: 0.5rem 0.7rem;
+    transition: all 0.3s;
+    position: relative;
+    z-index: 10;
+}
+#theme-toggle:hover, #theme-toggle:focus {
+    background: #fff;
+    color: var(--primary-red);
+    box-shadow: 0 0 4px var(--primary-red), 0 0 6px #fff;
+    outline: none;
 }
 
-.tech-list {
-    list-style: none;
-    padding-left: 0;
+/* Dark Mode Styles */
+body:not(.light-mode) {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
 }
 
-.tech-list li {
-    margin-bottom: 12px;
+body:not(.light-mode) .navbar {
+    background-color: rgba(0, 0, 0, 0.9);
+    border-bottom: 1px solid var(--dark-border);
+}
+
+body:not(.light-mode) .logo {
+    color: var(--dark-text);
+}
+
+body:not(.light-mode) .nav-links a {
+    color: var(--dark-text);
+}
+
+body:not(.light-mode) .nav-links a:hover {
+    color: var(--primary-red);
+}
+
+body:not(.light-mode) .hero {
+    background-color: var(--dark-bg);
+}
+
+body:not(.light-mode) .hero h1 {
+    color: var(--dark-text);
+}
+
+body:not(.light-mode) .hero .subtitle {
+    color: var(--dark-subtitle);
+    font-weight: 500;
+}
+
+body:not(.light-mode) section:not(.hero) {
+    background-color: var(--dark-bg);
+}
+
+body:not(.light-mode) .about {
+    background-color: var(--darker-gray);
+}
+
+body:not(.light-mode) h2 {
+    color: var(--primary-red);
+}
+
+body:not(.light-mode) .section-subtitle {
+    color: var(--dark-text);
+    font-weight: 600;
+}
+
+body:not(.light-mode) .about-block h3 {
+    color: var(--primary-red);
+}
+
+body:not(.light-mode) .about-block p,
+body:not(.light-mode) .about-block ul {
+    color: var(--dark-text);
+}
+
+body:not(.light-mode) .about-hobbies {
+    color: var(--dark-text);
+}
+
+body:not(.light-mode) .profile-frame {
+    background-color: var(--dark-bg);
+    border: 3px solid var(--dark-border);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+}
+
+body:not(.light-mode) .profile-frame:hover {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+}
+
+body:not(.light-mode) .profile-frame img {
+     border: 2px solid var(--dark-bg);
+}
+
+body:not(.light-mode) .skills {
+    background-color: var(--dark-bg);
+}
+
+body:not(.light-mode) .skill-card {
+    background-color: var(--dark-gray);
+    border: 1px solid var(--dark-border);
+}
+
+body:not(.light-mode) .skill-card h3 {
+    color: var(--dark-text);
+}
+
+body:not(.light-mode) .skill-card p {
+    color: var(--dark-subtitle);
+}
+
+body:not(.light-mode) .contact {
+    background-color: var(--darker-gray);
+}
+
+body:not(.light-mode) .contact-form input,
+body:not(.light-mode) .contact-form textarea {
+    background-color: var(--dark-gray);
+    border: 1px solid var(--dark-border);
+    color: var(--dark-text);
+}
+
+body:not(.light-mode) .submit-button {
+    background-color: transparent;
+    color: var(--primary-red);
+    border: 2px solid var(--primary-red);
+}
+
+body:not(.light-mode) .submit-button:hover {
+    background-color: var(--primary-red);
+    color: var(--dark-bg);
+    box-shadow: 0 0 20px var(--primary-red);
+}
+
+body:not(.light-mode) .project-card {
+    background-color: var(--dark-gray);
+    border: 1px solid var(--dark-border);
+}
+
+body:not(.light-mode) .project-card:hover {
+     transform: translateY(-5px);
+}
+
+body:not(.light-mode) .project-overlay {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+body:not(.light-mode) .read-more-btn {
+    color: var(--dark-text);
+    border: 2px solid var(--dark-border);
+    background: transparent;
+}
+
+body:not(.light-mode) .read-more-btn:hover {
+    color: var(--white);
+    box-shadow:
+        0 0 10px var(--primary-red),
+        0 0 20px var(--primary-red),
+        0 0 30px var(--neon-red);
+    border-color: var(--neon-red);
+}
+
+body:not(.light-mode) .project-card h3 {
+    color: var(--dark-text);
+}
+
+body:not(.light-mode) .project-card p {
+    color: var(--dark-subtitle);
+}
+
+body:not(.light-mode) .internship {
+    background-color: var(--darker-gray);
+}
+
+body:not(.light-mode) .internship-content {
+    background-color: var(--dark-gray);
+    border: 1px solid var(--dark-border);
+    color: var(--dark-text);
+}
+
+body:not(.light-mode) .internship-content h3 {
+    color: var(--primary-red);
+}
+
+body:not(.light-mode) .internship-content p {
+    color: var(--dark-subtitle);
+}
+
+body:not(.light-mode) .document-card {
+    background-color: var(--dark-gray);
+    border: 1px solid var(--dark-border);
+}
+
+body:not(.light-mode) .document-card:hover {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+}
+
+body:not(.light-mode) .document-icon {
+    color: var(--primary-red);
+}
+
+body:not(.light-mode) .document-card h3 {
+    color: var(--dark-text);
+}
+
+body:not(.light-mode) .document-card p {
+    color: var(--dark-subtitle);
+}
+
+body:not(.light-mode) .download-btn {
+    background-color: transparent;
+    color: var(--primary-red);
+    border: 1px solid var(--primary-red);
+}
+
+body:not(.light-mode) .download-btn:hover {
+     background-color: var(--primary-red);
+     color: var(--dark-bg);
+     box-shadow: 0 0 15px var(--primary-red);
+}
+
+body:not(.light-mode) .project-detail {
+     background-color: var(--dark-bg);
+}
+
+body:not(.light-mode) .content-container {
+     background-color: var(--dark-gray); /* Background for readability */
+     border: 1px solid var(--dark-border);
+     box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+     color: var(--dark-text);
+}
+
+body:not(.light-mode) .content-container h3 {
+    color: var(--primary-red);
+}
+
+body:not(.light-mode) .content-container p,
+body:not(.light-mode) .content-container ul {
+    color: var(--dark-subtitle);
+}
+
+body:not(.light-mode) .internship-detail {
+     background-color: var(--dark-bg);
+}
+
+body:not(.light-mode) .social-icon {
+    background: transparent;
+    border: 1px solid var(--dark-border);
+    color: var(--primary-red);
+}
+
+body:not(.light-mode) .social-icon:hover {
+    color: var(--dark-bg);
+}
+
+body:not(.light-mode) .footer {
+    background-color: var(--dark-gray);
+    border-top: 1px solid var(--dark-border);
+    color: var(--dark-text);
+}
+
+body:not(.light-mode) #theme-toggle {
+    background: #fff;
+    color: var(--primary-red);
+    border: 2px solid var(--primary-red);
+    box-shadow: 0 0 4px var(--primary-red), 0 0 6px #fff;
+}
+body:not(.light-mode) #theme-toggle:hover, body:not(.light-mode) #theme-toggle:focus {
+    background: var(--primary-red);
+    color: #fff;
+    box-shadow: 0 0 8px var(--primary-red), 0 0 12px #fff;
+}
+
+/* Remaining styles (carousel, media queries etc.) */
+
+.round-profile {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 260px;
+    height: 260px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 24px rgba(255,0,0,0.08);
 }
 
-.tech-list li i {
-    margin-right: 15px;
-    font-size: 1.2em;
-    color: #007bff;
-    width: 25px;
+body:not(.light-mode) .round-profile {
+     box-shadow: 0 0 24px rgba(255,0,0,0.12);
+}
+
+/* Add carousel styling */
+.carousel-container {
+    position: relative;
+    max-width: 800px; /* Adjust as needed */
+    margin: 2rem auto;
+    overflow: hidden;
+    border: 1px solid var(--light-border);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.05);
+}
+
+body:not(.light-mode) .carousel-container {
+    border: 1px solid var(--dark-border);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+}
+
+/* Dots indicators */
+.dots-container {
     text-align: center;
+    padding: 10px 0;
+    background-color: var(--light-card); /* Match content container background */
 }
 
-/* Update skill icons */
-.skill-icon i {
-    font-size: 3rem;
-    color: var(--primary-red);
-    transition: all 0.3s ease;
-}
-
-.skill-card:hover .skill-icon i {
-    text-shadow: 0 0 2px var(--primary-red), 0 0 4px var(--neon-red);
-}
-
-/* Responsive design for about section */
-@media (max-width: 992px) {
-    .about-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    .about-image {
-        justify-content: center;
-    }
-    .profile-frame {
-        width: 220px;
-        height: 220px;
-    }
-}
-
-@media (max-width: 576px) {
-    .about-content {
-        gap: 1.2rem;
-    }
-    .profile-frame {
-        width: 150px;
-        height: 150px;
-    }
-    .about-block h3 {
-        font-size: 1.1rem;
-    }
+body:not(.light-mode) .dots-container {
+    background-color: var(--dark-gray); /* Match content container background */
 }
 
 /* Darker titles in light mode */
-body.light-mode h1,
+/* body.light-mode h1,
 body.light-mode h2,
 body.light-mode h3 {
     color: #181818 !important;
 }
 body.light-mode .hero h1 {
     color: #181818 !important;
-}
+} */
 
 .download-cv-container {
     display: flex;
@@ -1160,386 +1199,77 @@ body.light-mode .hero h1 {
     gap: 0.7rem;
 }
 
-.round-profile {
-    border-radius: 50%;
-    overflow: hidden;
-    width: 260px;
-    height: 260px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 24px rgba(255,0,0,0.12);
-}
-.round-profile img {
-    border-radius: 50%;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border: none;
-}
-@media (max-width: 992px) {
-    .round-profile {
-        width: 180px;
-        height: 180px;
-    }
-}
-@media (max-width: 576px) {
-    .round-profile {
-        width: 120px;
-        height: 120px;
-    }
-}
-
-/* Project Detail Page Styling */
-/* Add carousel styling */
-.carousel-container {
-    position: relative;
-    max-width: 800px; /* Adjust as needed */
-    margin: 2rem auto;
-    overflow: hidden;
-    border: 1px solid var(--primary-red);
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
-}
-
-.carousel-slide {
-    display: none; /* Hide slides by default */
-    width: 100%;
-}
-
-.carousel-slide img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Next & previous buttons */
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-    background-color: rgba(0,0,0,0.8);
-    z-index: 2;
-}
-
-/* Position the "next button" to the right */
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little more opacity */
-.prev:hover, .next:hover {
-    background-color: rgba(0,0,0,1);
-}
-
-/* Dots indicators */
-.dots-container {
-    text-align: center;
-    padding: 10px 0;
-    background-color: var(--dark-gray); /* Match content container background */
-}
-
-.dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 5px;
-    background-color: var(--light-gray); /* Inactive dot color */
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-    background-color: var(--primary-red); /* Active/hover dot color */
-}
-
-/* Caption text */
-/* .text { ... styling for captions if you add them ... } */
-
-/* Number text (1/3 etc) */
-/* .numbertext { ... styling for slide numbers if you add them ... } */
-
-.project-banner {
-    position: relative;
-    width: 100%;
-    height: 400px; /* Adjust height as needed */
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: var(--white);
-    margin-top: 80px; /* Adjust based on navbar height */
-}
-
-.banner-image img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(50%); /* Darken image for text readability */
-}
-
-.banner-content {
-    position: relative;
-    z-index: 1;
-}
-
-.project-banner h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-}
-
-.project-banner .subtitle {
-    font-size: 1.2rem;
-    color: var(--light-gray);
-}
-
-.project-detail {
-    padding: 4rem 2rem;
-    background-color: var(--dark-bg);
-}
-
-.content-container {
-    max-width: 900px; /* Limit text width */
-    margin: 0 auto;
-    padding: 2rem;
-    background-color: var(--dark-gray); /* Background for readability */
-    border: 1px solid var(--primary-red);
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
-}
-
-.content-container h3 {
+body:not(.light-mode) .cta-button {
+    background-color: transparent;
     color: var(--primary-red);
-    font-size: 1.5rem;
-    margin-top: 1.5rem;
-    margin-bottom: 0.8rem;
+    border: 2px solid var(--primary-red);
 }
 
-.content-container h3:first-child {
-    margin-top: 0;
+body:not(.light-mode) .hero .cta-button {
+    background-color: transparent; /* Dark mode background */
+    color: var(--primary-red); /* Dark mode text color */
+    border: 2px solid var(--primary-red); /* Dark mode border */
 }
 
-.content-container p,
-.content-container ul {
-    color: var(--light-gray);
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
+body:not(.light-mode) .hero .cta-button:hover {
+    background-color: var(--primary-red); /* Dark mode hover background */
+    color: var(--dark-bg); /* Dark mode hover text color */
+    box-shadow: 0 0 20px var(--primary-red); /* Dark mode hover shadow */
 }
 
-.content-container ul {
-    list-style: disc inside;
-    padding-left: 1.5rem;
-}
-
-.content-container li {
-    margin-bottom: 0.5rem;
-}
-
-/* Adjust existing project-detail rule if necessary */
-/* Ensure padding is applied correctly after adding banner */
-section.project-detail {
-    padding-top: 4rem; /* Add padding to the top */
-}
-
-/* Existing project-hero and project-description rules might need to be removed or adjusted if they are no longer used in the HTML structure */
-/* For example, remove the old .project-hero and .project-description rules if they only applied to the previous structure */
-
-/* Internship Detail Page */
-.internship-detail {
-    padding: 8rem 2rem 4rem;
-    background-color: var(--dark-bg);
-}
-
-/* Updated Technical Skills Section */
-.skill-card {
-    background-color: var(--dark-gray);
-    padding: 2rem;
-    border: 1px solid var(--primary-red);
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.skill-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 30px rgba(255, 0, 0, 0.2);
-}
-
-.skill-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, transparent 0%, rgba(255, 0, 0, 0.1) 100%);
-    transform: translateX(-100%);
-    transition: transform 0.6s ease;
-}
-
-.skill-card:hover::before {
-    transform: translateX(0);
-}
-
-.skill-icon {
-    font-size: 3rem;
-    color: var(--primary-red);
-    margin-bottom: 1.5rem;
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-.skill-card:hover .skill-icon i {
-    text-shadow: 0 0 2px var(--primary-red), 0 0 4px var(--neon-red);
-}
-
-.skill-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--white);
-}
-
-.skill-card p {
-    color: var(--light-gray);
-    font-size: 0.9rem;
-}
-
-/* Contact Section */
-.contact-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.contact-info {
+/* Style for the document buttons container */
+.document-buttons {
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.contact-item i {
-    font-size: 1.5rem;
-    color: var(--primary-red);
-}
-
-.social-links {
-    display: flex;
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.social-icon {
-    width: 45px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--primary-red);
-    color: var(--primary-red);
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.social-icon::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: var(--primary-red);
-    transition: transform 0.3s ease;
-    z-index: -1;
-}
-
-.social-icon:hover {
-    color: var(--dark-bg);
-}
-
-.social-icon:hover::before {
-    transform: translateX(100%);
-}
-
-/* Update social icons */
-.social-icon i {
-    font-size: 1.5rem;
-    transition: all 0.3s ease;
-}
-
-.social-icon:hover i {
-    transform: scale(1.1);
-}
-
-/* Footer */
-.footer {
-    background-color: var(--dark-gray);
-    padding: 2rem;
-    text-align: center;
-    border-top: 1px solid var(--primary-red);
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Responsive Design Updates */
-@media (max-width: 768px) {
-    .project-hero {
-        height: 250px;
-    }
-
-    .project-description {
-        padding: 1.5rem;
-    }
-
-    .project-links {
         flex-direction: column;
-    }
-
-    .project-links .cta-button {
-        max-width: 100%;
-    }
-
-    .contact-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .social-links {
-        justify-content: center;
-    }
+    gap: 20px; /* Vertical space between buttons (at least 0.5rem, 20px is 1.25rem) */
+    margin-top: 1.5rem; /* Add some space above the buttons */
+    align-items: center; /* Center buttons horizontally if they don't take full width */
 }
 
-/* Adjust object-position for specific project banner images */
-.project-banner .banner-image img[src="../images/PermacultureDesignCourse.jpg"] {
-    object-position: center 25%; /* Adjust Permaculture image position */
+/* Apply styling consistent with main cta-button to buttons within document-buttons */
+.document-card .document-buttons .cta-button.document-view-btn { 
+    display: flex; /* Use flexbox to center icon and text */
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Make buttons take full width of the container */
+    padding: 1rem 2rem; /* Match padding of main cta-button */
+    font-size: 1rem; /* Consistent font size */
+    border-width: 2px; /* Consistent border width */
+    border-style: solid; /* Consistent border style */
+    border-color: var(--primary-red); /* Consistent red border */
+    background-color: var(--light-card); /* White background in light mode */
+    color: var(--primary-red); /* Red text in light mode */
+    text-transform: uppercase; /* Ensure text is uppercase */
+    font-weight: 600; /* Consistent font weight */
+    transition: all 0.3s ease; /* Add transition for hover effect */
+    text-decoration: none; /* Remove underline */
+    box-shadow: none; /* Remove any default box-shadow */
+    margin: 0; /* Remove any default margins to rely on gap */
 }
 
-.project-banner .banner-image img[src="../images/ProjectIOT.png"] {
-    object-position: center 1rem; /* Move Project IOT image down */
+.document-card .document-buttons .cta-button.document-view-btn i {
+    margin-right: 8px; /* Add space between icon and text */
+}
+
+.document-card .document-buttons .cta-button.document-view-btn:hover {
+    background-color: var(--primary-red); /* Red background on hover */
+    color: var(--dark-bg); /* Dark text on hover */
+    box-shadow: 0 0 15px var(--primary-red); /* Glow effect on hover */
+    border-color: var(--primary-red); /* Ensure border stays red on hover */
+}
+
+/* Dark mode styles for buttons within document-buttons */
+body:not(.light-mode) .document-card .document-buttons .cta-button.document-view-btn {
+    background-color: transparent; /* Transparent background in dark mode */
+    color: var(--primary-red); /* Red text in dark mode */
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--primary-red); /* Red border in dark mode */
+}
+
+body:not(.light-mode) .document-card .document-buttons .cta-button.document-view-btn:hover {
+     background-color: var(--primary-red); /* Red background on hover */
+     color: var(--dark-bg); /* Dark text on hover */
+     box-shadow: 0 0 15px var(--primary-red); /* Glow effect on hover */
+     border-color: var(--primary-red); /* Ensure border stays red on hover */
 }

@@ -117,13 +117,8 @@ document.addEventListener('DOMContentLoaded', () => {
         body.classList.remove('light-mode');
         themeIcon.classList.remove('fa-sun');
         themeIcon.classList.add('fa-moon');
-    } else if (savedTheme === 'light') {
-        // If theme is explicitly saved as light, apply light mode
-        body.classList.add('light-mode');
-        themeIcon.classList.remove('fa-moon');
-        themeIcon.classList.add('fa-sun');
     } else {
-        // If no theme is saved, default to light mode and save preference
+        // Default to light mode (either no saved preference or explicitly light)
         body.classList.add('light-mode');
         themeIcon.classList.remove('fa-moon');
         themeIcon.classList.add('fa-sun');

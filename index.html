@@ -7,6 +7,28 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d9f0abd257.js" crossorigin="anonymous"></script>
+    <script>
+        // Apply theme before page renders
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.body.classList.add('light-mode');
+            } else if (savedTheme === 'dark') {
+                 document.body.classList.remove('light-mode'); // Ensure no light-mode class if dark is saved
+            } else {
+                // Default to light if no theme is saved
+                document.body.classList.add('light-mode');
+                localStorage.setItem('theme', 'light');
+            }
+        })();
+    </script>
+    <!-- Inline script to prevent FOUC/FODM -->
+    <script>
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            document.documentElement.classList.add('light-mode');
+        }
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -33,47 +55,50 @@
             <a href="#projects" class="cta-button">DISCOVER MY WORK</a>
         </div>
         <div class="hero-background"></div>
+        
     </section>
 
     <section id="about" class="about">
         <h2>ABOUT ME</h2>
-        <p class="section-subtitle">Passionate technologist with a focus on IoT solutions</p>
         
-        <div class="about-content">
-            <div class="about-image">
-                <div class="profile-frame round-profile">
-                    <img src="images/Profile (2).jpg" alt="Profile Picture">
+            <p class="section-subtitle">Passionate technologist with a focus on IoT solutions</p>
+
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="profile-frame round-profile">
+                        <img src="images/Profile (2).jpg" alt="Profile Picture">
+                    </div>
+                </div>
+                <div class="about-details">
+                    <div class="about-block">
+                        <h3>Who is Harold?</h3>
+                        <p>Let me start by introducing myself a little more extensively; I am a 25-year old optimist who comes from a family that loves to laugh. Together with my parents and 2 sisters I live in the beautiful and peaceful Pajottenland (Flemish Brabant). As a child, I always wanted to become an inventor, build machines that would make people's lives easier or improve the world. It is therefore not illogical that throughout my life I have been fascinated by technology, innovation and new ideas.</p>
+                        <p>In addition, -largely due to my father- I have cultivated a tremendous love for nature, growing my own vegetables and restoring or creating ecosystems. I am convinced that both of the above are useful and much needed in a world in change. Although balancing the two is not always easy....</p>
+                    </div>
+                    <div class="about-block">
+                        <h3>Why IT and this orientation of choice?</h3>
+                        <p>To become an inventor you first of all need to be creative and inventive. Fortunately, I already had these characteristics by default. Due to my permanent curiosity and the urge to constantly learn, my knowledge of the world grew enormously as a child. I devoured books and could not be turned away from "museums" like Technopolis, Hydrodoe, Da Vinci Museum and you name it. If it involved something or other of experimentation or testing something out myself I was a fan.</p>
+                        <p>I was given various do-books, building kits and experimentation kits to get started on my own, until in high school when I first heard of Arduino, a world-renowned type of microcontroller that was ideal for the novice electronics enthusiast, which was me. I ordered a beginner's kit and soon I had finished almost all the projects. I knew: I love this, I want to know more and get better at it.</p>
+                    </div>
+                    <div class="about-block">
+                        <h3>Unique Hobbies</h3>
+                        <ul class="about-hobbies">
+                            <li><strong>Building DIY Electronic Systems:</strong> I love bringing ideas to life by designing and assembling custom electronics, from smart home gadgets to creative IoT solutions. Every project is a new adventure in innovation and learning.</li>
+                            <li><strong>Badminton:</strong> The fast pace and strategy of badminton energize me. It's a sport that sharpens my reflexes, keeps me fit, and reminds me of the joy of friendly competition and teamwork.</li>
+                            <li><strong>Bouldering:</strong> Climbing challenges me both physically and mentally. Each route is a puzzle that requires creativity, perseverance, and trust in yourself—qualities I value in all aspects of life.</li>
+                            <li><strong>Traveling:</strong> Exploring new places and cultures broadens my perspective and fuels my curiosity. I believe every journey is an opportunity to grow, connect, and find inspiration in the world's diversity.</li>
+                            <li><strong>Diving:</strong> The underwater world fascinates me. Diving allows me to experience tranquility, discover hidden beauty, and appreciate the importance of protecting our planet's ecosystems.</li>
+                            <li><strong>Making the World a Nicer Place for Everyone:</strong> Whether through volunteering, sharing knowledge, or simply spreading kindness, I strive to leave a positive impact wherever I go. I believe small actions can create big change.</li>
+                        </ul>
+                    </div>
+                    <div class="about-block">
+                        <h3>Future Dreams & Professional Ambitions</h3>
+                        <p>My dream is to lead innovative IoT projects that improve quality of life and sustainability. I aspire to work internationally, collaborate with diverse teams, and eventually mentor the next generation of engineers. My ambition is to contribute to smart cities, healthcare, and green technology through impactful, user-centered solutions.</p>
+                        <p>As for the future, I don't really know yet. I know that I would really like to take another big trip. This could be through Europe, although Iran and the Middle East also seem wonderful to me. Unfortunately, that will probably have to wait until the dust settles there. After this trip, I would like to seek out a job in the IoT sector, preferably in combination with working outdoors or at least something where I come into contact with plants or animals. I myself am thinking of perhaps eventually starting my own company that provides customized IoT solutions specifically aimed at automating and monitoring greenhouses and vegetable gardens in people's homes. But who knows what the future holds!</p>
+                    </div>
                 </div>
             </div>
-            <div class="about-details">
-                <div class="about-block">
-                    <h3>Who is Harold?</h3>
-                    <p>Let me start by introducing myself a little more extensively; I am a 25-year old optimist who comes from a family that loves to laugh. Together with my parents and 2 sisters I live in the beautiful and peaceful Pajottenland (Flemish Brabant). As a child, I always wanted to become an inventor, build machines that would make people's lives easier or improve the world. It is therefore not illogical that throughout my life I have been fascinated by technology, innovation and new ideas.</p>
-                    <p>In addition, -largely due to my father- I have cultivated a tremendous love for nature, growing my own vegetables and restoring or creating ecosystems. I am convinced that both of the above are useful and much needed in a world in change. Although balancing the two is not always easy....</p>
-                </div>
-                <div class="about-block">
-                    <h3>Why IT and this orientation of choice?</h3>
-                    <p>To become an inventor you first of all need to be creative and inventive. Fortunately, I already had these characteristics by default. Due to my permanent curiosity and the urge to constantly learn, my knowledge of the world grew enormously as a child. I devoured books and could not be turned away from "museums" like Technopolis, Hydrodoe, Da Vinci Museum and you name it. If it involved something or other of experimentation or testing something out myself I was a fan.</p>
-                    <p>I was given various do-books, building kits and experimentation kits to get started on my own, until in high school when I first heard of Arduino, a world-renowned type of microcontroller that was ideal for the novice electronics enthusiast, which was me. I ordered a beginner's kit and soon I had finished almost all the projects. I knew: I love this, I want to know more and get better at it.</p>
-                </div>
-                <div class="about-block">
-                    <h3>Unique Hobbies</h3>
-                    <ul class="about-hobbies">
-                        <li><strong>Building DIY Electronic Systems:</strong> I love bringing ideas to life by designing and assembling custom electronics, from smart home gadgets to creative IoT solutions. Every project is a new adventure in innovation and learning.</li>
-                        <li><strong>Badminton:</strong> The fast pace and strategy of badminton energize me. It's a sport that sharpens my reflexes, keeps me fit, and reminds me of the joy of friendly competition and teamwork.</li>
-                        <li><strong>Bouldering:</strong> Climbing challenges me both physically and mentally. Each route is a puzzle that requires creativity, perseverance, and trust in yourself—qualities I value in all aspects of life.</li>
-                        <li><strong>Traveling:</strong> Exploring new places and cultures broadens my perspective and fuels my curiosity. I believe every journey is an opportunity to grow, connect, and find inspiration in the world's diversity.</li>
-                        <li><strong>Diving:</strong> The underwater world fascinates me. Diving allows me to experience tranquility, discover hidden beauty, and appreciate the importance of protecting our planet's ecosystems.</li>
-                        <li><strong>Making the World a Nicer Place for Everyone:</strong> Whether through volunteering, sharing knowledge, or simply spreading kindness, I strive to leave a positive impact wherever I go. I believe small actions can create big change.</li>
-                    </ul>
-                </div>
-                <div class="about-block">
-                    <h3>Future Dreams & Professional Ambitions</h3>
-                    <p>My dream is to lead innovative IoT projects that improve quality of life and sustainability. I aspire to work internationally, collaborate with diverse teams, and eventually mentor the next generation of engineers. My ambition is to contribute to smart cities, healthcare, and green technology through impactful, user-centered solutions.</p>
-                    <p>As for the future, I don't really know yet. I know that I would really like to take another big trip. This could be through Europe, although Iran and the Middle East also seem wonderful to me. Unfortunately, that will probably have to wait until the dust settles there. After this trip, I would like to seek out a job in the IoT sector, preferably in combination with working outdoors or at least something where I come into contact with plants or animals. I myself am thinking of perhaps eventually starting my own company that provides customized IoT solutions specifically aimed at automating and monitoring greenhouses and vegetable gardens in people's homes. But who knows what the future holds!</p>
-                </div>
-            </div>
-        </div>
+        
     </section>
 
     <div class="download-cv-container">
@@ -87,171 +112,170 @@
 
     <section id="skills" class="skills">
         <h2>TECHNICAL SKILLS</h2>
-        <p class="section-subtitle">My expertise in the IoT ecosystem</p>
         
-        <div class="skills-grid">
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <i class="fas fa-microchip"></i>
+            <p class="section-subtitle">My expertise in the IoT ecosystem</p>
+
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>Embedded Systems</h3>
+                    <p>Arduino, ESP32/8266, Raspberry Pi, custom PCB design, and sensor integration.</p>
                 </div>
-                <h3>Embedded Systems</h3>
-                <p>Arduino, ESP32/8266, Raspberry Pi, custom PCB design, and sensor integration.</p>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <i class="fas fa-code"></i>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Programming</h3>
+                    <p>HTML, CSS, C/C++, Python, JavaScript, Node.js, and embedded programming for various microcontrollers.</p>
                 </div>
-                <h3>Programming</h3>
-                <p>HTML, CSS, C/C++, Python, JavaScript, Node.js, and embedded programming for various microcontrollers.</p>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <i class="fas fa-network-wired"></i>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Connectivity</h3>
+                    <p>Bluetooth, WiFi, ZigBee, MQTT, and other IoT communication protocols.</p>
                 </div>
-                <h3>Connectivity</h3>
-                <p>Bluetooth, WiFi, ZigBee, MQTT, and other IoT communication protocols.</p>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <i class="fas fa-cloud"></i>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud Integration</h3>
+                    <p>AWS IoT, Azure IoT Hub, OpenHAB, custom cloud solutions for device managemen and home automation.</p>
                 </div>
-                <h3>Cloud Integration</h3>
-                <p>AWS IoT, Azure IoT Hub, OpenHAB, custom cloud solutions for device managemen and home automation.</p>
             </div>
-        </div>
+        
     </section>
 
     <section id="projects" class="projects">
         <h2>PROJECTS</h2>
-        <p class="section-subtitle">Featured work and achievements</p>
-        <div class="project-grid">
-            <div class="project-card">
-                <div class="project-image lora-image">
-                    <img src="images/LORATheExplorer.jpg" alt="LORA The Explorer">
-                    <div class="project-overlay">
-                        <a href="projects/lora-explorer.html" class="read-more-btn">READ MORE</a>
+        
+            <p class="section-subtitle">Featured work and achievements</p>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-image lora-image">
+                        <img src="images/LORATheExplorer.jpg" alt="LORA The Explorer">
+                        <div class="project-overlay">
+                            <a href="projects/lora-explorer.html" class="read-more-btn">READ MORE</a>
+                        </div>
                     </div>
+                    <h3>LORA The Explorer</h3>
+                    <p>Developed a weather balloon to establish an emergency network in disaster areas.</p>
                 </div>
-                <h3>LORA The Explorer</h3>
-                <p>Developed a weather balloon to establish an emergency network in disaster areas.</p>
-            </div>
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="images/MinifigureSorting.png" alt="Minifigure sorting">
-                    <div class="project-overlay">
-                        <a href="projects/minifigure-sorting.html" class="read-more-btn">READ MORE</a>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/MinifigureSorting.png" alt="Minifigure sorting">
+                        <div class="project-overlay">
+                            <a href="projects/minifigure-sorting.html" class="read-more-btn">READ MORE</a>
+                        </div>
                     </div>
+                    <h3>Minifigure sorting</h3>
+                    <p>Trained an AI model to recognize LEGO minifigures at the Bricks & More trade show.</p>
                 </div>
-                <h3>Minifigure sorting</h3>
-                <p>Trained an AI model to recognize LEGO minifigures at the Bricks & More trade show.</p>
-            </div>
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="images/AppHostingPlatform.png" alt="App Hosting Platform">
-                    <div class="project-overlay">
-                        <a href="projects/app-hosting.html" class="read-more-btn">READ MORE</a>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/AppHostingPlatform.png" alt="App Hosting Platform">
+                        <div class="project-overlay">
+                            <a href="projects/app-hosting.html" class="read-more-btn">READ MORE</a>
+                        </div>
                     </div>
+                    <h3>App Hosting Platform</h3>
+                    <p>Created a hosting platform in a local datacenter to host a PHP application for a client.</p>
                 </div>
-                <h3>App Hosting Platform</h3>
-                <p>Created a hosting platform in a local datacenter to host a PHP application for a client.</p>
-            </div>
-            <div class="project-card">
-                <div class="project-image permaculture-image">
-                    <img src="images/PermacultureDesignCourse.jpg" alt="Permaculture Design Course">
-                    <div class="project-overlay">
-                        <a href="projects/pdc-thailand.html" class="read-more-btn">READ MORE</a>
+                <div class="project-card">
+                    <div class="project-image permaculture-image">
+                        <img src="images/PermacultureDesignCourse.jpg" alt="Permaculture Design Course">
+                        <div class="project-overlay">
+                            <a href="projects/pdc-thailand.html" class="read-more-btn">READ MORE</a>
+                        </div>
                     </div>
+                    <h3>Permaculture Design Course (PDC)</h3>
+                    <p>Took a Permaculture Design Course on an organic farm in Thailand.</p>
                 </div>
-                <h3>Permaculture Design Course (PDC)</h3>
-                <p>Took a Permaculture Design Course on an organic farm in Thailand.</p>
-            </div>
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="images/ProjectIOT.png" alt="Project IOT">
-                    <div class="project-overlay">
-                        <a href="projects/project-iot.html" class="read-more-btn">READ MORE</a>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/ProjectIOT.png" alt="Project IOT">
+                        <div class="project-overlay">
+                            <a href="projects/project-iot.html" class="read-more-btn">READ MORE</a>
+                        </div>
                     </div>
+                    <h3>Project IOT</h3>
+                    <p>Automated a pumpkin greenhouse for the pumpkin regatta at Kasterlee.</p>
                 </div>
-                <h3>Project IOT</h3>
-                <p>Automated a pumpkin greenhouse for the pumpkin regatta at Kasterlee.</p>
-            </div>
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="images/Project 4.0.png" alt="Project 4.0">
-                    <div class="project-overlay">
-                        <a href="projects/project-4.0.html" class="read-more-btn">READ MORE</a>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/Project 4.0.png" alt="Project 4.0">
+                        <div class="project-overlay">
+                            <a href="projects/project-4.0.html" class="read-more-btn">READ MORE</a>
+                        </div>
                     </div>
+                    <h3>Project 4.0</h3>
+                    <p>Developed a solution for the loading problem on the parking lot of Elision.</p>
                 </div>
-                <h3>Project 4.0</h3>
-                <p>Developed a solution for the loading problem on the parking lot of Elision.</p>
-            </div>
-            <div class="project-card">
-                <div class="project-image mesh-image">
-                    <img src="images/Meshnetwork.jpg" alt="Mesh network">
-                    <div class="project-overlay">
-                        <a href="projects/mesh-network.html" class="read-more-btn">READ MORE</a>
+                <div class="project-card">
+                    <div class="project-image mesh-image">
+                        <img src="images/Meshnetwork.jpg" alt="Mesh network">
+                        <div class="project-overlay">
+                            <a href="projects/mesh-network.html" class="read-more-btn">READ MORE</a>
+                        </div>
                     </div>
+                    <h3>Mesh network</h3>
+                    <p>Built a mesh network across campus using ESP32 microcontrollers.</p>
                 </div>
-                <h3>Mesh network</h3>
-                <p>Built a mesh network across campus using ESP32 microcontrollers.</p>
             </div>
-        </div>
+        
     </section>
 
     <section id="internship" class="internship">
         <h2>INTERNSHIP</h2>
-        <p class="section-subtitle">My Professional Experience</p>
-        <div class="internship-content">
-            <h3><i class="fas fa-laptop-code"></i> IoT Solutions Developer at CERcuits</h3>
-            <p>During my internship at CERcuits, I developed an IoT system to monitor and automate a dust extraction system, improving efficiency and reducing noise.</p>
-            <a href="internship.html" class="cta-button">READ MORE</a>
-        </div>
+        
+            <p class="section-subtitle">My Professional Experience</p>
+            <div class="internship-content">
+                <h3><i class="fas fa-laptop-code"></i> IoT Solutions Developer at CERcuits</h3>
+                <p>During my internship at CERcuits, I developed an IoT system to monitor and automate a dust extraction system, improving efficiency and reducing noise.</p>
+                <a href="internship.html" class="cta-button">READ MORE</a>
+            </div>
+        
     </section>
 
     <section id="contact" class="contact">
         <h2>CONTACT ME</h2>
-        <p class="section-subtitle">Let's discuss how we can collaborate on IoT solutions</p>
         
-        <div class="contact-container">
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <p>Herfelingen, Belgium</p>
+            <p class="section-subtitle">Let's discuss how we can collaborate on IoT solutions</p>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Herfelingen, Belgium</p>
+                    </div>
+                    <div class="contact-item">
+                        <a href="tel:+32483112061" class="contact-phone-link">
+                            <i class="fas fa-phone"></i>
+                            <p>+32 483 11 20 61</p>
+                        </a>
+                    </div>
+                    <div class="contact-item">
+                        <a href="mailto:de.ridder.harold@gmail.com" class="contact-email-link">
+                            <i class="fas fa-envelope"></i>
+                            <p>de.ridder.harold@gmail.com</p>
+                        </a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/HDeRidder" class="social-icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/yourusername" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <p>+32 483 11 20 61</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <p>de.ridder.harold@gmail.com</p>
-                </div>
-                <div class="social-links">
-                    <a href="https://github.com/HDeRidder" class="social-icon">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://linkedin.com/in/yourusername" class="social-icon">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://twitter.com/yourusername" class="social-icon">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="https://medium.com/@yourusername" class="social-icon">
-                        <i class="fab fa-medium-m"></i>
-                    </a>
-                </div>
+
+                <!-- Contact Form Removed -->
+
             </div>
-            
-            <div class="contact-form">
-                <form>
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <input type="text" placeholder="Subject" required>
-                    <textarea placeholder="Your Message" required></textarea>
-                    <button type="submit" class="submit-button">SEND MESSAGE</button>
-                </form>
-            </div>
-        </div>
+        
     </section>
 
     <footer class="footer">
