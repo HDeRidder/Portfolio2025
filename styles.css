@@ -745,26 +745,63 @@ section.project-detail {
 
 .contact-item {
     display: flex;
-    align-items: center;
+    align-items: center; /* Ensures vertical alignment of icon and text */
     gap: 1rem;
+    /* Added for better centering if needed, though align-items should handle it */
+    justify-content: center;
 }
 
-/* Style for the mailto link in contact info */
+.contact-item p, /* Target location text */
+.contact-phone-link, /* Target phone link */
+.contact-email-link { /* Target email link */
+    font-size: 1.15rem; /* Make text bigger */
+    font-weight: 600; /* Make text bolder */
+}
+
+/* Styles for the mailto link in contact info */
 .contact-email-link {
     display: flex;
     align-items: center;
     gap: 1rem;
     text-decoration: none; /* Remove underline */
     color: inherit; /* Inherit color from parent */
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease; /* Add transition for smooth hover */
 }
 
 .contact-email-link:hover {
-    color: var(--primary-red); /* Change color on hover */
+    color: var(--primary-red); /* Change color to red on hover */
+    text-decoration: none !important; /* Explicitly remove underline on hover */
+    text-shadow: none; /* Remove text shadow/glow */
+    transform: scale(1.03); /* Subtle growth effect */
+}
+
+.contact-email-link:hover p { /* Target the p tag inside on hover */
+     text-decoration: none !important; /* Explicitly remove underline on p tag on hover */
+}
+
+/* Styles for the phone link */
+.contact-phone-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+    transition: color 0.3s ease, transform 0.3s ease; /* Add transition for smooth hover */
+}
+
+.contact-phone-link:hover {
+     color: var(--primary-red); /* Change color to red on hover */
+     text-decoration: none !important; /* Explicitly remove underline on hover */
+     text-shadow: none; /* Remove text shadow/glow */
+     transform: scale(1.03); /* Subtle growth effect */
+}
+
+.contact-phone-link:hover p { /* Target the p tag inside on hover */
+    text-decoration: none !important; /* Explicitly remove underline on p tag on hover */
 }
 
 .contact-item i {
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* Keep icon size consistent or adjust if needed */
     color: var(--primary-red);
 }
 
@@ -1272,4 +1309,39 @@ body:not(.light-mode) .document-card .document-buttons .cta-button.document-view
      color: var(--dark-bg); /* Dark text on hover */
      box-shadow: 0 0 15px var(--primary-red); /* Glow effect on hover */
      border-color: var(--primary-red); /* Ensure border stays red on hover */
+}
+
+/* Existing contact section styles */
+
+.contact-phone-link,
+.contact-email-link {
+    color: inherit; /* Inherit color from parent */
+    text-decoration: none; /* Remove underline */
+}
+
+.contact-phone-link:hover,
+.contact-email-link:hover {
+    color: var(--primary-red); /* Change color to red on hover */
+    text-decoration: none !important; /* Explicitly remove underline on hover, using !important as a last resort */
+    text-shadow: none; /* Remove text shadow/glow */
+    transform: scale(1.03); /* Subtle growth effect */
+}
+
+.contact-phone-link:hover p { /* Target the p tag inside on hover */
+    text-decoration: none !important; /* Explicitly remove underline on p tag on hover */
+}
+
+.contact-email-link:hover p { /* Target the p tag inside on hover */
+     text-decoration: none !important; /* Explicitly remove underline on p tag on hover */
+}
+
+/* Media query for wider screens */
+@media (min-width: 1024px) { /* Example breakpoint for wider screens */
+    .contact-info {
+        font-size: 1.1em; /* Increase font size */
+        /* Add other styles here if needed, e.g., padding */
+    }
+    .contact-item i {
+         margin-right: 15px; /* Adjust icon spacing */
+    }
 }
