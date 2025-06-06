@@ -455,8 +455,8 @@ h2 {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: top;
-    transition: transform 0.3s ease;
+    border: 2px solid var(--light-card);
+    object-position: center;
 }
 
 .project-image.lora-image img,
@@ -2388,5 +2388,111 @@ body:not(.light-mode) .soft-skills li {
 .skills-cv {
     /* Existing styles */
     padding-top: 100px; /* Add padding equal to navbar height */
+}
+
+/* --- Internship Documents Section --- */
+.internship-documents {
+    margin-top: 1rem; /* Further reduced space above the section */
+    padding: 0.8rem 1rem; /* Further reduced padding inside the section */
+    background-color: var(--light-card); /* Card background color */
+    border: 1px solid var(--light-border); /* Card border */
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.04); /* Even more subtle shadow */
+    max-width: 500px; /* Further limit width for compactness */
+    margin-left: auto; /* Center the block */
+    margin-right: auto; /* Center the block */
+}
+
+body:not(.light-mode) .internship-documents {
+    background-color: var(--dark-gray); /* Dark mode card background */
+    border: 1px solid var(--dark-border); /* Dark mode card border */
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.08); /* Dark mode shadow */
+}
+
+.internship-documents h3 {
+    color: var(--primary-red);
+    margin-top: 0;
+    margin-bottom: 0.8rem; /* Further reduced margin below heading */
+    font-size: 1.2rem; /* Further reduced font size */
+    font-weight: 700;
+    text-align: center; /* Center the heading */
+}
+
+.internship-documents ul {
+    list-style: none; /* Remove default list bullets */
+    padding: 0;
+    margin: 0;
+}
+
+.internship-documents li {
+    display: flex; /* Use flexbox to align name and buttons */
+    justify-content: space-between; /* Space out name and buttons */
+    align-items: center; /* Vertically align items */
+    padding: 0.5rem 0; /* Further reduced padding for each list item */
+    border-bottom: 1px dashed var(--light-border); /* Subtle separator */
+}
+
+body:not(.light-mode) .internship-documents li {
+    border-bottom: 1px dashed var(--dark-border); /* Dark mode separator */
+}
+
+.internship-documents li:last-child {
+    border-bottom: none; /* Remove border from last item */
+}
+
+.internship-documents li span {
+    font-size: 0.95rem; /* Further reduced font size */
+    color: var(--light-text);
+    flex-grow: 1; /* Allow name to take up available space */
+    margin-right: 0.6rem; /* Further reduced space between name and buttons */
+}
+
+body:not(.light-mode) .internship-documents li span {
+    color: var(--dark-text);
+}
+
+.internship-documents .document-buttons {
+    display: flex;
+    flex-direction: row; /* This is the key rule */
+    gap: 0.4rem; /* Adjust space between buttons as needed */
+    align-items: center; /* Keep buttons vertically aligned */
+}
+
+.internship-documents .document-buttons a {
+    display: inline-flex; /* Use inline-flex for small buttons */
+    align-items: center; /* Vertically center icon and text */
+    padding: 0.2rem 0.5rem; /* Further reduced padding for more subtle look */
+    font-size: 0.8rem; /* Further reduced font size */
+    border: 1px solid var(--primary-red); /* Subtle border */
+    background-color: transparent; /* Transparent background */
+    color: var(--primary-red); /* Red text/icon */
+    text-decoration: none; /* Remove underline */
+    transition: all 0.3s ease-in-out; /* Added ease-in-out transition */
+    border-radius: 4px; /* Slightly smaller rounded corners */
+    font-weight: 500; /* Less bold text */
+    text-transform: none; /* Keep text case as is */
+    box-shadow: none; /* Remove shadow */
+}
+
+body:not(.light-mode) .internship-documents .document-buttons a {
+    color: var(--primary-red); /* Red text/icon in dark mode */
+    border-color: var(--primary-red); /* Red border in dark mode */
+}
+
+.internship-documents .document-buttons a:hover {
+    background-color: rgba(var(--primary-red-rgb), 0.1); /* Subtle red background on hover */
+    color: var(--primary-red); /* Keep text red on hover */
+    border-color: var(--primary-red); /* Keep border red on hover */
+    box-shadow: 0 0 8px rgba(var(--primary-red-rgb), 0.3); /* More subtle red glow on hover */
+}
+
+body:not(.light-mode) .internship-documents .document-buttons a:hover {
+     background-color: rgba(var(--primary-red-rgb), 0.15); /* Slightly more visible background on hover in dark mode */
+     color: var(--primary-red); /* Keep text red on hover in dark mode */
+     box-shadow: 0 0 8px rgba(var(--primary-red-rgb), 0.4); /* Slightly stronger red glow in dark mode */
+}
+
+.internship-documents .document-buttons i {
+    margin-right: 0.3rem; /* Further reduced space between icon and text */
+    font-size: 0.85rem; /* Further reduced icon size */
 }
 

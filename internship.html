@@ -42,6 +42,12 @@
                  <div class="project-info-carousel-container">
                     <!-- Integrate existing internship images into carousel slides -->
                     <div class="project-info-slide fade">
+                        <img src="images/AFCS.jpg" alt="Internship Image - AFCS">
+                    </div>
+                    <div class="project-info-slide fade">
+                        <img src="images/lasers.jpg" alt="Internship Image - Lasers">
+                    </div>
+                    <div class="project-info-slide fade">
                         <img src="images/internship-image1.jpg" alt="Internship Image 1">
                     </div>
                     <div class="project-info-slide fade">
@@ -59,6 +65,8 @@
                     <span class="dot-info" onclick="currentInfoSlide(1, this.parentElement.previousElementSibling.parentElement.querySelector('.project-info-carousel-container'))"></span>
                     <span class="dot-info" onclick="currentInfoSlide(2, this.parentElement.previousElementSibling.parentElement.querySelector('.project-info-carousel-container'))"></span>
                     <span class="dot-info" onclick="currentInfoSlide(3, this.parentElement.previousElementSibling.parentElement.querySelector('.project-info-carousel-container'))"></span>
+                    <span class="dot-info" onclick="currentInfoSlide(4, this.parentElement.previousElementSibling.parentElement.querySelector('.project-info-carousel-container'))"></span>
+                    <span class="dot-info" onclick="currentInfoSlide(5, this.parentElement.previousElementSibling.parentElement.querySelector('.project-info-carousel-container'))"></span>
                     <!-- Add more span.dot-info for additional images here -->
                  </div>
             </div>
@@ -120,69 +128,77 @@
 
         </div>
 
-        <!-- Move Document Grid here, outside of the .content-container but within .internship-detail section -->
-        <div class="document-grid">
-            <div class="document-card">
-                <div class="document-icon">
-                    <i class="fas fa-file-pdf"></i>
-                </div>
-                <h3>Project Plan</h3>
-                <p>Comprehensive analysis of my internship project and outcomes</p>
-                <div class="document-buttons">
-                    <a href="documents/final-report.pdf" class="cta-button document-view-btn" download>
-                        <i class="fas fa-file-download"></i> DOWNLOAD
-                    </a>
-                    <a href="documents/final-report.pdf" class="cta-button document-view-btn" target="_blank">
-                        <i class="fas fa-eye"></i> VIEW DOCUMENT
-                    </a>
-                </div>
-            </div>
-
-            <div class="document-card">
-                <div class="document-icon">
-                    <i class="fas fa-file-code"></i>
-                </div>
-                <h3>Realisation</h3>
-                <p>Technical specifications and implementation details</p>
-                <div class="document-buttons">
-                    <a href="documents/technical-docs.pdf" class="cta-button document-view-btn" download>
-                        <i class="fas fa-file-download"></i> DOWNLOAD
-                    </a>
-                    <a href="documents/technical-docs.pdf" class="cta-button document-view-btn" target="_blank">
-                        <i class="fas fa-eye"></i> VIEW DOCUMENT
-                    </a>
-                </div>
-            </div>
-
-            <div class="document-card">
-                <div class="document-icon">
-                    <i class="fas fa-file-alt"></i>
-                </div>
-                <h3>Reflection</h3>
-                <p>Detailed timeline and milestone achievements</p>
-                <div class="document-buttons">
-                    <a href="documents/progress-report.pdf" class="cta-button document-view-btn" download>
-                         <i class="fas fa-file-download"></i> DOWNLOAD
-                    </a>
-                     <a href="documents/progress-report.pdf" class="cta-button document-view-btn" target="_blank">
-                        <i class="fas fa-eye"></i> VIEW DOCUMENT
-                    </a>
-                </div>
-            </div>
-
-            <div class="document-card">
-                <div class="document-icon">
-                    <i class="fab fa-github"></i>
-                </div>
-                <h3>GitHub Repository</h3>
-                <p>Source code and technical implementation</p>
-                <div class="document-buttons">
-                    <a href="https://github.com/yourusername/project" class="cta-button document-view-btn">VIEW CODE</a>
-                </div>
-            </div>
+        <!-- New section for subtle document links -->
+        <div class="internship-documents">
+            <h3>Internship Documents & Resources</h3>
+            <ul>
+                <li>
+                    <span>Project Plan</span>
+                    <div class="document-buttons">
+                        <a href="documents/final-report.pdf" download><i class="fas fa-file-download"></i> Download</a>
+                        <a href="documents/final-report.pdf" target="_blank"><i class="fas fa-eye"></i> View</a>
+                    </div>
+                </li>
+                <li>
+                    <span>Realisation</span>
+                    <div class="document-buttons">
+                        <a href="documents/technical-docs.pdf" download><i class="fas fa-file-download"></i> Download</a>
+                        <a href="documents/technical-docs.pdf" target="_blank"><i class="fas fa-eye"></i> View</a>
+                    </div>
+                </li>
+                <li>
+                    <span>Reflection</span>
+                    <div class="document-buttons">
+                         <a href="documents/progress-report.pdf" download><i class="fas fa-file-download"></i> Download</a>
+                         <a href="documents/progress-report.pdf" target="_blank"><i class="fas fa-eye"></i> View</a>
+                    </div>
+                </li>
+                <li>
+                    <span>GitHub Repository</span>
+                    <div class="document-buttons">
+                        <a href="https://github.com/yourusername/project" target="_blank"><i class="fab fa-github"></i> View Code</a>
+                    </div>
+                </li>
+            </ul>
         </div>
 
     </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h2>CONTACT ME</h2>
+            <p class="section-subtitle">Let's discuss how we can collaborate on IoT solutions</p>
+            <!-- Contact Info and Social Links -->
+            <div class="contact-info">
+                 <div class="contact-item">
+                     <i class="fas fa-map-marker-alt"></i>
+                     <span class="contact-text">     Herfelingen, Belgium</span>
+                 </div>
+                 <div class="contact-item">
+                     <a href="tel:+32483112061" class="contact-phone-link">
+                         <i class="fas fa-phone"></i>
+                         <span class="contact-text">+32 483 11 20 61</span>
+                     </a>
+                 </div>
+                 <div class="contact-item">
+                     <a href="mailto:de.ridder.harold@gmail.com" class="contact-email-link">
+                         <i class="fas fa-envelope"></i>
+                         <span class="contact-text">de.ridder.harold@gmail.com</span>
+                     </a>
+                 </div>
+            </div>
+            <!-- Social Links moved here -->
+            <div class="social-links">
+                <a href="https://github.com/HDeRidder" class="social-icon">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/yourusername" class="social-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+            <p>&copy; 2025 Harold De Ridder. All Rights Reserved.</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
