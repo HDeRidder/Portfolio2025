@@ -256,10 +256,9 @@ h2 {
 .profile-frame img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure image covers the frame */
-    object-position: center; /* Ensure centered */
-    display: block; /* Ensure image is a block element for better sizing */
-    /* Removed border: 2px solid var(--light-card); */
+    object-fit: cover;
+    border: 2px solid var(--light-card);
+    object-position: center;
 }
 
 @keyframes borderGlow {
@@ -742,85 +741,80 @@ section.project-detail {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    align-items: center; /* Center the flex items horizontally */
+    align-items: flex-start; /* Center the flex items horizontally */
 }
 
 .contact-item {
-    display: flex; /* Use flexbox for alignment */
-    align-items: start; /* Align items to the start (top) */
-    gap: 0; /* Remove gap, spacing handled by icon margin */
-    /* Removed previous grid and flex properties */
-    /* display: grid; */
-    /* grid-template-columns: 30px 1fr; */
-    /* align-items: start; */
-    /* gap: 1rem; */
-    position: relative; /* Needed for positioning the ::before pseudo-element */
-    padding-left: 35px; /* Reduced left padding (e.g., 30px icon + 5px gap) */
-    width: 100%; /* Allow contact item to take full width of its container */
-    /* Removed previous grid and flex properties */
-    /* display: grid; */
-    /* grid-template-columns: 30px 1fr; */
-    /* align-items: start; */
-    /* gap: 1rem; */
+    display: flex;
+    align-items: center; /* Ensures vertical alignment of icon and text */
+    gap: 1rem;
+    /* Added for better centering if needed, though align-items should handle it */
+    justify-content: flex-start;
+    padding: 0.5rem 0;
+}
+
+.contact-item .contact-text {
+    font-weight: bold;
+    font-size: 1.15rem; /* Ensure location text has the same font size */
+}
+
+.contact-phone-link, /* Target phone link */
+.contact-email-link { /* Target email link */
+    font-size: 1.15rem; /* Make text bigger */
+    font-weight: 600; /* Make text bolder */
+}
+
+/* Styles for the mailto link in contact info */
+.contact-email-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+    transition: color 0.3s ease; /* Add smooth color transition */
+}
+
+.contact-email-link:hover {
+    color: var(--primary-red); /* Change color to red on hover */
+    text-decoration: none !important; /* Explicitly remove underline on hover, using !important as a last resort */
+    text-shadow: none; /* Remove text shadow/glow */
+    /* Removed transform: scale(1.03); to eliminate subtle growth effect */
+}
+
+.contact-email-link:hover p { /* Target the p tag inside on hover */
+     text-decoration: none !important; /* Explicitly remove underline on p tag on hover */
+}
+
+/* Styles for the phone link */
+.contact-phone-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+    transition: color 0.3s ease; /* Add smooth color transition */
+}
+
+.contact-phone-link:hover {
+     color: var(--primary-red); /* Change color to red on hover */
+     text-decoration: none !important; /* Explicitly remove underline on hover, using !important as a last resort */
+     text-shadow: none; /* Remove text shadow/glow */
+     /* Removed transform: scale(1.03); to eliminate subtle growth effect */
+}
+
+.contact-phone-link:hover p { /* Target the p tag inside on hover */
+    text-decoration: none !important; /* Explicitly remove underline on p tag on hover */
 }
 
 .contact-item i {
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* Keep icon size consistent or adjust if needed */
     color: var(--primary-red);
-    /* Removed fixed width, flex-shrink, and margin-right */
-    /* width: 30px; */
-    /* flex-shrink: 0; */
-    /* margin-right: 1rem; */
-    position: absolute; /* Position icon absolutely */
-    left: 0; /* Align icon to the left edge of the padding */
-    top: 3px; /* Adjust top position to fine-tune vertical alignment with the first line of text */
-    /* Removed previous positioning/alignment */
-    /* vertical-align: top; */
-    /* Removed sizing and positioning properties - flex handles this */
-    /* width: 30px; */
-    /* flex-shrink: 0; */
-    /* margin-right: 1rem; */
-    /* Removed grid-column/row from previous attempts */
-    /* grid-column: 1; */
-    /* grid-row: 1; */
-    /* vertical-align: middle; */ /* Removed previous vertical-align */
-}
-
-.contact-text {
-    color: var(--light-text); /* Ensure text color is correct */
-    font-size: 1.15rem;
-    font-weight: 600;
-    line-height: 1.4;
-    word-break: break-word; /* Allow long words to break and wrap */
-    text-align: left; /* Explicitly align text to the left */
-    display: block; /* Keep as block to manage text wrapping within its container */
-    /* Removed flex-grow */
-    /* flex-grow: 1; */
-    /* Removed previous positioning/flex properties */
-    /* Removed display: block; */
-    /* Removed positioning and flex properties */
-    /* flex-grow: 1; */
-    /* Removed grid-column/row from previous attempts */
-    /* grid-column: 3; */
-    /* grid-row: 1; */
-}
-
-body:not(.light-mode) .contact-text {
-    color: var(--dark-text);
-}
-
-/* Ensure links inside contact items inherit text styles */
-.contact-phone-link .contact-text,
-.contact-email-link .contact-text {
-    color: inherit; /* Inherit color from the link */
-    text-decoration: none; /* Remove underline from text within links */
 }
 
 .social-links {
-    display: flex; /* Use flexbox for social icons */
-    justify-content: center; /* Center social icons */
-    margin-top: 1.8rem; /* Adjusted space above social links */
-    gap: 1.2rem; /* Adjusted space between social icons */
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
 }
 
 .social-icon {
@@ -1403,6 +1397,7 @@ body:not(.light-mode) .document-card .document-buttons .cta-button.document-view
 .contact-email-link {
     color: inherit; /* Inherit color from parent */
     text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Add smooth color transition */
 }
 
 .contact-phone-link:hover,
@@ -1410,7 +1405,7 @@ body:not(.light-mode) .document-card .document-buttons .cta-button.document-view
     color: var(--primary-red); /* Change color to red on hover */
     text-decoration: none !important; /* Explicitly remove underline on hover, using !important as a last resort */
     text-shadow: none; /* Remove text shadow/glow */
-    transform: scale(1.03); /* Subtle growth effect */
+    /* Removed transform: scale(1.03); to eliminate subtle growth effect */
 }
 
 .contact-phone-link:hover p { /* Target the p tag inside on hover */
@@ -1862,20 +1857,20 @@ section:not(.hero) {
 
 /* Styles for the sidebar - used for appearance */
 .skills-sidebar {
-    position: sticky;
-    top: 100px;
-    padding: 2.5rem; /* Keep outer padding */
-    background-color: var(--light-card);
-    border: 1px solid var(--light-border);
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.8rem; /* Reduced gap between major sidebar sections */
-    width: auto;
-    height: auto; /* Ensure height is auto to fit content */
-    overflow-y: visible; /* Ensure overflow is visible */
-    z-index: auto;
+    position: sticky; /* Make the sidebar sticky */
+    top: 100px; /* Position below the fixed navbar (adjust if navbar height changes) */
+    padding: 2rem; /* Add padding inside the sidebar */
+    background-color: var(--light-card); /* Add a background */
+    border: 1px solid var(--light-border); /* Add a border */
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.1); /* Add a subtle shadow */
+    display: flex; /* Use flexbox for content within sidebar */
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center content horizontally */
+    gap: 1rem; /* Space between profile and contact info */
+    width: auto; /* Ensure width is not fixed for sticky */
+    height: auto; /* Ensure height is not fixed for sticky */
+    overflow-y: visible; /* Ensure overflow is visible for sticky */
+    z-index: auto; /* Revert z-index */
 }
 
 body:not(.light-mode) .skills-sidebar {
@@ -2298,10 +2293,8 @@ body:not(.light-mode) .soft-skills li {
     }
 
     .skills-contact-info h3 {
-        font-size: 1.4rem; /* Slightly larger heading */
-        color: var(--primary-red);
-        margin-bottom: 1.2rem; /* Space below heading */
-        text-align: center; /* Center the contact info heading */
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
     }
 
      .skills-contact-info .contact-item {
@@ -2380,94 +2373,4 @@ body:not(.light-mode) .skills-cv p {
 
 body:not(.light-mode) .soft-skills li {
      color: var(--dark-text);
-}
-
-.skills-contact-info {
-    /* Add padding around the contact text content */
-    padding: 1.8rem; /* Reduced padding slightly for compactness */
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem; /* Keep gap between contact items */
-    align-items: flex-start; /* Align items to the start (left) */
-    /* Removed center alignment for contact info block */
-    /* align-items: center; */
-}
-
-.contact-item {
-    display: flex; /* Use flexbox for alignment */
-    align-items: start; /* Align items to the start (top) */
-    gap: 0; /* Remove gap, spacing handled by padding */
-    position: relative; /* Needed for positioning the icon absolutely */
-    padding-left: 35px; /* Reduced left padding (e.g., 30px icon + 5px gap) */
-    width: 100%; /* Allow contact item to take full width of its container */
-    /* Removed previous grid and flex properties */
-    /* display: grid; */
-    /* grid-template-columns: 30px 1fr; */
-    /* align-items: start; */
-    /* gap: 1rem; */
-}
-
-.contact-item i {
-    font-size: 1.5rem;
-    color: var(--primary-red);
-    position: absolute; /* Position icon absolutely */
-    left: 0; /* Align icon to the left edge of the padding */
-    top: 3px; /* Adjust top position to fine-tune vertical alignment with the first line of text */
-    /* Removed fixed width, flex-shrink, margin-right, and vertical-align */
-    /* width: 30px; */
-    /* flex-shrink: 0; */
-    /* margin-right: 1rem; */
-    /* vertical-align: top; */
-    /* Removed previous positioning/alignment */
-    /* vertical-align: top; */
-    /* Removed sizing and positioning properties - flex handles this */
-    /* width: 30px; */
-    /* flex-shrink: 0; */
-    /* margin-right: 1rem; */
-    /* Removed grid-column/row from previous attempts */
-    /* grid-column: 1; */
-    /* grid-row: 1; */
-    /* vertical-align: middle; */
-}
-
-.contact-text {
-    color: var(--light-text); /* Ensure text color is correct */
-    font-size: 1.15rem;
-    font-weight: 600;
-    line-height: 1.4;
-    word-break: break-word; /* Allow long words to break and wrap */
-    text-align: left; /* Explicitly align text to the left */
-    display: block; /* Ensure text behaves as a block for wrapping */
-    flex-grow: 1; /* Allow the text to grow and take available space */
-    /* Removed margin-left as padding handles the indent */
-    /* margin-left: 0; */
-    /* Removed previous positioning/flex properties */
-    /* Removed display: block; - allow inline-block behavior within flex */
-    /* Removed display: block; */
-    /* Removed positioning and flex properties */
-    /* flex-grow: 1; */
-    /* Removed grid-column/row from previous attempts */
-    /* grid-column: 3; */
-    /* grid-row: 1; */
-}
-
-body:not(.light-mode) .contact-text {
-    color: var(--dark-text);
-}
-
-/* Ensure links inside contact items behave correctly */
-.contact-phone-link,
-.contact-email-link {
-    color: inherit; /* Inherit color from parent */
-    text-decoration: none; /* Remove underline */
-    display: flex; /* Use flexbox for link content */
-    align-items: flex-start; /* Align items to the start */
-    width: 100%; /* Ensure link takes full width */
-}
-
-.contact-phone-link .contact-text,
-.contact-email-link .contact-text {
-    color: inherit; /* Inherit color from the link */
-    text-decoration: none; /* Remove underline from text within links */
-    flex-grow: 1; /* Allow text span to grow */
 }
