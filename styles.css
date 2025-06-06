@@ -17,8 +17,9 @@
 
     /* Dark mode variables - using fallback to light mode variables */
     --dark-text: var(--white);
-    --dark-subtitle: var(--light-gray);
+    --dark-subtitle: #a0a0a0;
     --dark-border: var(--primary-red);
+    --footer-gray-bg: #e0e0e0; /* A slightly darker gray for the footer in light mode */
 }
 
 * {
@@ -884,16 +885,20 @@ body:not(.light-mode) .social-icon:hover {
 
 /* Footer */
 .footer {
-    background-color: var(--light-card);
+    background-color: var(--footer-gray-bg); /* Use the new variable for footer background */
     padding: 2rem;
     text-align: center;
     border-top: 1px solid var(--light-border);
     color: var(--light-text);
+    /* Add dark mode specific background for consistency */
 }
 
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center content horizontally */
 }
 
 /* Subtle glow for theme toggle button */
