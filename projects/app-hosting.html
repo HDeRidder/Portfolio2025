@@ -26,20 +26,56 @@
         </div>
     </nav>
 
-    <section class="project-banner">
-        <div class="banner-content">
-            <h1>APP HOSTING PLATFORM</h1>
-            <p class="subtitle">Local Datacenter PHP Application Hosting</p>
-        </div>
-        <div class="banner-image">
-            <img src="../images/AppHostingPlatform.png" alt="App Hosting Platform Banner">
+    <!-- New Project Header Section with Carousel and Info Card -->
+    <section class="project-header-section">
+        <div class="project-header-container">
+
+            <!-- Carousel on the left -->
+            <div class="project-header-carousel">
+                 <div class="project-info-carousel-container">
+                    <div class="project-info-slide fade">
+                        <img src="../images/AppHostingPlatform.png" alt="App Hosting Platform Image">
+                    </div>
+                    <!-- Add more project-info-slide divs for additional images here -->
+                 <button class="prev-info" onclick="plusInfoSlides(-1, this.parentElement)">&#10094;</button>
+                <button class="next-info" onclick="plusInfoSlides(1, this.parentElement)">&#10095;</button>
+                 </div>
+                 <!-- Dots indicators remain outside the container but within the carousel wrapper -->
+                 <div class="dots-container-info">
+                    <span class="dot-info" onclick="currentInfoSlide(1, this.parentElement.previousElementSibling.querySelector('.project-info-carousel-container'))"></span>
+                    <!-- Add more span.dot-info for additional images here -->
+                 </div>
+            </div>
+
+            <!-- Project Info Card on the right -->
+            <div class="project-info-card">
+                <h2>App Hosting Platform</h2>
+                <p><strong>Subtitle:</strong> Local Datacenter PHP Application Hosting</p>
+                <p>Created a hosting platform in a local datacenter to host a PHP application for a client.</p>
+                <p><strong>Context:</strong> Client web application hosting</p>
+                <p><strong>Technology:</strong></p>
+                <ul>
+                    <li>Linux Server Environment</li>
+                    <li>MySQL Database</li>
+                    <li>FTP/SSH Access</li>
+                    <li>Anti-malware Protection</li>
+                    <li>Automated Backups/Monitoring</li>
+                    <li>PHP Application Deployment</li>
+                    <li>CIS Controls</li>
+                    <li>Kubernetes (for scalability)</li>
+                </ul>
+                 <!-- Add Team, Github, Project URL if available and relevant -->
+            </div>
+
         </div>
     </section>
 
     <section class="project-detail">
         <div class="content-container">
-            <h3>Project Overview</h3>
-            <p>This project involved creating a robust hosting platform within a local shared hosting datacenter to deploy and manage a PHP application for a client. The goal was to provide a secure, scalable, and reliable environment for the client's web application, ensuring high availability and ease of maintenance.</p>
+            <!-- Remove redundant information already moved to the info card -->
+            <!-- <h3>Project Overview</h3> -->
+            <!-- <p>This project involved creating a robust hosting platform...</p> -->
+
             <h3>Technical Implementation</h3>
             <ul>
                 <li>Set up a Linux-based server environment</li>
@@ -109,7 +145,6 @@
         </div>
     </footer>
 
-    <script src="https://kit.fontawesome.com/d9f0abd257.js" crossorigin="anonymous"></script>
     <script src="../script.js"></script>
 </body>
 </html> 

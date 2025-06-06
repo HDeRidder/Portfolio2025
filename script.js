@@ -1,24 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Navbar scroll effect
-    const navbar = document.querySelector('.navbar');
-    let lastScroll = 0;
-
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll <= 0) {
-            navbar.style.opacity = '1';
-        }
-        
-        if (currentScroll > lastScroll && currentScroll > 50) {
-            navbar.style.opacity = '0';
-        } else {
-            navbar.style.opacity = '1';
-        }
-        
-        lastScroll = currentScroll;
-    });
-
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -139,25 +119,34 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Initialize carousel if present on the page
-    const carouselContainer = document.querySelector('.carousel-container');
-    if (carouselContainer) {
-        showSlides(slideIndex);
+    // Initialize original carousel if present (likely not needed now)
+    // const carouselContainer = document.querySelector('.carousel-container');
+    // if (carouselContainer) {
+    //     showSlides(slideIndex); // Show the first slide initially
+    //     // autoSlides(); // Start automatic slideshow (old)
+    // }
+
+    // Initialize new Project Info Carousel if present
+    const projectInfoCarouselContainer = document.querySelector('.project-info-carousel-container');
+    if (projectInfoCarouselContainer) {
+        showInfoSlides(infoSlideIndex); // Show the first slide initially
+        autoInfoSlides(); // Start automatic slideshow for project info carousel
     }
 });
 
-// Carousel functionality
-let slideIndex = 1;
+// Carousel functionality (This section will be for the original, now removed, project image carousel)
+// Kept for reference if needed elsewhere, but not controlling the new project info carousel
+let slideIndex = 1; // This is for the old carousel
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
+function plusSlides(n) { // Old carousel navigation
+  // showSlides(slideIndex += n);
 }
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
+function currentSlide(n) { // Old carousel navigation
+  // showSlides(slideIndex = n);
 }
 
-function showSlides(n) {
+function showSlides(n) { // Old carousel display logic
   let i;
   let slides = document.getElementsByClassName("carousel-slide");
   let dots = document.getElementsByClassName("dot");
@@ -175,4 +164,62 @@ function showSlides(n) {
   if (dots.length > 0) { // Check if dots exist
     dots[slideIndex-1].className += " active";
   }
+}
+
+// Automatic slideshow function (Old carousel)
+// function autoSlides() {
+//   (Existing implementation remains but is not called for the new carousel)
+// }
+
+// New Project Info Carousel functionality
+let infoSlideIndex = 1; // Index for the new project info carousel
+
+function plusInfoSlides(n) {
+  showInfoSlides(infoSlideIndex += n);
+}
+
+function currentInfoSlide(n) {
+  showInfoSlides(infoSlideIndex = n);
+}
+
+function showInfoSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("project-info-slide");
+  let dots = document.getElementsByClassName("dot-info");
+  if (n > slides.length) {infoSlideIndex = 1}
+  if (n < 1) {infoSlideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  if (slides.length > 0) { // Check if slides exist
+    slides[infoSlideIndex-1].style.display = "block";
+  }
+  if (dots.length > 0) { // Check if dots exist
+    dots[infoSlideIndex-1].className += " active";
+  }
+}
+
+// Automatic slideshow function for Project Info Carousel
+function autoInfoSlides() {
+  let i;
+  let slides = document.getElementsByClassName("project-info-slide");
+  let dots = document.getElementsByClassName("dot-info");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  infoSlideIndex++;
+  if (infoSlideIndex > slides.length) {infoSlideIndex = 1}
+   if (slides.length > 0) { // Check if slides exist
+        slides[infoSlideIndex-1].style.display = "block";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    if (dots.length > 0) { // Check if dots exist
+        dots[infoSlideIndex-1].className += " active";
+    }
+  setTimeout(autoInfoSlides, 5000); // Change image every 5 seconds
 } 

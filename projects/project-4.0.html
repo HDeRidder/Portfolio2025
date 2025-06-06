@@ -26,20 +26,53 @@
         </div>
     </nav>
 
-    <section class="project-banner">
-        <div class="banner-content">
-            <h1>PROJECT 4.0</h1>
-            <p class="subtitle">Smart Parking Solution for Elision</p>
-        </div>
-        <div class="banner-image">
-            <img src="../images/Project 4.0.png" alt="Project 4.0 Banner">
+    <!-- New Project Header Section with Carousel and Info Card -->
+    <section class="project-header-section">
+        <div class="project-header-container">
+
+            <!-- Carousel on the left -->
+            <div class="project-header-carousel">
+                 <div class="project-info-carousel-container">
+                    <div class="project-info-slide fade">
+                        <img src="../images/Project 4.0.png" alt="Project 4.0 Image">
+                    </div>
+                    <!-- Add more project-info-slide divs for additional images here -->
+                 <button class="prev-info" onclick="plusInfoSlides(-1, this.parentElement)">&#10094;</button>
+                <button class="next-info" onclick="plusInfoSlides(1, this.parentElement)">&#10095;</button>
+                 </div>
+                 <!-- Dots indicators remain outside the container but within the carousel wrapper -->
+                 <div class="dots-container-info">
+                    <span class="dot-info" onclick="currentInfoSlide(1, this.parentElement.previousElementSibling.querySelector('.project-info-carousel-container'))"></span>
+                    <!-- Add more span.dot-info for additional images here -->
+                 </div>
+            </div>
+
+            <!-- Project Info Card on the right -->
+            <div class="project-info-card">
+                <h2>Project 4.0</h2>
+                <p><strong>Subtitle:</strong> Smart Parking Solution for Elision</p>
+                <p>Developed a solution for the loading problem on the parking lot of Elision.</p>
+                <p><strong>Context:</strong> Loading and parking challenges at Elision campus</p>
+                <p><strong>Technology:</strong></p>
+                <ul>
+                    <li>Camera-based Vehicle Detection/Tracking</li>
+                    <li>IoT Sensors</li>
+                    <li>Web/Mobile App</li>
+                    <li>Data Analytics</li>
+                    <li>Computer Vision</li>
+                </ul>
+                 <!-- Add Team, Github, Project URL if available and relevant -->
+            </div>
+
         </div>
     </section>
 
     <section class="project-detail">
         <div class="content-container">
-            <h3>Project Overview</h3>
-            <p>Project 4.0 focused on developing a smart solution to address the loading and parking challenges at the Elision campus. The aim was to optimize parking space usage, improve traffic flow, and provide real-time information to users and administrators.</p>
+            <!-- Remove redundant information already moved to the info card -->
+            <!-- <h3>Project Overview</h3> -->
+            <!-- <p>Project 4.0 focused on developing a smart solution...</p> -->
+
             <h3>Technical Implementation</h3>
             <ul>
                 <li>Deployed camera-based vehicle detection and tracking</li>
@@ -104,6 +137,7 @@
             <p>&copy; 2025 Harold De Ridder. All Rights Reserved.</p>
         </div>
     </footer>
+
     <script src="../script.js"></script>
 </body>
 </html> 

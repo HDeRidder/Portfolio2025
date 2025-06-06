@@ -26,29 +26,57 @@
         </div>
     </nav>
 
-    <section class="project-banner">
-        <div class="banner-content">
-            <h1>MINIFIGURE SORTING</h1>
-            <p class="subtitle">AI-Powered LEGO Minifigure Recognition at Bricks & More</p>
-        </div>
-        <div class="banner-image">
-            <img src="../images/MinifigureSorting.png" alt="Minifigure Sorting Banner">
+    <!-- New Project Header Section with Carousel and Info Card -->
+    <section class="project-header-section">
+        <div class="project-header-container">
+
+            <!-- Carousel on the left -->
+            <div class="project-header-carousel">
+                 <div class="project-info-carousel-container">
+                    <div class="project-info-slide fade">
+                        <img src="../images/MinifigureSorting.png" alt="Minifigure Sorting Image">
+                    </div>
+                    <!-- Add more project-info-slide divs for additional images here -->
+                 <button class="prev-info" onclick="plusInfoSlides(-1, this.parentElement)">&#10094;</button>
+                <button class="next-info" onclick="plusInfoSlides(1, this.parentElement)">&#10095;</button>
+                 </div>
+                 <!-- Dots indicators remain outside the container but within the carousel wrapper -->
+                 <div class="dots-container-info">
+                    <span class="dot-info" onclick="currentInfoSlide(1, this.parentElement.previousElementSibling.parentElement.querySelector('.project-info-carousel-container'))"></span>
+                    <!-- Add more span.dot-info for additional images here -->
+                 </div>
+            </div>
+
+            <!-- Project Info Card on the right -->
+            <div class="project-info-card">
+                <h2>Minifigure Sorting</h2>
+                <p><strong>Subtitle:</strong> AI-Powered LEGO Minifigure Recognition at Bricks & More</p>
+                <p>Trained an AI model to recognize LEGO minifigures at the Bricks & More trade show.</p>
+                <p><strong>Context:</strong> Digital Innovation Course / Bricks & More fair</p>
+                <p><strong>Technology:</strong></p>
+                <ul>
+                    <li>Teachable Machines (Google AI)</li>
+                    <li>Cobot (Robot Arm)</li>
+                    <li>Raspberry Pi</li>
+                    <li>Webcam</li>
+                    <li>Relay Board</li>
+                    <li>Python</li>
+                </ul>
+                <p><strong>Assignment:</strong> Program a robot arm to sort LEGO minifigures into 4 categories using AI.</p>
+                 <!-- Add Team, Github, Project URL if available and relevant -->
+            </div>
+
         </div>
     </section>
 
     <section class="project-detail">
         <div class="content-container">
-            <h3>Context & Background</h3>
-            <p>For the Digital Innovation course, we were given the assignment to program a robot arm for the Lego fair called 'Bricks and More'. This fair takes place every year on the campus of Thomas More in Geel. It attracts a lot of hobbyists but also a lot of children. The latter group would be our target group.</p>
-            <p><strong>The assignment:</strong><br>
-            Make sure children can make little men at the lego fair and have them triaged by a robot arm. The idea is that the robot arm will try to divide the made man into 1 of 4 categories.</p>
-            <p>The 4 categories were:</p>
-            <ul>
-                <li>Space</li>
-                <li>Knights</li>
-                <li>Pirates</li>
-                <li>Emergency Services</li>
-            </ul>
+            <!-- Remove redundant information already moved to the info card -->
+            <!-- <h3>Context & Background</h3> -->
+            <!-- <p>For the Digital Innovation course, we were given the assignment...</p> -->
+            <!-- <p><strong>The assignment:</strong><br>Make sure children can make little men...</p> -->
+            <!-- <p>The 4 categories were: ...</p> -->
+
             <h3>Realization</h3>
             <p>To realize this, we used Teachable Machines. This is a pre-trained AI model from Google that you can use to recognize things. These things can be images, sounds or body positions. We chose images and started taking thousands of pictures of hundreds of different self-made males that each belonged to one category. Based on this input, we taught the AI model to distinguish minifigures from each other.</p>
             <p>Next, we got to work on the Cobot. A cobot is a robot designed so that there are virtually no risks involved in using it around humans. If the robot is making a move and bumps into something (even if only gently), it blocks immediately to avoid accidents. We used the wizard on the accompanying tablet to program 4 different scenarios that the robot arm could be presented with. Each scenario was a path that this robotic arm would follow, each time starting with picking up the male, then making a nice pendulum movement to finally put the male down in 1 of the 4 spots.</p>

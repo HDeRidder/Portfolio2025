@@ -33,32 +33,69 @@
         </div>
     </nav>
 
-    <section class="project-banner">
-        <div class="banner-content">
-            <h1>MY INTERNSHIP</h1>
-            <p class="subtitle">IoT Solutions Developer at TechCorp</p>
-        </div>
-        <div class="banner-image">
-            <img src="images/internship-banner.jpg" alt="Internship Banner">
+    <!-- New Internship Header Section with Carousel and Info Card -->
+    <section class="project-header-section"> <!-- Reusing project header class for styling consistency -->
+        <div class="project-header-container">
+
+            <!-- Carousel on the left -->
+            <div class="project-header-carousel">
+                 <div class="project-info-carousel-container">
+                    <!-- Integrate existing internship images into carousel slides -->
+                    <div class="project-info-slide fade">
+                        <img src="images/internship-image1.jpg" alt="Internship Image 1">
+                    </div>
+                    <div class="project-info-slide fade">
+                        <img src="images/internship-image2.jpg" alt="Internship Image 2">
+                    </div>
+                    <div class="project-info-slide fade">
+                        <img src="images/internship-image3.jpg" alt="Internship Image 3">
+                    </div>
+                    <!-- Add more project-info-slide divs for additional internship images here -->
+                 <button class="prev-info" onclick="plusInfoSlides(-1, this.parentElement)">&#10094;</button>
+                <button class="next-info" onclick="plusInfoSlides(1, this.parentElement)">&#10095;</button>
+                 </div>
+                 <!-- Dots indicators remain outside the container but within the carousel wrapper -->
+                 <div class="dots-container-info">
+                    <span class="dot-info" onclick="currentInfoSlide(1, this.parentElement.previousElementSibling.parentElement.querySelector('.project-info-carousel-container'))"></span>
+                    <span class="dot-info" onclick="currentInfoSlide(2, this.parentElement.previousElementSibling.parentElement.querySelector('.project-info-carousel-container'))"></span>
+                    <span class="dot-info" onclick="currentInfoSlide(3, this.parentElement.previousElementSibling.parentElement.querySelector('.project-info-carousel-container'))"></span>
+                    <!-- Add more span.dot-info for additional images here -->
+                 </div>
+            </div>
+
+            <!-- Internship Info Card on the right -->
+            <div class="project-info-card">
+                <h2>My Internship</h2>
+                <p><strong>Role:</strong> IoT Solutions Developer</p>
+                <p><strong>Company:</strong> CERcuits (at TechCorp)</p>
+                <p>Developed an IoT system to monitor and automate a dust extraction system.</p>
+                <p><strong>Context:</strong> Innovation campus in Geel, specialized in ceramic PCBs</p>
+                <p><strong>Assignment:</strong> Monitor and automate existing dust extraction system</p>
+                 <p><strong>Technology Used:</strong></p>
+                 <ul>
+                     <li>ESP32 Microcontroller</li>
+                     <li>Optocoupler</li>
+                     <li>Relay Boards</li>
+                     <li>Siemens Contactor</li>
+                     <li>Three-color lamp with buzzer</li>
+                 </ul>
+                 <!-- Extract and summarize key learnings here -->
+            </div>
+
         </div>
     </section>
 
     <section class="internship-detail">
         <div class="content-container">
-            <h3>Context & Background</h3>
-            <p>My internship took place at CERcuits, a startup on the innovation campus in Geel that specializes in ceramic PCBs (Printed Circuit Boards). These are thin boards made of insulating material, in this case ceramics, that are more resistant to extreme temperatures. On PCBs you see copper tracks connecting electronic components. They are used in applications where heat resistance is crucial.</p>
-            <p>My first contact with CERcuits came during the "Embedded Devices Essentials" class in the second year of my bachelor's degree. At the time, we were working on a weather balloon that could serve as an emergency network. In the process, we designed our own PCB with LORA and wifi functionality. Our professor then invited some people from CERcuits for a guest lecture. That presentation stuck with me, and in my senior year I decided to apply for an internship there.</p>
-            <p>On my first visit, I was immediately warmly welcomed by my mentor, Ruben Mangelschots. After a brief introduction and tour, I was given the green light to start work there. My assignment: monitor and automate the existing dust extraction system.</p>
-
-            <h3>Problem definition</h3>
-            <p>In one room there are four 600W blowers running almost constantly. Although the system works, there are some drawbacks:</p>
-            <ul>
-                <li>Obnoxious noise for workers.</li>
-                <li>Heating up of the room, especially annoying in summer.</li>
-                <li>High energy cost due to continuous operation.</li>
-            </ul>
-            <p>This could be more efficient. And I got to work on that.</p>
-
+            <!-- Remove redundant information already moved to the info card -->
+            <!-- <h3>Context & Background</h3> -->
+            <!-- <p>My internship took place at CERcuits...</p> -->
+            <!-- <p>My first contact with CERcuits came...</p> -->
+            <!-- <p>On my first visit, I was immediately...</p> -->
+            <!-- <h3>Problem definition</h3> -->
+            <!-- <p>In one room there are four 600W blowers...</p> -->
+            <!-- <ul> ... </ul> -->
+            
             <h3>Realization</h3>
             <p>Like any good project, I started with research. Together with my mentor, we determined the desired functionalities of the "Air Filtration Control System."</p>
             <ul>
@@ -75,30 +112,15 @@
             <h3>What did I learn?</h3>
             <p> [Insert learnings here] </p>
 
-            <!-- Carousel for images -->
-            <div class="carousel-container">
-                <div class="carousel-slide">
-                    <img src="images/internship-image1.jpg" alt="Internship Image 1">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/internship-image2.jpg" alt="Internship Image 2">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/internship-image3.jpg" alt="Internship Image 3">
-                </div>
-                <!-- Add more carousel-slide divs for additional images -->
-            </div>
-            <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
-            <button class="next" onclick="plusSlides(1)">&#10095;</button>
-            <div class="dots-container">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-                <!-- Add more dots for additional images -->
-            </div>
+            <!-- Remove old carousel and document grid - Document grid will be added below the new header -->
+            <!-- <div class="carousel-container"> ... </div> -->
+            <!-- <button class="prev" onclick="plusSlides(-1)">&#10094;</button> -->
+            <!-- <button class="next" onclick="plusSlides(1)">&#10095;</button> -->
+            <!-- <div class="dots-container"> ... </div> -->
 
         </div>
 
+        <!-- Move Document Grid here, outside of the .content-container but within .internship-detail section -->
         <div class="document-grid">
             <div class="document-card">
                 <div class="document-icon">
@@ -115,7 +137,7 @@
                     </a>
                 </div>
             </div>
-            
+
             <div class="document-card">
                 <div class="document-icon">
                     <i class="fas fa-file-code"></i>
@@ -131,7 +153,7 @@
                     </a>
                 </div>
             </div>
-            
+
             <div class="document-card">
                 <div class="document-icon">
                     <i class="fas fa-file-alt"></i>
@@ -147,7 +169,7 @@
                     </a>
                 </div>
             </div>
-            
+
             <div class="document-card">
                 <div class="document-icon">
                     <i class="fab fa-github"></i>
@@ -159,6 +181,7 @@
                 </div>
             </div>
         </div>
+
     </section>
 
     <section id="contact" class="contact">

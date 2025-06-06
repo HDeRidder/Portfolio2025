@@ -26,20 +26,53 @@
         </div>
     </nav>
 
-    <section class="project-banner">
-        <div class="banner-content">
-            <h1>PROJECT IOT</h1>
-            <p class="subtitle">Automating a Pumpkin Greenhouse for the Pumpkin Regatta</p>
-        </div>
-        <div class="banner-image">
-            <img src="../images/ProjectIOT.png" alt="Project IOT Banner">
+    <!-- New Project Header Section with Carousel and Info Card -->
+    <section class="project-header-section">
+        <div class="project-header-container">
+
+            <!-- Carousel on the left -->
+            <div class="project-header-carousel">
+                 <div class="project-info-carousel-container">
+                    <div class="project-info-slide fade">
+                        <img src="../images/ProjectIOT.png" alt="Project IOT Image">
+                    </div>
+                    <!-- Add more project-info-slide divs for additional images here -->
+                 <button class="prev-info" onclick="plusInfoSlides(-1, this.parentElement)">&#10094;</button>
+                <button class="next-info" onclick="plusInfoSlides(1, this.parentElement)">&#10095;</button>
+                 </div>
+                 <!-- Dots indicators remain outside the container but within the carousel wrapper -->
+                 <div class="dots-container-info">
+                    <span class="dot-info" onclick="currentInfoSlide(1, this.parentElement.previousElementSibling.querySelector('.project-info-carousel-container'))"></span>
+                    <!-- Add more span.dot-info for additional images here -->
+                 </div>
+            </div>
+
+            <!-- Project Info Card on the right -->
+            <div class="project-info-card">
+                <h2>Project IOT</h2>
+                <p><strong>Subtitle:</strong> Automating a Pumpkin Greenhouse for the Pumpkin Regatta</p>
+                <p>Automated a pumpkin greenhouse for the pumpkin regatta at Kasterlee.</p>
+                <p><strong>Context:</strong> Pumpkin Regatta at Kasterlee</p>
+                <p><strong>Technology:</strong></p>
+                <ul>
+                    <li>IoT Sensors (Soil Moisture, Temperature, Humidity)</li>
+                    <li>Automated Irrigation System</li>
+                    <li>Web Dashboard (Remote Monitoring/Control)</li>
+                    <li>Data Logging</li>
+                    <li>Weather Forecast APIs</li>
+                </ul>
+                 <!-- Add Team, Github, Project URL if available and relevant -->
+            </div>
+
         </div>
     </section>
 
     <section class="project-detail">
         <div class="content-container">
-            <h3>Project Overview</h3>
-            <p>This project focused on automating a pumpkin greenhouse in preparation for the annual pumpkin regatta at Kasterlee. The goal was to optimize growing conditions and reduce manual labor through the use of IoT sensors and automated control systems.</p>
+            <!-- Remove redundant information already moved to the info card -->
+            <!-- <h3>Project Overview</h3> -->
+            <!-- <p>This project focused on automating a pumpkin greenhouse...</p> -->
+
             <h3>Technical Implementation</h3>
             <ul>
                 <li>Deployed soil moisture, temperature, and humidity sensors throughout the greenhouse</li>
@@ -104,6 +137,7 @@
             <p>&copy; 2025 Harold De Ridder. All Rights Reserved.</p>
         </div>
     </footer>
+
     <script src="../script.js"></script>
 </body>
 </html> 

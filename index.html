@@ -58,17 +58,49 @@
         
     </section>
 
-    <section id="about" class="about">
-        <h2>ABOUT ME</h2>
-        
-            <p class="section-subtitle">Passionate technologist with a focus on IoT solutions</p>
+    <!-- Combined About and Skills Section Container -->
+    <div class="combined-about-skills">
+        <!-- Single sticky contact sidebar here -->
+        <div class="skills-sidebar">
+             <div class="skills-profile-image">
+                  <div class="profile-frame round-profile">
+                     <img src="images/Profile (2).jpg" alt="Profile Picture">
+                  </div>
+             </div>
+             <div class="skills-contact-info">
+                 <h3>Contact Info</h3>
+                 <div class="contact-item">
+                     <i class="fas fa-map-marker-alt"></i>
+                     <span class="contact-text">Herfelingen, Belgium</span>
+                 </div>
+                 <div class="contact-item">
+                     <a href="tel:+32483112061" class="contact-phone-link">
+                         <i class="fas fa-phone"></i>
+                         <span class="contact-text">+32 483 11 20 61</span>
+                     </a>
+                 </div>
+                 <div class="contact-item">
+                     <a href="mailto:de.ridder.harold@gmail.com" class="contact-email-link">
+                         <i class="fas fa-envelope"></i>
+                         <span class="contact-text">de.ridder.harold@gmail.com</span>
+                     </a>
+                 </div>
+                 <div class="social-links">
+                     <a href="https://github.com/HDeRidder" class="social-icon">
+                         <i class="fab fa-github"></i>
+                     </a>
+                     <a href="https://linkedin.com/in/yourusername" class="social-icon">
+                         <i class="fab fa-linkedin-in"></i>
+                     </a>
+                 </div>
+             </div>
+        </div>
 
-            <div class="about-content">
-                <div class="about-image">
-                    <div class="profile-frame round-profile">
-                        <img src="images/Profile (2).jpg" alt="Profile Picture">
-                    </div>
-                </div>
+        <div class="combined-content">
+            <!-- About Section (Content Only) -->
+            <section id="about" class="about">
+                <h2>ABOUT ME</h2>
+                <p class="section-subtitle">Passionate technologist with a focus on IoT solutions</p>
                 <div class="about-details">
                     <div class="about-block">
                         <h3>Who is Harold?</h3>
@@ -97,9 +129,58 @@
                         <p>As for the future, I don't really know yet. I know that I would really like to take another big trip. This could be through Europe, although Iran and the Middle East also seem wonderful to me. Unfortunately, that will probably have to wait until the dust settles there. After this trip, I would like to seek out a job in the IoT sector, preferably in combination with working outdoors or at least something where I come into contact with plants or animals. I myself am thinking of perhaps eventually starting my own company that provides customized IoT solutions specifically aimed at automating and monitoring greenhouses and vegetable gardens in people's homes. But who knows what the future holds!</p>
                     </div>
                 </div>
-            </div>
-        
-    </section>
+            </section>
+
+            <!-- MY SKILLS Section (Content Only) -->
+            <section id="my-skills" class="skills-cv">
+                <h2>MY SKILLS</h2>
+                <p class="section-subtitle">Overview of my hard and soft skills</p>
+                <div class="skills-layout-container">
+                    <div class="hard-skills">
+                        <h3>HARD SKILLS</h3>
+                        <div class="skill-category">
+                            <h4>Programming</h4>
+                            <p>Arduino: <span class="stars">★★★★☆</span></p>
+                            <p>Python: <span class="stars">★★★★☆</span></p>
+                            <p>HTML: <span class="stars">★★★☆☆</span></p>
+                            <p>CSS: <span class="stars">★★★☆☆</span></p>
+                            <p>FastAPI: <span class="stars">★★★☆☆</span></p>
+                            <p>PLC (FDB/LAD): <span class="stars">★★☆☆☆</span></p>
+                            <p>Java: <span class="stars">★★☆☆☆</span></p>
+                            <p>SQL: <span class="stars">★★★☆☆</span></p>
+                            <p>C++: <span class="stars">★★☆☆☆</span></p>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Electronics</h4>
+                            <p>Arduino: <span class="stars">★★★★☆</span></p>
+                            <p>ESP32: <span class="stars">★★★☆☆</span></p>
+                            <p>Raspberry Pi: <span class="stars">★★★★☆</span></p>
+                            <p>KNX Home Autom.: <span class="stars">★★★☆☆</span></p>
+                            <p>Sensor Integration: <span class="stars">★★★★☆</span></p>
+                            <p>Smart Homes: <span class="stars">★★★☆☆</span></p>
+                            <p>PCB Design: <span class="stars">★★☆☆☆</span></p>
+                        </div>
+                    </div>
+
+                    <div class="soft-skills">
+                        <h3>SOFT SKILLS</h3>
+                        <ul>
+                            <li>Problem-solving Oriented</li>
+                            <li>Strong Team Player</li>
+                            <li>Strong Communication Skills</li>
+                            <li>Stress-Resistant</li>
+                            <li>Curious</li>
+                            <li>Enthusiastic</li>
+                            <li>Enjoys Laughing</li>
+                            <li>Learns Quickly</li>
+                            <li>Creative</li>
+                            <li>Flexible</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
 
     <div class="download-cv-container">
         <a href="CV_Harold_De_Ridder.pdf" class="cta-button" download>
@@ -153,6 +234,18 @@
         
             <p class="section-subtitle">Featured work and achievements</p>
             <div class="project-grid">
+                <!-- New Internship Card moved to the top -->
+                <div class="project-card">
+                    <div class="project-image">
+                         <img src="images/internship-image1.jpg" alt="Internship">
+                         <div class="project-overlay">
+                            <a href="internship.html" class="read-more-btn">READ MORE</a>
+                         </div>
+                    </div>
+                    <h3>Internship</h3>
+                    <p>IoT Solutions Developer at CERcuits - Developed a dust extraction system automation.</p>
+                </div>
+
                 <div class="project-card">
                     <div class="project-image lora-image">
                         <img src="images/LORATheExplorer.jpg" alt="LORA The Explorer">
@@ -170,7 +263,7 @@
                             <a href="projects/minifigure-sorting.html" class="read-more-btn">READ MORE</a>
                         </div>
                     </div>
-                    <h3>Minifigure Sorting/h3>
+                    <h3>Minifigure Sorting</h3>
                     <p>Trained an AI model to recognize LEGO minifigures at the Bricks & More trade show.</p>
                 </div>
                 <div class="project-card">
@@ -195,7 +288,7 @@
                 </div>
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/ProjectIOT.png" alt="Project IOT">
+                        <img src="images/Project IOT.png" alt="Project IOT">
                         <div class="project-overlay">
                             <a href="projects/project-iot.html" class="read-more-btn">READ MORE</a>
                         </div>
@@ -245,32 +338,7 @@
             <p class="section-subtitle">Let's discuss how we can collaborate on IoT solutions</p>
 
             <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Herfelingen, Belgium</p>
-                    </div>
-                    <div class="contact-item">
-                        <a href="tel:+32483112061" class="contact-phone-link">
-                            <i class="fas fa-phone"></i>
-                            <p>+32 483 11 20 61</p>
-                        </a>
-                    </div>
-                    <div class="contact-item">
-                        <a href="mailto:de.ridder.harold@gmail.com" class="contact-email-link">
-                            <i class="fas fa-envelope"></i>
-                            <p>de.ridder.harold@gmail.com</p>
-                        </a>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://github.com/HDeRidder" class="social-icon">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://linkedin.com/in/yourusername" class="social-icon">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                </div>
+                <!-- Removed contact info from here, will be in fixed sidebar -->
 
                 <!-- Contact Form Removed -->
 
@@ -286,5 +354,6 @@
 
     <script src="https://kit.fontawesome.com/d9f0abd257.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
+
 </body>
 </html> 

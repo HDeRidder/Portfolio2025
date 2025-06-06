@@ -26,28 +26,53 @@
         </div>
     </nav>
 
-    <section class="project-banner">
-        <div class="banner-content">
-            <h1>PERMACULTURE DESIGN COURSE (PDC)</h1>
-            <p class="subtitle">Learning Sustainable Agriculture in Thailand</p>
-        </div>
-        <div class="banner-image">
-            <img src="../images/PermacultureDesignCourse.jpg" alt="Permaculture Design Course Banner">
+    <!-- New Project Header Section with Carousel and Info Card -->
+    <section class="project-header-section">
+        <div class="project-header-container">
+
+            <!-- Carousel on the left -->
+            <div class="project-header-carousel">
+                 <div class="project-info-carousel-container">
+                    <div class="project-info-slide fade">
+                        <img src="../images/PermacultureDesignCourse.jpg" alt="Permaculture Design Course Image">
+                    </div>
+                    <!-- Add more project-info-slide divs for additional images here -->
+                 <button class="prev-info" onclick="plusInfoSlides(-1, this.parentElement)">&#10094;</button>
+                <button class="next-info" onclick="plusInfoSlides(1, this.parentElement)">&#10095;</button>
+                 </div>
+                 <!-- Dots indicators remain outside the container but within the carousel wrapper -->
+                 <div class="dots-container-info">
+                    <span class="dot-info" onclick="currentInfoSlide(1, this.parentElement.previousElementSibling.parentElement.querySelector('.project-info-carousel-container'))"></span>
+                    <!-- Add more span.dot-info for additional images here -->
+                 </div>
+            </div>
+
+            <!-- Project Info Card on the right -->
+            <div class="project-info-card">
+                <h2>Permaculture Design Course (PDC)</h2>
+                <p><strong>Subtitle:</strong> Learning Sustainable Agriculture in Thailand</p>
+                <p>Took a Permaculture Design Course on an organic farm in Thailand.</p>
+                <p><strong>Context:</strong> Organic farm in Thailand</p>
+                <p><strong>Key Learnings:</strong></p>
+                <ul>
+                    <li>Principles of permaculture and ecological design</li>
+                    <li>Soil health, composting, and water management</li>
+                    <li>Agroforestry and integrated farming systems</li>
+                    <li>Community building and collaborative problem-solving</li>
+                    <li>Practical skills in organic gardening and natural building</li>
+                </ul>
+                 <!-- Add Team, Github, Project URL if available and relevant -->
+            </div>
+
         </div>
     </section>
 
     <section class="project-detail">
         <div class="content-container">
-            <h3>Project Overview</h3>
-            <p>This project involved taking a Permaculture Design Course (PDC) on an organic farm in Thailand. The course provided hands-on experience in sustainable agriculture, ecological design, and community living, with a focus on creating regenerative food systems and resilient landscapes.</p>
-            <h3>Key Learnings</h3>
-            <ul>
-                <li>Principles of permaculture and ecological design</li>
-                <li>Soil health, composting, and water management</li>
-                <li>Agroforestry and integrated farming systems</li>
-                <li>Community building and collaborative problem-solving</li>
-                <li>Practical skills in organic gardening and natural building</li>
-            </ul>
+            <!-- Remove redundant information already moved to the info card -->
+            <!-- <h3>Project Overview</h3> -->
+            <!-- <p>This project involved taking a Permaculture Design Course (PDC)...</p> -->
+
             <h3>Impact</h3>
             <p>The course deepened my understanding of sustainable agriculture and inspired me to integrate permaculture principles into future IoT and technology projects, especially those related to food production and environmental stewardship.</p>
         </div>

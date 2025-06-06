@@ -26,22 +26,56 @@
         </div>
     </nav>
 
-    <section class="project-banner">
-        <div class="banner-content">
-            <h1>LORA THE EXPLORER</h1>
-            <p class="subtitle">Weather Balloon & Backup Network</p>
-        </div>
-        <div class="banner-image">
-            <img src="../images/LORATheExplorer.jpg" alt="LORA The Explorer PCB">
+    <!-- New Project Header Section with Carousel and Info Card -->
+    <section class="project-header-section">
+        <div class="project-header-container">
+
+            <!-- Carousel on the left -->
+            <div class="project-header-carousel">
+                 <div class="project-info-carousel-container">
+                    <div class="project-info-slide fade">
+                        <img src="../images/LORATheExplorer.jpg" alt="LORA The Explorer Image">
+                    </div>
+                    <!-- Add more project-info-slide divs for additional images here -->
+                 <button class="prev-info" onclick="plusInfoSlides(-1, this.parentElement)">&#10094;</button>
+                <button class="next-info" onclick="plusInfoSlides(1, this.parentElement)">&#10095;</button>
+                 </div>
+                 <!-- Dots indicators remain outside the container but within the carousel wrapper -->
+                 <div class="dots-container-info">
+                    <span class="dot-info" onclick="currentInfoSlide(1, this.parentElement.previousElementSibling.parentElement.querySelector('.project-info-carousel-container'))"></span>
+                    <!-- Add more span.dot-info for additional images here -->
+                 </div>
+            </div>
+
+            <!-- Project Info Card on the right -->
+            <div class="project-info-card">
+                <h2>LORA The Explorer</h2>
+                <p><strong>Subtitle:</strong> Weather Balloon & Backup Network</p>
+                <p>Developed a weather balloon to establish an emergency network in disaster areas.</p>
+                <p><strong>Context:</strong> Embedded Devices Essentials Course</p>
+                <p><strong>Technology:</strong></p>
+                <ul>
+                    <li>ESP32 Microcontroller</li>
+                    <li>LORA</li>
+                    <li>Wi-Fi</li>
+                    <li>Mesh Networks</li>
+                    <li>EasyEDA (PCB Design)</li>
+                    <li>C Programming</li>
+                </ul>
+                <p><strong>Team:</strong> Mathieu Du Jardin, Jens Geenen, and Harold De Ridder</p>
+                <!-- Add Github, Project URL if available and relevant -->
+            </div>
+
         </div>
     </section>
 
     <section class="project-detail">
         <div class="content-container">
-            <h3>Context & Background</h3>
-            <p>For the course Embedded Devices Essentials we worked with three students—Mathieu Du Jardin, Jens Geenen and myself—on the project Weatherballoon & Backup Network. After some lessons on the ESP32 microcontroller and its programming in C, we chose this project: a weather balloon that measures environmental data and acts as a node in a mesh network.</p>
-            <p>Each balloon had to send data via Wi-Fi and communicate with other balloons via LORA. LORA (LOng RAnge) is a wireless communication technology that covers greater distances than Wi-Fi. Our idea: during disasters, multiple balloons would be launched to establish a temporary network that allowed emergency workers or victims to communicate locally and access info such as air quality.</p>
-            <p>We named our project—LORA The Explorer—with a wink, via ChatGPT. Both functional and funny.</p>
+            <!-- Remove redundant information already moved to the info card -->
+            <!-- <h3>Context & Background</h3> -->
+            <!-- <p>For the course Embedded Devices Essentials...</p> -->
+            <!-- <p>Each balloon had to send data via Wi-Fi...</p> -->
+            <!-- <p>We named our project...</p> -->
 
             <h3>Realization</h3>
             <p>We were excited and dove headfirst into LORA, mesh networks and weather balloons. The challenge was not only designing the system, but also developing our own PCB and even building the ESP32 module from scratch. For this, we used EasyEDA, software for PCB design.</p>

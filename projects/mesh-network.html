@@ -26,18 +26,66 @@
         </div>
     </nav>
 
-    <section class="project-banner">
-        <div class="banner-content">
-            <h1>MESH NETWORK</h1>
-            <p class="section-subtitle">Building a Campus-Wide Mesh Network with ESP32</p>
-        </div>
-        <div class="banner-image">
-            <img src="../images/Meshnetwork.jpg" alt="Mesh Network Project Banner">
+    <!-- New Project Header Section with Carousel and Info Card -->
+    <section class="project-header-section">
+        <div class="project-header-container">
+            
+            <!-- Carousel on the left -->
+            <div class="project-header-carousel">
+                 <div class="project-info-carousel-container">
+                    <div class="project-info-slide fade">
+                        <img src="../images/mesh1.jpg" alt="Mesh Network Image 1">
+                    </div>
+                    <div class="project-info-slide fade">
+                        <img src="../images/mesh2.jpg" alt="Mesh Network Image 2">
+                    </div>
+                    <div class="project-info-slide fade">
+                        <img src="../images/mesh3.jpg" alt="Mesh Network Image 3">
+                    </div>
+                    <div class="project-info-slide fade">
+                        <img src="../images/mesh4.jpg" alt="Mesh Network Image 4">
+                    </div>
+                    <div class="project-info-slide fade">
+                        <img src="../images/mesh5.jpg" alt="Mesh Network Image 5">
+                    </div>
+                 
+                 <!-- Navigation buttons for the carousel moved inside the container -->
+                <button class="prev-info" onclick="plusInfoSlides(-1)">&#10094;</button>
+                <button class="next-info" onclick="plusInfoSlides(1)">&#10095;</button>
+                 </div>
+                 <!-- Dots indicators remain outside the container but within the carousel wrapper -->
+                 <div class="dots-container-info">
+                    <span class="dot-info" onclick="currentInfoSlide(1)"></span>
+                    <span class="dot-info" onclick="currentInfoSlide(2)"></span>
+                    <span class="dot-info" onclick="currentInfoSlide(3)"></span>
+                    <span class="dot-info" onclick="currentInfoSlide(4)"></span>
+                    <span class="dot-info" onclick="currentInfoSlide(5)"></span>
+                 </div>
+            </div>
+            
+            <!-- Project Info Card on the right -->
+            <div class="project-info-card">
+                <h2>Project Information</h2>
+                <p>Built a mesh network across campus using ESP32 microcontrollers.</p>
+                <p><strong>Vak:</strong> Campus IoT Network</p>
+                <p><strong>Technology:</strong></p>
+                <ul>
+                    <li>ESP32 Microcontrollers</li>
+                    <li>Custom Mesh Firmware</li>
+                    <li>Real-time Monitoring</li>
+                    <li>Secure Communication</li>
+                </ul>
+                <p><strong>Team:</strong> Harold De Ridder and team members (details based on project)</p>
+                <p><strong>Github:</strong> <a href="https://github.com/HDeRidder/Mesh-Network-Project" target="_blank">[Link to your Mesh Network GitHub]</a></p>
+                <p><strong>Project URL:</strong> <a href="#" target="_blank">[Link to project demo if available]</a></p>
+            </div>
+
         </div>
     </section>
 
     <section class="project-detail">
         <div class="content-container">
+
             <h3>Project Overview</h3>
             <p>This project involved building a robust mesh network across campus using ESP32 microcontrollers. The goal was to create a resilient, self-healing wireless network that could support IoT devices and enable reliable communication even in challenging environments.</p>
             <h3>Technical Implementation</h3>
@@ -57,28 +105,6 @@
             </ul>
             <h3>Results</h3>
             <p>The mesh network successfully demonstrated reliable communication across campus, with seamless integration of new nodes and robust performance even in the event of node failures. The project highlighted the potential of mesh networking for scalable IoT deployments.</p>
-
-            <!-- Carousel for images -->
-            <div class="carousel-container">
-                <div class="carousel-slide">
-                    <img src="../images/mesh-network-image1.jpg" alt="Mesh Network Image 1">
-                </div>
-                <div class="carousel-slide">
-                    <img src="../images/mesh-network-image2.jpg" alt="Mesh Network Image 2">
-                </div>
-                <div class="carousel-slide">
-                    <img src="../images/mesh-network-image3.jpg" alt="Mesh Network Image 3">
-                </div>
-                <!-- Add more carousel-slide divs for additional images -->
-            </div>
-            <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
-            <button class="next" onclick="plusSlides(1)">&#10095;</button>
-            <div class="dots-container">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-                <!-- Add more dots for additional images -->
-            </div>
 
         </div>
     </section>
