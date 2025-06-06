@@ -369,6 +369,7 @@ h2 {
     font-size: 0.9rem;
 }
 
+
 /* Contact Section */
 .contact {
     padding: 6rem 2rem;
@@ -1584,7 +1585,6 @@ body:not(.light-mode) .project-info-card ul {
 .project-info-card a:hover {
     text-decoration: underline; /* Add underline on hover for links */
 }
-
 /* Styling for navigation buttons in the new carousel */
 .project-info-carousel-container .prev-info,
 .project-info-carousel-container .next-info {
@@ -1859,7 +1859,7 @@ section:not(.hero) {
 .skills-sidebar {
     position: sticky; /* Make the sidebar sticky */
     top: 100px; /* Position below the fixed navbar (adjust if navbar height changes) */
-    padding: 2rem; /* Add padding inside the sidebar */
+    padding: 2rem 1rem; /* Add padding inside the sidebar (top/bottom, left/right) */
     background-color: var(--light-card); /* Add a background */
     border: 1px solid var(--light-border); /* Add a border */
     box-shadow: 0 0 20px rgba(255, 0, 0, 0.1); /* Add a subtle shadow */
@@ -2114,6 +2114,7 @@ body:not(.light-mode) .skills-cv .section-subtitle {
     font-size: 1.2rem; /* Keep original heading size */
     color: var(--light-text);
     margin-bottom: 0.6rem; /* Reduced space below skill category heading */
+    margin-top: 0; /* Remove default top margin */
 }
 
 body:not(.light-mode) .skills-cv h4 {
@@ -2146,6 +2147,7 @@ body:not(.light-mode) .skills-cv p {
     list-style: disc inside;
     padding-left: 0;
     margin-bottom: 0;
+    margin-top: 0; /* Remove default top margin */
 }
 
 .soft-skills li {
@@ -2330,6 +2332,7 @@ body:not(.light-mode) .soft-skills li {
     font-size: 1.2rem; /* Keep original heading size */
     color: var(--light-text);
     margin-bottom: 0.6rem; /* Reduced space below skill category heading */
+    margin-top: 0; /* Remove default top margin */
 }
 
 body:not(.light-mode) .skills-cv h4 {
@@ -2362,6 +2365,7 @@ body:not(.light-mode) .skills-cv p {
     list-style: disc inside;
     padding-left: 0;
     margin-bottom: 0;
+    margin-top: 0; /* Remove default top margin */
 }
 
 .soft-skills li {
@@ -2374,3 +2378,4 @@ body:not(.light-mode) .skills-cv p {
 body:not(.light-mode) .soft-skills li {
      color: var(--dark-text);
 }
+
