@@ -2384,3 +2384,9 @@ body:not(.light-mode) .soft-skills li {
      color: var(--dark-text);
 }
 
+/* MY SKILLS Section (Content Only) */
+.skills-cv {
+    /* Existing styles */
+    padding-top: 100px; /* Add padding equal to navbar height */
+}
+
