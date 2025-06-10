@@ -3,9 +3,22 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            const navbar = document.querySelector('.navbar');
+            const navbarHeight = navbar ? navbar.offsetHeight : 0;
+
+            if (targetElement) {
+                // Calculate the position to scroll to, accounting for the fixed navbar
+                const  elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition - navbarHeight;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
         });
     });
 
@@ -223,11 +236,11 @@ document.addEventListener('DOMContentLoaded', () => {
 let slideIndex = 1; // This is for the old carousel
 
 function plusSlides(n) { // Old carousel navigation
-  // showSlides(slideIndex += n);\
+  // showSlides(slideIndex += n);
 }
 
 function currentSlide(n) { // Old carousel navigation
-  // showSlides(slideIndex = n);\
+  // showSlides(slideIndex = n);
 }
 
 function showSlides(n) { // Old carousel display logic

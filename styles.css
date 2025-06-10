@@ -817,6 +817,7 @@ section.project-detail {
     display: flex;
     gap: 1.5rem;
     margin-top: 2rem;
+    margin-bottom: 2rem; /* Increased space below social icons */
 }
 
 .social-icon {
@@ -2696,5 +2697,17 @@ body:not(.light-mode) .filter-dropdown-content label:hover {
     width: 1rem;
     height: 1rem;
     cursor: pointer;
+}
+
+/* Projects Section */
+.projects {
+    padding: 6rem 2rem;
+    background-color: var(--light-gray-bg);
+    scroll-margin-top: 120px; /* Increased space for the fixed navbar */
+}
+
+.projects h2 {
+    scroll-margin-top: 120px; /* Adjust for fixed navbar when scrolling to this specific heading */
+    display: block;
 }
 
