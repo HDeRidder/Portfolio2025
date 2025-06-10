@@ -2585,3 +2585,116 @@ body:not(.light-mode) .filter-btn.active {
     box-shadow: 0 0 10px rgba(var(--primary-red-rgb), 0.8);
 }
 
+/* --- Project Filter Dropdown --- */
+.filter-dropdown-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    z-index: 10;
+}
+
+.filter-dropdown-toggle {
+    background-color: var(--light-card);
+    color: var(--light-text);
+    border: 1px solid var(--light-border);
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+body:not(.light-mode) .filter-dropdown-toggle {
+    background-color: var(--dark-gray);
+    color: var(--dark-text);
+    border: 1px solid var(--dark-border);
+}
+
+.filter-dropdown-toggle:hover {
+    background-color: var(--primary-red);
+    color: var(--dark-bg);
+    border-color: var(--primary-red);
+    box-shadow: 0 0 10px rgba(var(--primary-red-rgb), 0.5);
+    transform: translateY(-2px);
+}
+
+body:not(.light-mode) .filter-dropdown-toggle:hover {
+    background-color: var(--primary-red);
+    color: var(--dark-bg);
+    border-color: var(--primary-red);
+    box-shadow: 0 0 10px rgba(var(--primary-red-rgb), 0.7);
+}
+
+.filter-dropdown-toggle .fa-chevron-down,
+.filter-dropdown-toggle .fa-chevron-up {
+    transition: transform 0.3s ease;
+}
+
+.filter-dropdown-toggle.active .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+.filter-dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* Position below the toggle button */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--light-card);
+    border: 1px solid var(--light-border);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    margin-top: 0.5rem;
+    min-width: 200px;
+    max-height: 250px; /* Limit height for scrollability */
+    overflow-y: auto;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+body:not(.light-mode) .filter-dropdown-content {
+    background-color: var(--dark-gray);
+    border: 1px solid var(--dark-border);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.filter-dropdown-content.show {
+    display: flex; /* Show as flex column when active */
+}
+
+.filter-dropdown-content label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.6rem;
+    cursor: pointer;
+    color: var(--light-text);
+    transition: background-color 0.2s ease;
+}
+
+body:not(.light-mode) .filter-dropdown-content label {
+    color: var(--dark-text);
+}
+
+.filter-dropdown-content label:hover {
+    background-color: var(--light-hover);
+}
+
+body:not(.light-mode) .filter-dropdown-content label:hover {
+    background-color: var(--dark-hover);
+}
+
+.filter-dropdown-content input[type="checkbox"] {
+    accent-color: var(--primary-red);
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+}
+

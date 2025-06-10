@@ -119,13 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Initialize original carousel if present (likely not needed now)
-    // const carouselContainer = document.querySelector('.carousel-container');
-    // if (carouselContainer) {
-    //     showSlides(slideIndex); // Show the first slide initially
-    //     // autoSlides(); // Start automatic slideshow (old)
-    // }
-
     // Initialize new Project Info Carousel if present
     const projectInfoCarouselContainer = document.querySelector('.project-info-carousel-container');
     if (projectInfoCarouselContainer) {
@@ -133,44 +126,96 @@ document.addEventListener('DOMContentLoaded', () => {
         autoInfoSlides(); // Start automatic slideshow for project info carousel
     }
 
-    // Project Filtering Logic
-    const filterButtons = document.querySelectorAll('.filter-btn');
+    // Project Filtering Logic (Multi-select dropdown)
+    const filterDropdownToggle = document.getElementById('filterDropdownToggle');
+    const filterDropdownContent = document.getElementById('filterDropdownContent');
+    const filterCheckboxes = document.querySelectorAll('.filter-checkbox');
     const projectCards = document.querySelectorAll('.project-grid .project-card');
 
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Remove active class from all buttons and add to the clicked one
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
+    filterDropdownToggle.addEventListener('click', () => {
+        filterDropdownContent.classList.toggle('show');
+        filterDropdownToggle.classList.toggle('active');
+    });
 
-            const filterValue = button.getAttribute('data-filter');
+    // Close the dropdown if the user clicks outside of it
+    window.addEventListener('click', (event) => {
+        if (!event.target.matches('.filter-dropdown-toggle') && !event.target.closest('.filter-dropdown-content')) {
+            if (filterDropdownContent.classList.contains('show')) {
+                filterDropdownContent.classList.remove('show');
+                filterDropdownToggle.classList.remove('active');
+            }
+        }
+    });
 
-            projectCards.forEach(card => {
-                const tagsContainer = card.querySelector('.project-tags');
-                if (filterValue === 'all') {
-                    card.style.display = 'block'; // Show all cards
-                } else if (tagsContainer) {
-                    const tags = tagsContainer.querySelectorAll('.tag');
-                    let hasMatchingTag = false;
-                    tags.forEach(tag => {
-                        // Remove '#' and convert to lowercase for comparison
-                        const tagName = tag.textContent.substring(1).toLowerCase(); 
-                        if (tagName === filterValue) {
-                            hasMatchingTag = true;
+    // Function to apply filters
+    function applyProjectFilters() {
+        let selectedFilters = [];
+        filterCheckboxes.forEach(checkbox => {
+            if (checkbox.checked && checkbox.value !== 'all') {
+                selectedFilters.push(checkbox.value);
+            }
+        });
+
+        // If 'All' is checked or no other filters are selected, show all
+        if (document.querySelector('.filter-checkbox[value="all"]').checked || selectedFilters.length === 0) {
+            projectCards.forEach(card => card.style.display = 'block');
+            // Ensure 'All' checkbox is checked if no other filters are selected
+            document.querySelector('.filter-checkbox[value="all"]').checked = true;
+            return; // Exit function as all cards are shown
+        }
+
+        // Filter based on selected tags
+        projectCards.forEach(card => {
+            const tagsContainer = card.querySelector('.project-tags');
+            let hasMatchingTag = false;
+
+            if (tagsContainer) {
+                const tags = tagsContainer.querySelectorAll('.tag');
+                tags.forEach(tag => {
+                    const tagName = tag.textContent.substring(1).toLowerCase();
+                    if (selectedFilters.includes(tagName)) {
+                        hasMatchingTag = true;
+                    }
+                });
+            }
+
+            if (hasMatchingTag) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    // Add event listeners to checkboxes
+    filterCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            if (checkbox.value === 'all') {
+                // If 'All' is checked, uncheck all others
+                if (checkbox.checked) {
+                    filterCheckboxes.forEach(otherCheckbox => {
+                        if (otherCheckbox.value !== 'all') {
+                            otherCheckbox.checked = false;
                         }
                     });
-
-                    if (hasMatchingTag) {
-                        card.style.display = 'block'; // Show card if it has the tag
-                    } else {
-                        card.style.display = 'none'; // Hide card otherwise
-                    }
-                } else {
-                    card.style.display = 'none'; // Hide cards without tags if a filter is active
                 }
-            });
+            } else {
+                // If any other tag is checked, uncheck 'All'
+                if (checkbox.checked) {
+                    document.querySelector('.filter-checkbox[value="all"]').checked = false;
+                } 
+            }
+            // If no checkboxes are checked, check 'All'
+            const anyOtherChecked = Array.from(filterCheckboxes).some(cb => cb.checked && cb.value !== 'all');
+            if (!anyOtherChecked) {
+                document.querySelector('.filter-checkbox[value="all"]').checked = true;
+            }
+            applyProjectFilters(); // Apply filters after change
         });
     });
+
+    // Apply filters on initial load to ensure correct state
+    applyProjectFilters();
 });
 
 // Carousel functionality (This section will be for the original, now removed, project image carousel)
@@ -178,11 +223,11 @@ document.addEventListener('DOMContentLoaded', () => {
 let slideIndex = 1; // This is for the old carousel
 
 function plusSlides(n) { // Old carousel navigation
-  // showSlides(slideIndex += n);
+  // showSlides(slideIndex += n);\
 }
 
 function currentSlide(n) { // Old carousel navigation
-  // showSlides(slideIndex = n);
+  // showSlides(slideIndex = n);\
 }
 
 function showSlides(n) { // Old carousel display logic
@@ -260,4 +305,4 @@ function autoInfoSlides() {
         dots[infoSlideIndex - 1].className += " active";
     }
     setTimeout(() => autoInfoSlides(), 5000); // Change image every 5 seconds
-} 
+}

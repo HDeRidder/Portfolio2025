@@ -184,23 +184,26 @@
         <h2>PROJECTS</h2>
         
             <p class="section-subtitle">Featured work and achievements</p>
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="esp32">#ESP32</button>
-                <button class="filter-btn" data-filter="sensorintegration">#SensorIntegration</button>
-                <button class="filter-btn" data-filter="pcb">#PCB</button>
-                <button class="filter-btn" data-filter="networks">#Networks</button>
-                <button class="filter-btn" data-filter="lora">#LORA</button>
-                <button class="filter-btn" data-filter="cobot">#Cobot</button>
-                <button class="filter-btn" data-filter="raspberrypi">#RaspberryPi</button>
-                <button class="filter-btn" data-filter="ai">#AI</button>
-                <button class="filter-btn" data-filter="python">#Python</button>
-                <button class="filter-btn" data-filter="vmware">#VMware</button>
-                <button class="filter-btn" data-filter="linux">#Linux</button>
-                <button class="filter-btn" data-filter="homeautomation">#HomeAutomation</button>
-                <button class="filter-btn" data-filter="gopro">#GoPro</button>
-                <button class="filter-btn" data-filter="aws">#AWS</button>
-                <button class="filter-btn" data-filter="c++">#C++</button>
+            <div class="filter-dropdown-container">
+                <button class="filter-dropdown-toggle" id="filterDropdownToggle">Filter Projects <i class="fas fa-chevron-down"></i></button>
+                <div class="filter-dropdown-content" id="filterDropdownContent">
+                    <label><input type="checkbox" class="filter-checkbox" value="all" checked> All</label>
+                    <label><input type="checkbox" class="filter-checkbox" value="esp32"> #ESP32</label>
+                    <label><input type="checkbox" class="filter-checkbox" value="sensorintegration"> #SensorIntegration</label>
+                    <label><input type="checkbox" class="filter-checkbox" value="pcb"> #PCB</label>
+                    <label><input type="checkbox" class="filter-checkbox" value="networks"> #Networks</label>
+                    <label><input type="checkbox" class="filter-checkbox" value="lora"> #LORA</label>
+                    <label><input type="checkbox" class="filter-checkbox" value="cobot"> #Cobot</label>
+                    <label><input type="checkbox" class="filter-checkbox" value="raspberrypi"> #RaspberryPi</label>
+                    <label><input type="checkbox" class="filter-checkbox" value="ai"> #AI</label>
+                    <label><input type="checkbox" class="filter-checkbox" value="python"> #Python</label>
+                    <label><input type="checkbox" class="filter-checkbox" value="vmware"> #VMware</label>
+                    <label><input type="checkbox" class="filter-checkbox" value="linux"> #Linux</label>
+                    <label><input type="checkbox" class="filter-checkbox" value="homeautomation"> #HomeAutomation</label>
+                    <label><input type="checkbox" class="filter-checkbox" value="gopro"> #GoPro</label>
+                    <label><input type="checkbox" class="filter-checkbox" value="aws"> #AWS</label>
+                    <label><input type="checkbox" class="filter-checkbox" value="c++"> #C++</label>
+                </div>
             </div>
             <div class="project-grid">
                 <!-- New Internship Card moved to the top -->
@@ -224,7 +227,7 @@
                     <div class="project-image">
                         <img src="images/LORATheExplorer.jpg" alt="LORA The Explorer">
                         <div class="project-overlay">
-                            <a href="projects/lora.html" class="read-more-btn">READ MORE</a>
+                            <a href="projects/lora-explorer.html" class="read-more-btn">READ MORE</a>
                         </div>
                     </div>
                     <h3>LORA The Explorer</h3>
@@ -241,7 +244,7 @@
                     <div class="project-image">
                         <img src="images/MinifigureSorting.png" alt="Minifigure Sorting">
                         <div class="project-overlay">
-                            <a href="projects/minifigure.html" class="read-more-btn">READ MORE</a>
+                            <a href="projects/minifigure-sorting.html" class="read-more-btn">READ MORE</a>
                         </div>
                     </div>
                     <h3>Minifigure Sorting</h3>
@@ -273,7 +276,7 @@
                     <div class="project-image">
                         <img src="images/ProjectIOT.png" alt="Project IOT">
                         <div class="project-overlay">
-                            <a href="projects/iot.html" class="read-more-btn">READ MORE</a>
+                            <a href="projects/project-iot.html" class="read-more-btn">READ MORE</a>
                         </div>
                     </div>
                     <h3>Project IOT</h3>
@@ -291,7 +294,7 @@
                     <div class="project-image">
                         <img src="images/Project 4.0.png" alt="Project 4.0">
                         <div class="project-overlay">
-                            <a href="projects/industry.html" class="read-more-btn">READ MORE</a>
+                            <a href="projects/project-4.0.html" class="read-more-btn">READ MORE</a>
                         </div>
                     </div>
                     <h3>Project 4.0</h3>
@@ -308,7 +311,7 @@
                     <div class="project-image">
                         <img src="images/Meshnetwork.jpg" alt="Mesh Network">
                         <div class="project-overlay">
-                            <a href="projects/mesh.html" class="read-more-btn">READ MORE</a>
+                            <a href="projects/mesh-network.html" class="read-more-btn">READ MORE</a>
                         </div>
                     </div>
                     <h3>Mesh Network</h3>
