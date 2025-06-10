@@ -2496,3 +2496,92 @@ body:not(.light-mode) .internship-documents .document-buttons a:hover {
     font-size: 0.85rem; /* Further reduced icon size */
 }
 
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.tag {
+    font-size: 0.85rem; /* Increased from 0.75rem */
+    padding: 0.3rem 0.7rem; /* Increased padding */
+    background-color: rgba(var(--primary-red-rgb), 0.1);
+    color: var(--primary-red);
+    border-radius: 4px;
+    border: 1px solid rgba(var(--primary-red-rgb), 0.2);
+    transition: all 0.3s ease;
+    font-weight: 600; /* Made text bolder */
+}
+
+body:not(.light-mode) .tag {
+    background-color: rgba(var(--primary-red-rgb), 0.15);
+    border-color: rgba(var(--primary-red-rgb), 0.3);
+}
+
+.tag:hover {
+    background-color: rgba(var(--primary-red-rgb), 0.2);
+    transform: translateY(-1px);
+}
+
+body:not(.light-mode) .tag:hover {
+    background-color: rgba(var(--primary-red-rgb), 0.25);
+}
+
+/* --- Project Filter Buttons --- */
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+.filter-btn {
+    background-color: var(--light-card);
+    color: var(--light-text);
+    border: 1px solid var(--light-border);
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    white-space: nowrap; /* Prevent buttons from wrapping text */
+}
+
+body:not(.light-mode) .filter-btn {
+    background-color: var(--dark-gray);
+    color: var(--dark-text);
+    border: 1px solid var(--dark-border);
+}
+
+.filter-btn:hover {
+    background-color: var(--primary-red);
+    color: var(--dark-bg);
+    border-color: var(--primary-red);
+    box-shadow: 0 0 10px rgba(var(--primary-red-rgb), 0.5);
+    transform: translateY(-2px);
+}
+
+body:not(.light-mode) .filter-btn:hover {
+    background-color: var(--primary-red);
+    color: var(--dark-bg);
+    border-color: var(--primary-red);
+    box-shadow: 0 0 10px rgba(var(--primary-red-rgb), 0.7);
+}
+
+.filter-btn.active {
+    background-color: var(--primary-red);
+    color: var(--dark-bg);
+    border-color: var(--primary-red);
+    box-shadow: 0 0 10px rgba(var(--primary-red-rgb), 0.6);
+}
+
+body:not(.light-mode) .filter-btn.active {
+    background-color: var(--primary-red);
+    color: var(--dark-bg);
+    border-color: var(--primary-red);
+    box-shadow: 0 0 10px rgba(var(--primary-red-rgb), 0.8);
+}
+

@@ -132,6 +132,45 @@ document.addEventListener('DOMContentLoaded', () => {
         showInfoSlides(infoSlideIndex); // Show the first slide initially
         autoInfoSlides(); // Start automatic slideshow for project info carousel
     }
+
+    // Project Filtering Logic
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-grid .project-card');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons and add to the clicked one
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const filterValue = button.getAttribute('data-filter');
+
+            projectCards.forEach(card => {
+                const tagsContainer = card.querySelector('.project-tags');
+                if (filterValue === 'all') {
+                    card.style.display = 'block'; // Show all cards
+                } else if (tagsContainer) {
+                    const tags = tagsContainer.querySelectorAll('.tag');
+                    let hasMatchingTag = false;
+                    tags.forEach(tag => {
+                        // Remove '#' and convert to lowercase for comparison
+                        const tagName = tag.textContent.substring(1).toLowerCase(); 
+                        if (tagName === filterValue) {
+                            hasMatchingTag = true;
+                        }
+                    });
+
+                    if (hasMatchingTag) {
+                        card.style.display = 'block'; // Show card if it has the tag
+                    } else {
+                        card.style.display = 'none'; // Hide card otherwise
+                    }
+                } else {
+                    card.style.display = 'none'; // Hide cards without tags if a filter is active
+                }
+            });
+        });
+    });
 });
 
 // Carousel functionality (This section will be for the original, now removed, project image carousel)
@@ -202,24 +241,23 @@ function showInfoSlides(n) {
   }
 }
 
-// Automatic slideshow function for Project Info Carousel
 function autoInfoSlides() {
-  let i;
-  let slides = document.getElementsByClassName("project-info-slide");
-  let dots = document.getElementsByClassName("dot-info");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  infoSlideIndex++;
-  if (infoSlideIndex > slides.length) {infoSlideIndex = 1}
-   if (slides.length > 0) { // Check if slides exist
-        slides[infoSlideIndex-1].style.display = "block";
+    let i;
+    let slides = document.getElementsByClassName("project-info-slide");
+    let dots = document.getElementsByClassName("dot-info");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
     }
+    infoSlideIndex++;
+    if (infoSlideIndex > slides.length) { infoSlideIndex = 1 }
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
-    if (dots.length > 0) { // Check if dots exist
-        dots[infoSlideIndex-1].className += " active";
+    if (slides.length > 0) { // Check if slides exist
+        slides[infoSlideIndex - 1].style.display = "block";
     }
-  setTimeout(autoInfoSlides, 5000); // Change image every 5 seconds
+    if (dots.length > 0) { // Check if dots exist
+        dots[infoSlideIndex - 1].className += " active";
+    }
+    setTimeout(() => autoInfoSlides(), 5000); // Change image every 5 seconds
 } 
