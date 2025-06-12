@@ -542,33 +542,87 @@ h2 {
 }
 
 .internship-content {
-    max-width: 800px;
+    max-width: 1200px; /* Adjust max-width for the two-column layout */
     margin: 0 auto;
-    text-align: center;
-    padding: 2rem;
-    border: 1px solid var(--light-border);
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two-column layout */
+    gap: 3rem;
+    align-items: center;
     background-color: var(--light-card);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: left !important; /* This is the key line to add/modify */
+}
+
+.internship-image {
+    position: relative;
+    height: 100%; /* Make image container fill height */
+    min-height: 400px; /* Give it a minimum height */
+}
+
+.internship-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Make image cover the container */
+    display: block;
+}
+
+.internship-details {
+    padding: 2rem;
+}
+
+.internship-details h3 {
+    color: var(--primary-red);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.internship-details p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
     color: var(--light-text);
 }
 
-.internship-content h3 {
-    color: var(--primary-red);
-    font-size: 1.8rem;
+.internship-details .project-tags {
     margin-bottom: 1.5rem;
 }
 
-.internship-content p {
-    color: var(--light-text);
-    margin-bottom: 2rem;
-    line-height: 1.8;
+.internship-details .cta-button {
+    margin-top: 1rem;
 }
 
-/* Update internship styles */
-.internship-content h3 i {
-    margin-right: 10px;
+/* Dark mode styles for internship section */
+body:not(.light-mode) .internship {
+    background-color: var(--dark-gray);
+}
+
+body:not(.light-mode) .internship-content {
+    background-color: var(--darker-gray);
+}
+
+body:not(.light-mode) .internship-details h3 {
     color: var(--primary-red);
 }
 
+body:not(.light-mode) .internship-details p {
+    color: var(--light-gray);
+}
+
+/* Responsive styles for internship section */
+@media (max-width: 768px) {
+    .internship-content {
+        grid-template-columns: 1fr;
+    }
+
+    .internship-image {
+        min-height: 300px;
+    }
+
+    .internship-details {
+        padding: 1.5rem;
+    }
+}
 /* Document Download Buttons */
 .document-grid {
     display: grid;

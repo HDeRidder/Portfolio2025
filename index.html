@@ -39,7 +39,7 @@
                 <li><a href="index.html#about">ABOUT ME</a></li>
                 <li><a href="index.html#skills">SKILLS</a></li>
                 <li><a href="index.html#projects">PROJECTS</a></li>
-                <li><a href="internship.html">INTERNSHIP</a></li>
+                <li><a href="#internship" onclick="handleInternshipNav(event)">INTERNSHIP</a></li>
                 <li><a href="index.html#contact">CONTACT</a></li>
             </ul>
             <button id="theme-toggle" aria-label="Toggle light/dark mode">
@@ -87,7 +87,7 @@
                  </div>
                  <div class="contact-item">
                      <i class="fas fa-car"></i>
-                     <span class="contact-text">Driving License</span>
+                     <span class="contact-text">Driver's License</span>
                  </div>
              </div>
             <!-- Social Links moved here -->
@@ -136,7 +136,7 @@
                     <div class="soft-skills">
                         <h3>SOFT SKILLS</h3>
                         <ul>
-                            <li>Problem-solving Oriented</li>
+                            <li>Problem-solving</li>
                             <li>Strong Team Player</li>
                             <li>Strong Communication Skills</li>
                             <li>Stress-Resistant</li>
@@ -165,7 +165,7 @@
                         <p>My path to IT and IoT was driven by inherent creativity, inventiveness, and a constant curiosity fueled by books and hands-on experimentation. Discovering Arduino in high school solidified my passion for electronics and technology, confirming this was the field where I wanted to grow and contribute.</p>
                     </div>
                     <div class="about-block">
-                        <h3>Unique Hobbies</h3>
+                        <h3>My Hobbies</h3>
                         <ul class="about-hobbies">
                             <li>Building DIY Electronic Systems</li>
                             <li>Badminton</li>
@@ -193,165 +193,154 @@
         </a>
     </div>
 
-    <section id="projects" class="projects">
-        <h2>PROJECTS</h2>
-        
-            <p class="section-subtitle">Featured work and achievements</p>
-            <div class="filter-dropdown-container">
-                <button class="filter-dropdown-toggle" id="filterDropdownToggle">Filter Projects <i class="fas fa-chevron-down"></i></button>
-                <div class="filter-dropdown-content" id="filterDropdownContent">
-                    <label><input type="checkbox" class="filter-checkbox" value="all" checked> All</label>
-                    <label><input type="checkbox" class="filter-checkbox" value="esp32"> #ESP32</label>
-                    <label><input type="checkbox" class="filter-checkbox" value="sensorintegration"> #SensorIntegration</label>
-                    <label><input type="checkbox" class="filter-checkbox" value="pcb"> #PCB</label>
-                    <label><input type="checkbox" class="filter-checkbox" value="networks"> #Networks</label>
-                    <label><input type="checkbox" class="filter-checkbox" value="lora"> #LORA</label>
-                    <label><input type="checkbox" class="filter-checkbox" value="cobot"> #Cobot</label>
-                    <label><input type="checkbox" class="filter-checkbox" value="raspberrypi"> #RaspberryPi</label>
-                    <label><input type="checkbox" class="filter-checkbox" value="ai"> #AI</label>
-                    <label><input type="checkbox" class="filter-checkbox" value="python"> #Python</label>
-                    <label><input type="checkbox" class="filter-checkbox" value="vmware"> #VMware</label>
-                    <label><input type="checkbox" class="filter-checkbox" value="linux"> #Linux</label>
-                    <label><input type="checkbox" class="filter-checkbox" value="homeautomation"> #HomeAutomation</label>
-                    <label><input type="checkbox" class="filter-checkbox" value="gopro"> #GoPro</label>
-                    <label><input type="checkbox" class="filter-checkbox" value="aws"> #AWS</label>
-                    <label><input type="checkbox" class="filter-checkbox" value="c++"> #C++</label>
-                </div>
-            </div>
-            <div class="project-grid">
-                <!-- New Internship Card moved to the top -->
-                <div class="project-card internship-project-card">
-                    <div class="project-image">
-                         <img src="images/AFCS.jpg" alt="Internship">
-                         <div class="project-overlay">
-                            <a href="internship.html" class="read-more-btn">READ MORE</a>
-                         </div>
-                    </div>
-                    <h3>Internship</h3>
-                    <p>IoT Solutions Developer at CERcuits - Developed a dust extraction system automation.</p>
-                    <div class="project-tags">
-                        <span class="tag">#ESP32</span>
-                        <span class="tag">#SensorIntegration</span>
-                        <span class="tag">#PCB</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/LORATheExplorer.jpg" alt="LORA The Explorer">
-                        <div class="project-overlay">
-                            <a href="projects/lora-explorer.html" class="read-more-btn">READ MORE</a>
-                        </div>
-                    </div>
-                    <h3>LORA The Explorer</h3>
-                    <p>Development of a LORA network for tracking and monitoring.</p>
-                    <div class="project-tags">
-                        <span class="tag">#PCB</span>
-                        <span class="tag">#ESP32</span>
-                        <span class="tag">#Networks</span>
-                        <span class="tag">#LORA</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/MinifigureSorting.png" alt="Minifigure Sorting">
-                        <div class="project-overlay">
-                            <a href="projects/minifigure-sorting.html" class="read-more-btn">READ MORE</a>
-                        </div>
-                    </div>
-                    <h3>Minifigure Sorting</h3>
-                    <p>Development of a collaborative robot for sorting LEGO minifigures.</p>
-                    <div class="project-tags">
-                        <span class="tag">#Cobot</span>
-                        <span class="tag">#RaspberryPi</span>
-                        <span class="tag">#AI</span>
-                        <span class="tag">#Python</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/AppHostingPlatform.png" alt="App Hosting Platform">
-                        <div class="project-overlay">
-                            <a href="projects/app-hosting.html" class="read-more-btn">READ MORE</a>
-                        </div>
-                    </div>
-                    <h3>App Hosting Platform</h3>
-                    <p>Development of a platform for hosting applications.</p>
-                    <div class="project-tags">
-                        <span class="tag">#VMware</span>
-                        <span class="tag">#Linux</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/ProjectIOT.png" alt="Project IOT">
-                        <div class="project-overlay">
-                            <a href="projects/project-iot.html" class="read-more-btn">READ MORE</a>
-                        </div>
-                    </div>
-                    <h3>Project IOT</h3>
-                    <p>Development of an IOT system for home automation.</p>
-                    <div class="project-tags">
-                        <span class="tag">#ESP32</span>
-                        <span class="tag">#SensorIntegration</span>
-                        <span class="tag">#RaspberryPi</span>
-                        <span class="tag">#HomeAutomation</span>
-                        <span class="tag">#Python</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/Project 4.0.png" alt="Project 4.0">
-                        <div class="project-overlay">
-                            <a href="projects/project-4.0.html" class="read-more-btn">READ MORE</a>
-                        </div>
-                    </div>
-                    <h3>Project 4.0</h3>
-                    <p>Development of an AI system for industry 4.0.</p>
-                    <div class="project-tags">
-                        <span class="tag">#AI</span>
-                        <span class="tag">#GoPro</span>
-                        <span class="tag">#AWS</span>
-                        <span class="tag">#Linux</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/Meshnetwork.jpg" alt="Mesh Network">
-                        <div class="project-overlay">
-                            <a href="projects/mesh-network.html" class="read-more-btn">READ MORE</a>
-                        </div>
-                    </div>
-                    <h3>Mesh Network</h3>
-                    <p>Development of a mesh network for sensor data collection.</p>
-                    <div class="project-tags">
-                        <span class="tag">#ESP32</span>
-                        <span class="tag">#C++</span>
-                        <span class="tag">#SensorIntegration</span>
-                    </div>
-                </div>
-            </div>
-        
-    </section>
-
     <section id="internship" class="internship">
         <h2>INTERNSHIP</h2>
-        
-            <p class="section-subtitle">My Professional Experience</p>
-            <div class="internship-content">
-                <h3><i class="fas fa-laptop-code"></i> IoT Solutions Developer at CERcuits</h3>
-                <p>During my internship at CERcuits, I developed an IoT system to monitor and automate a dust extraction system, improving efficiency and reducing noise.</p>
+        <p class="section-subtitle">My Professional Experience</p>
+        <div class="internship-content">
+            <div class="internship-image">
+                <img src="images/AFCS.jpg" alt="Air Filtration Control System">
+            </div>
+            <div class="internship-details">
+                <h3>IoT Solutions Developer at CERcuits</h3>
+                <p>Developed an innovative IoT system to monitor and automate a dust extraction system. The system automatically detects laser activity and controls the extraction system accordingly, improving efficiency and reducing noise pollution. Implemented real-time monitoring and automated control using ESP32 microcontrollers and various industrial components.</p>
+                <div class="project-tags">
+                    <span class="tag">#ESP32</span>
+                    <span class="tag">#SensorIntegration</span>
+                    <span class="tag">#PCB</span>
+                    <span class="tag">#Automation</span>
+                    <span class="tag">#IoT</span>
+                </div>
                 <a href="internship.html" class="cta-button">READ MORE</a>
             </div>
-        
+        </div>
     </section>
 
-    
+    <section id="projects" class="projects">
+        <h2>PROJECTS</h2>
+        <p class="section-subtitle">Featured work and achievements</p>
+        <div class="filter-dropdown-container">
+            <button class="filter-dropdown-toggle" id="filterDropdownToggle">Filter Projects <i class="fas fa-chevron-down"></i></button>
+            <div class="filter-dropdown-content" id="filterDropdownContent">
+                <label><input type="checkbox" class="filter-checkbox" value="all" checked> All</label>
+                <label><input type="checkbox" class="filter-checkbox" value="esp32"> #ESP32</label>
+                <label><input type="checkbox" class="filter-checkbox" value="sensorintegration"> #SensorIntegration</label>
+                <label><input type="checkbox" class="filter-checkbox" value="pcb"> #PCB</label>
+                <label><input type="checkbox" class="filter-checkbox" value="networks"> #Networks</label>
+                <label><input type="checkbox" class="filter-checkbox" value="lora"> #LORA</label>
+                <label><input type="checkbox" class="filter-checkbox" value="cobot"> #Cobot</label>
+                <label><input type="checkbox" class="filter-checkbox" value="raspberrypi"> #RaspberryPi</label>
+                <label><input type="checkbox" class="filter-checkbox" value="ai"> #AI</label>
+                <label><input type="checkbox" class="filter-checkbox" value="python"> #Python</label>
+                <label><input type="checkbox" class="filter-checkbox" value="vmware"> #VMware</label>
+                <label><input type="checkbox" class="filter-checkbox" value="linux"> #Linux</label>
+                <label><input type="checkbox" class="filter-checkbox" value="homeautomation"> #HomeAutomation</label>
+                <label><input type="checkbox" class="filter-checkbox" value="gopro"> #GoPro</label>
+                <label><input type="checkbox" class="filter-checkbox" value="aws"> #AWS</label>
+                <label><input type="checkbox" class="filter-checkbox" value="c++"> #C++</label>
+            </div>
+        </div>
+        <div class="project-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="images/LORATheExplorer.jpg" alt="LORA The Explorer">
+                    <div class="project-overlay">
+                        <a href="projects/lora-explorer.html" class="read-more-btn">READ MORE</a>
+                    </div>
+                </div>
+                <h3>LORA The Explorer</h3>
+                <p>Development of a PCB for network connectivity in disaster areas</p>
+                <div class="project-tags">
+                    <span class="tag">#PCB</span>
+                    <span class="tag">#ESP32</span>
+                    <span class="tag">#Networks</span>
+                    <span class="tag">#LORA</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="images/MinifigureSorting.png" alt="Minifigure Sorting">
+                    <div class="project-overlay">
+                        <a href="projects/minifigure-sorting.html" class="read-more-btn">READ MORE</a>
+                    </div>
+                </div>
+                <h3>Minifigure Sorting</h3>
+                <p>Using AI and a Cobot for sorting LEGO minifigures.</p>
+                <div class="project-tags">
+                    <span class="tag">#Cobot</span>
+                    <span class="tag">#RaspberryPi</span>
+                    <span class="tag">#AI</span>
+                    <span class="tag">#Python</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="images/AppHostingPlatform.png" alt="App Hosting Platform">
+                    <div class="project-overlay">
+                        <a href="projects/app-hosting.html" class="read-more-btn">READ MORE</a>
+                    </div>
+                </div>
+                <h3>App Hosting Platform</h3>
+                <p>Development of a platform for hosting applications.</p>
+                <div class="project-tags">
+                    <span class="tag">#VMware</span>
+                    <span class="tag">#Linux</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="images/ProjectIOT.png" alt="Project IOT">
+                    <div class="project-overlay">
+                        <a href="projects/project-iot.html" class="read-more-btn">READ MORE</a>
+                    </div>
+                </div>
+                <h3>Project IOT</h3>
+                <p>Development of an IOT system for automation of a pumpkin greenhouse.</p>
+                <div class="project-tags">
+                    <span class="tag">#ESP32</span>
+                    <span class="tag">#SensorIntegration</span>
+                    <span class="tag">#RaspberryPi</span>
+                    <span class="tag">#HomeAutomation</span>
+                    <span class="tag">#Python</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="images/Project 4.0.png" alt="Project 4.0">
+                    <div class="project-overlay">
+                        <a href="projects/project-4.0.html" class="read-more-btn">READ MORE</a>
+                    </div>
+                </div>
+                <h3>Project 4.0</h3>
+                <p>Development of a smart parking spot detection application</p>
+                <div class="project-tags">
+                    <span class="tag">#AI</span>
+                    <span class="tag">#GoPro</span>
+                    <span class="tag">#AWS</span>
+                    <span class="tag">#Linux</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="images/Meshnetwork.jpg" alt="Mesh Network">
+                    <div class="project-overlay">
+                        <a href="projects/mesh-network.html" class="read-more-btn">READ MORE</a>
+                    </div>
+                </div>
+                <h3>Mesh Network</h3>
+                <p>Development of a mesh network for sensor data collection.</p>
+                <div class="project-tags">
+                    <span class="tag">#ESP32</span>
+                    <span class="tag">#C++</span>
+                    <span class="tag">#SensorIntegration</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer class="footer">
         <div class="footer-content">
@@ -395,6 +384,18 @@
 
     <script src="https://kit.fontawesome.com/d9f0abd257.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
-
+    <script>
+        function handleInternshipNav(event) {
+            if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {
+                event.preventDefault(); // Prevent default link behavior
+                document.getElementById('internship').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            } else {
+                // If not on index.html, let the link navigate to internship.html
+                window.location.href = 'internship.html';
+            }
+        }
+    </script>
 </body>
 </html> 

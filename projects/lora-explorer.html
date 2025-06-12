@@ -68,25 +68,30 @@
 
     <section class="project-detail">
         <div class="content-container">
-            <h3>What did I apply?</h3>
-            <ul>
-                <li>Working with EasyEDA and designing my own electrical schematics.</li>
-                <li>PCBs with some complexity require a lot of time and care.</li>
-                <li>Build a working test setup first before ordering a PCB.</li>
-                <li>Check components and data sheets carefully; avoid obsolete parts.</li>
-                <li>Online communities are very valuable for technical problems.</li>
-                <li>Observing deadlines is crucial, especially for orders with long lead times.</li>
-            </ul>
-
             <h3>Context & Background</h3>
-            <p>For the course Embedded Devices Essentials...</p>
-            <p>Each balloon had to send data via Wi-Fi...</p>
-            <p>We named our project...</p>
+            <p>Together with two fellow students, Mathieu Du Jardin and Jens Geenen, I worked on this project for the Embedded Devices Essentials course. We had already received instruction on the ESP32 microcontroller and programming in C. Then we were allowed to get started on our own. We chose the following project:</p>
+
+            <h4>Project Weatherballoon & Backup Network</h4>
+            <p>"Design a weather balloon with measuring equipment that also serves as a node in a mesh network."</p>
+
+            <p>Each balloon had to collect environmental data and contain Wi-Fi and LORA. LORA (LOng RAnge) is a wireless communication technology with a much greater range than Wi-Fi.</p>
+
+            <p>After some brainstorming (thanks to ChatGPT), we named the project LORA The Explorer. The aim: to use balloons as an emergency network in disaster areas. Users would connect to the balloon via Wi-Fi, while the balloons would communicate with each other via LORA. This way, an entire village could be bridged with just a few balloons.</p>
 
             <h3>Realization</h3>
-            <p>We were excited and dove headfirst into LORA, mesh networks and weather balloons. The challenge was not only designing the system, but also developing our own PCB and even building the ESP32 module from scratch. For this, we used EasyEDA, software for PCB design.</p>
-            <p>Soon we discovered how complex it was to design a microcontroller completely on our own. A small error in the schematic could have disastrous consequences. Due to time constraints, we had to order an alternative ESP32 chip last-minute, which unfortunately turned out to be obsolete in retrospect.</p>
-            <p>Our PCB looked good, but did not work as hoped. Only after help from Roma, a sympathetic technician from Georgia whom we found through Facebook, did we get the chip partially working. Unfortunately, this came too late to complete the project.</p>
+            <p>We were enthusiastic and immediately dove into LORA, mesh networks, weather balloons, and PCB design. We had to make our own circuit board and even tried to design the ESP32 module entirely ourselves. We used EasyEDA for this.</p>
+
+            <p>We quickly realized how complex it was to build a working microcontroller from scratch. A small mistake could cause everything to fail. Due to time pressure, we replaced our ESP32 chip at the last minute with a version from another manufacturer – a mistake. The PCB looked good, but the chip didn't work. It turned out to be outdated and unprogrammable. After getting help via Facebook (thanks to Roma from Georgia), we managed to get it partially working, but it was too late to successfully complete the project.</p>
+
+            <h3>What did I apply?</h3>
+            <ul>
+                <li>Learn to work well with EasyEDA and PCB design.</li>
+                <li>Designing a complex PCB takes a lot of time.</li>
+                <li>First, create a properly functioning test setup before ordering a PCB.</li>
+                <li>Carefully check all components and datasheets.</li>
+                <li>Use forums and online groups when you encounter problems.</li>
+                <li>Respect deadlines when ordering – a lesson we unfortunately learned too late.</li>
+            </ul>
         </div>
     </section>
 

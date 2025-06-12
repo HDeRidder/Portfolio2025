@@ -36,6 +36,12 @@
                     <div class="project-info-slide fade">
                         <img src="../images/AppHostingPlatform.png" alt="App Hosting Platform Image">
                     </div>
+                    <div class="project-info-slide fade">
+                        <img src="../images/software diagram 1.png" alt="Software Diagram 1">
+                    </div>
+                    <div class="project-info-slide fade">
+                        <img src="../images/software diagram 2.png" alt="Software Diagram 2">
+                    </div>
                     <!-- Add more project-info-slide divs for additional images here -->
                  <button class="prev-info" onclick="plusInfoSlides(-1, this.parentElement)">&#10094;</button>
                 <button class="next-info" onclick="plusInfoSlides(1, this.parentElement)">&#10095;</button>
@@ -43,6 +49,8 @@
                  <!-- Dots indicators remain outside the container but within the carousel wrapper -->
                  <div class="dots-container-info">
                     <span class="dot-info" onclick="currentInfoSlide(1, this.parentElement.previousElementSibling.querySelector('.project-info-carousel-container'))"></span>
+                    <span class="dot-info" onclick="currentInfoSlide(2, this.parentElement.previousElementSibling.querySelector('.project-info-carousel-container'))"></span>
+                    <span class="dot-info" onclick="currentInfoSlide(3, this.parentElement.previousElementSibling.querySelector('.project-info-carousel-container'))"></span>
                     <!-- Add more span.dot-info for additional images here -->
                  </div>
             </div>
@@ -66,27 +74,48 @@
 
     <section class="project-detail">
         <div class="content-container">
-            <h3>What did I apply?</h3>
+            <h3>Context & Background</h3>
+            <p>The project involves the design and implementation of a hosting platform tailored for PHP/Laravel applications, hosted in the Thomas More datacenter. It supports automated deployment, focuses on scalability, security, and high availability, and enables clients to host multiple applications efficiently. The platform emphasizes control, cost-efficiency via shared hosting, and the ability to provide better support by removing reliance on third-party providers.</p>
+
+            <p>The platform's value proposition lies in its customizability, enhanced security, and full ownership of the infrastructure stack. However, it consciously excludes features like disaster recovery, SLA guarantees, 24/7 support, or multi-region deployments.</p>
+
+            <h3>Realization</h3>
+            <p>The platform was built with a strong focus on automation and layered complexity:</p>
+
+            <h4>Crawl-Walk-Run-Fly Model:</h4>
             <ul>
-                <li>Set up a Linux-based server environment</li>
-                <li>Configured MySQL database for backend data storage</li>
-                <li>Implemented secure FTP and SSH access for deployment</li>
-                <li>Implemented anti-malware protection</li>
-                <li>Automated backups and monitoring for uptime and performance</li>
-                <li>Deployed the client's PHP application and ensured seamless operation</li>
-                <li>Relying on CIS controls for security</li>
-                <li>Relying on Kubernetes cluster for scalability</li>
-                <li>Automated deployment and backup processes</li>
-                <li>Custom domain and SSL certificate integration</li>
-                <li>Performance monitoring and alerting</li>
-                <li>User-friendly management interface for the client</li>
+                <li>Crawl: Manual tasks with basic automation.</li>
+                <li>Walk: Partial automation (e.g., using Ansible), basic monitoring.</li>
+                <li>Run: Full Infrastructure-as-Code, centralized logging.</li>
+                <li>Fly: Advanced features like auto-scaling and multi-tenancy.</li>
             </ul>
 
-            <h3>Context & Background</h3>
-            <p>This project involved creating a robust hosting platform in a local datacenter to host a PHP application for a client.</p>
+            <h4>Security Implementation via CIS Controls:</h4>
+            <ul>
+                <li>CIS 1–2: Asset inventory and discovery (hardware/software).</li>
+                <li>CIS 3: Data protection and encryption.</li>
+                <li>CIS 4–6: Secure configurations, access control, account management.</li>
+                <li>CIS 7–11: Vulnerability management, log auditing, malware defense, backups.</li>
+            </ul>
 
-            <h3>Results</h3>
-            <p>The platform successfully hosted the client's PHP application with zero downtime during the launch period. The client benefited from improved performance, enhanced security, and simplified management, resulting in a positive user experience and high client satisfaction.</p>
+            <h4>Tools Used:</h4>
+            <ul>
+                <li>Infrastructure & Automation: Kubernetes, Ansible, Jenkins, Docker.</li>
+                <li>Security & Monitoring: ClamAV, OCS Inventory, Nmap, Firewall/VPN.</li>
+                <li>Databases: MySQL (app data), PostgreSQL (logs).</li>
+                <li>Backup & Logging: Restic (backup), Grafana (dashboard).</li>
+                <li>CI/CD: GitLab, Jenkins pipelines.</li>
+            </ul>
+
+            <h3>What Did I Apply</h3>
+            <ul>
+                <li>DevOps practices: CI/CD with Jenkins and GitLab.</li>
+                <li>Infrastructure as Code: With Ansible and Kubernetes.</li>
+                <li>Security standards: CIS benchmarks and hardening via Ansible.</li>
+                <li>Scalable architecture: Using container orchestration (K8s), shared hosting, and backup solutions.</li>
+                <li>Monitoring and observability: With Grafana and log centralization.</li>
+                <li>Platform services management: Including automated vulnerability scanning and encrypted backups.</li>
+            </ul>
         </div>
     </section>
 

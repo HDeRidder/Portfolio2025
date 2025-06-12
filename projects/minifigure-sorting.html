@@ -68,30 +68,41 @@
 
     <section class="project-detail">
         <div class="content-container">
-            <h3>What did I apply?</h3>
+            <h3>Context & Background</h3>
+            <p>For the Digital Innovation course, we were tasked with programming a robot arm for the Lego fair called 'Bricks and More'. This fair takes place annually on the Thomas More campus in Geel. It attracts many hobbyists, but also a lot of children. The latter group would be our target audience.</p>
+
+            <h4>The assignment:</h4>
+            <p>Ensure that children at the Lego fair can make figures and have them sorted by a robot arm. The aim is for the robot arm to try to divide the figures into one of four categories.</p>
+
+            <h4>The four categories were:</h4>
+            <ul>
+                <li>Space</li>
+                <li>Knights</li>
+                <li>Pirates</li>
+                <li>Emergency services</li>
+            </ul>
+
+            <h3>Realization</h3>
+            <p>To achieve this, we used Teachable Machines. This is a pre-trained AI model from Google that you can use to recognize things. These things can be images, sounds, or body postures. We opted for images and started taking thousands of photos of hundreds of different self-built figures, each belonging to one category. Based on this input, we taught the AI model to distinguish between minifigures.</p>
+
+            <p>Then we got to work with the Cobot. A cobot is a robot that is designed in such a way that there are virtually no risks associated with using it around people. If the robot is in motion and collides with something (even if only gently), it immediately stops to prevent accidents. We used the wizard on the accompanying tablet to program four different scenarios that the robot arm could be presented with. Each scenario was a path that the robot arm would follow, starting each time by picking up the figure, then making a nice swinging movement, and finally placing the figure in one of four locations.</p>
+
+            <p>Finally, we connected a webcam to a Raspberry Pi. The webcam was used to take a photo of the figure that had been made. The Raspberry Pi was in turn connected to a relay board that switched inputs from the Cobot. The flow was as follows:</p>
+            <ol>
+                <li>The webcam took a photo that was stored on the Raspberry Pi</li>
+                <li>The photo was sent to an online AI model via the Raspberry Pi</li>
+                <li>The AI model attempted to categorize the photo and sent that category to the Raspberry Pi</li>
+                <li>Based on the result it received, the Raspberry Pi switched one of the four relays</li>
+                <li>The robot executed the corresponding pre-programmed scenario and (hopefully) placed the male figure in the correct spot</li>
+            </ol>
+
+            <h3>What did I learn?</h3>
             <ul>
                 <li>Working with Teachable Machine, a pre-trained AI from Google</li>
                 <li>Programming a Cobot</li>
-                <li>Brushed up on Python knowledge</li>
-                <li>Combining Raspberry Pi and Robotics</li>
+                <li>Refreshed my Python knowledge</li>
+                <li>Combination of Raspberry Pi and robotics</li>
             </ul>
-
-            <h3>Context & Background</h3>
-            <p>For the Digital Innovation course, we were given the assignment...</p>
-            <p><strong>The assignment:</strong><br>Make sure children can make little men...</p>
-            <p>The 4 categories were: ...</p>
-
-            <h3>Realization</h3>
-            <p>To realize this, we used Teachable Machines. This is a pre-trained AI model from Google that you can use to recognize things. These things can be images, sounds or body positions. We chose images and started taking thousands of pictures of hundreds of different self-made males that each belonged to one category. Based on this input, we taught the AI model to distinguish minifigures from each other.</p>
-            <p>Next, we got to work on the Cobot. A cobot is a robot designed so that there are virtually no risks involved in using it around humans. If the robot is making a move and bumps into something (even if only gently), it blocks immediately to avoid accidents. We used the wizard on the accompanying tablet to program 4 different scenarios that the robot arm could be presented with. Each scenario was a path that this robotic arm would follow, each time starting with picking up the male, then making a nice pendulum movement to finally put the male down in 1 of the 4 spots.</p>
-            <p>Finally, we connected a webcam to a Raspberry Pi. The webcam served to take a picture of the created little man. The Raspberry Pi was in turn connected to a relay board that switched inputs of the Cobot. The flow was as follows:</p>
-            <ol>
-                <li>The webcam took a picture that was stored on the Raspberry Pi</li>
-                <li>The photo was forwarded to an online AI model via the Raspberry Pi</li>
-                <li>The AI model tried to categorize the photo and forwarded that category to the Raspberry Pi</li>
-                <li>The raspberry pi switched 1 of 4 relays based on the returned result</li>
-                <li>The robot executed the corresponding pre-programmed scenario and (hopefully) put the male in the right place</li>
-            </ol>
         </div>
     </section>
 
